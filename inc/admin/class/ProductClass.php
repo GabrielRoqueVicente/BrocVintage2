@@ -7,8 +7,8 @@ class Product
     private $_idProduct;
     private $_autor;
     private $_year;
-    private $_disponibility;
     private $_entryDate;
+    private $_disponibility;
     private $_name;
     private $_description;
     private $_price;
@@ -22,129 +22,121 @@ class Product
 
     //===PROPERTIES===
 
+        //Dynamic class hydrate
+    public function hydrate(array $datas)
+    {
+        foreach ($datas as $key => $value)
+        {
+            $method = 'set'.ucfirst($key);
+
+            if (method_exists($this, $method))
+            {
+                $this->$method($value);
+            }
+        }
+    }
+
     //===SETTERS===
+
+    public function setId($idProduct)
+    {
+        $idProduct = (int) $idProduct;
+
+        if ($idProduct > 0)
+        {
+            $this->_id = $idProduct;
+        }
+    }
 
     public function setAutor($autor)
     {
-        if (!is_string($autor))
+        if (is_string($autor) && strlen($autor) <= 40)
         {
-            trigger_error('L\'auteur doit être une chaîne de charactères.', E_USER_WARNING);
-            return;
+            $this->_autor = $autor;
         }
-
-        if (strlen($autor) > 40)
-        {
-            trigger_error('L\'auteur ne peux contenir plus de 40 charactères.', E_USER_WARNING);
-            return;
-        }
-
-        $this->_autor = $autor;
     }
 
     public function setYear($year)
     {
-        if(!is_date($year))
+        if(is_date($year))
         {
-            trigger_error('Format de date incorrecte.', E_USER_WARNING);
-            return;
+            $this->_year = $year;
         }
 
-        $this->_year = $year;
+    }
+
+    public function setEntryDate($EntryDate)
+    {
+        if(is_date($EntryDate))
+        {
+            $this->_EntryDate = $EntryDate;
+        }
+
     }
 
     public function setDisponibilty($disponibility)
     {
-        if($disponibility !== ('dis' || 'res' || 'ind'))
+        if(is_string($disponibility) $$ $disponibility == ('dis' || 'res' || 'ind'))
         {
-            trigger_error('Format de disponibilité incorrecte.', E_USER_WARNING);
-            return;
+            $this->_disponibility = $disponibility;
         }
-
-        $this->_disponibility = $disponibility;
     }
 
     public function setName($name)
     {
-        if (!is_string($name))
-        {
-            trigger_error('Le nom de l\'objet doit être une chaîne de charactères.', E_USER_WARNING);
-            return;
-        }
+        $name = (int) $name;
 
-        if (strlen($name) > 40)
+        if (is_string($name) && strlen($name) <= 40)
         {
-            trigger_error('Le nom de l\'objet ne peux contenir plus de 40 charactères.', E_USER_WARNING);
-            return;
+            $this->_name = $name;
         }
-
-        $this->_autor = $name;
     }
 
     public function setDescription($description)
     {
-        if(!is_string($description))
+        if (is_string($description))
         {
-            trigger_error('La description doit être une chaîne de charactères.', E_USER_WARNING);
-            return;
+            $this->_description = $description;
         }
 
-        $this->_description = $description;
     }
 
     public function setPrice($price)
     {
-        if(!is_float($price))
-        {
-            trigger_error('Le prix doit être une valeur.', E_USER_WARNING);
-            return;
-        }
+        $price = (float) $price;
 
-        $this->_price = $price;
+        if(is_float($price))
+        {
+            $this->_price = $price;
+        }
     }
 
     public function setPromotion($promotion)
     {
-        if(!is_bool($promotion))
+        if(is_bool($promotion))
         {
-            trigger_error('Promotion doit être un booléen.', E_USER_WARNING);
-            return;
+            $this->_promotion = $promotion;
         }
-
-        $this->_promotion = $promotion;
     }
 
     public function setProductType($productType)
     {
-        if(!is_int($productType))
-        {
-            trigger_error('Type de produit incorrecte.', E_USER_WARNING);
-            return;
-        }
+        $productType = (int) $productType;
 
-        if($productType > 100)
+        if (is_int($productType) && $productType >= 1 && $productType <= 100)
         {
-            trigger_error('La valeur du type de produit ne dois pas depasser 100.', E_USER_WARNING);
-            return;
+            $this->_productType = $productType;
         }
-
-        $this->_productType = $productType;
     }
 
     public function setProductSubType($productSubType)
     {
-        if(!is_int($productSubType))
-        {
-            trigger_error('Type de sous-produit incorrecte.', E_USER_WARNING);
-            return;
-        }
+        $productSubType = (int) $productSubType;
 
-        if($productSubType > 100)
+        if (is_int($productSubType) && $productSubType >= 1 && $productSubType <= 100)
         {
-            trigger_error('La valeur du sous-type de produit ne dois pas depasser 100.', E_USER_WARNING);
-            return;
+            $this->_productSubType = $productSubType;
         }
-
-        $this->_productSubType = $productSubType;
     }
 
     /* ================================================================================================================
@@ -215,14 +207,14 @@ class Product
         return $this->_year;
     }
 
-    public function disponibility()
-    {
-        return $this->_disponibility;
-    }
-
     public function entryDate()
     {
         return $this->_entryDate;
+    }
+
+    public function disponibility()
+    {
+        return $this->_disponibility;
     }
 
     public function name()
