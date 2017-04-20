@@ -1,4 +1,6 @@
 <?php
+require(ProductClass.php);
+
 class ProductManager
 {
     private $_db;
@@ -29,7 +31,7 @@ class ProductManager
 
     public function delete(Product $product)
     {
-        this->_db->exec('DELETE FROM products WHERE id = ' .$product->id_product());
+        $this->_db->exec('DELETE FROM products WHERE id = ' .$product->id_product());
     }
 
     public function get($id_product)
@@ -45,7 +47,7 @@ class ProductManager
     public function getList()
     {
         $products = [];
-        $q = this->_db->query('SELECT id_product autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY name');
+        $q = $this->_db->query('SELECT id_product autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY name');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

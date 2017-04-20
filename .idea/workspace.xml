@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/Product.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin/class/ProductManager.php" afterPath="$PROJECT_DIR$/inc/admin/class/ProductManager.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +37,7 @@
       <file leaf-file-name="ProductClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/admin/class/ProductClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2079">
+            <state relative-caret-position="2205">
               <caret line="105" column="31" lean-forward="false" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
               <folding />
             </state>
@@ -48,16 +47,16 @@
       <file leaf-file-name="ProductManager.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/admin/class/ProductManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1659">
-              <caret line="79" column="5" lean-forward="false" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+            <state relative-caret-position="-28">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
-                <marker date="1492687477530" expanded="true" signature="207:493" ph="INSERT INTO products... " />
-                <marker date="1492687477530" expanded="true" signature="1247:1278" ph="DELETE FROM " />
-                <marker date="1492687477530" expanded="true" signature="1247:1279" ph="DELETE FROM " />
-                <marker date="1492687477530" expanded="true" signature="1431:1587" ph="SELECT id_pr... " />
-                <marker date="1492687477530" expanded="true" signature="1431:1588" ph="SELECT id_pr... " />
-                <marker date="1492687477530" expanded="true" signature="1786:1937" ph="SELECT id_pr... " />
-                <marker date="1492687477530" expanded="true" signature="2181:2464" ph="UPDATE produ... " />
+                <marker date="1492687722431" expanded="true" signature="235:521" ph="INSERT INTO products... " />
+                <marker date="1492687722431" expanded="true" signature="1276:1307" ph="DELETE FROM " />
+                <marker date="1492687722431" expanded="true" signature="1276:1308" ph="DELETE FROM " />
+                <marker date="1492687722431" expanded="true" signature="1460:1616" ph="SELECT id_pr... " />
+                <marker date="1492687722431" expanded="true" signature="1460:1617" ph="SELECT id_pr... " />
+                <marker date="1492687722431" expanded="true" signature="1816:1967" ph="SELECT id_pr... " />
+                <marker date="1492687722431" expanded="true" signature="2211:2494" ph="UPDATE produ... " />
               </folding>
             </state>
           </provider>
@@ -273,12 +272,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492601813880</updated>
       <workItem from="1492601815268" duration="12849000" />
-      <workItem from="1492674288706" duration="9541000" />
+      <workItem from="1492674288706" duration="9790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22390000" />
+    <option name="totallyTimeSpent" value="22639000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,10 +356,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/inc/admin/class/ProductClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
+        <state relative-caret-position="2205">
+          <caret line="105" column="31" lean-forward="false" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -373,26 +372,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/admin/class/ProductClass.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2079">
-          <caret line="105" column="31" lean-forward="false" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/admin/class/ProductManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="79" column="5" lean-forward="false" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        <state relative-caret-position="-28">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <marker date="1492687477530" expanded="true" signature="207:493" ph="INSERT INTO products... " />
-            <marker date="1492687477530" expanded="true" signature="1247:1278" ph="DELETE FROM " />
-            <marker date="1492687477530" expanded="true" signature="1247:1279" ph="DELETE FROM " />
-            <marker date="1492687477530" expanded="true" signature="1431:1587" ph="SELECT id_pr... " />
-            <marker date="1492687477530" expanded="true" signature="1431:1588" ph="SELECT id_pr... " />
-            <marker date="1492687477530" expanded="true" signature="1786:1937" ph="SELECT id_pr... " />
-            <marker date="1492687477530" expanded="true" signature="2181:2464" ph="UPDATE produ... " />
+            <marker date="1492687722431" expanded="true" signature="235:521" ph="INSERT INTO products... " />
+            <marker date="1492687722431" expanded="true" signature="1276:1307" ph="DELETE FROM " />
+            <marker date="1492687722431" expanded="true" signature="1276:1308" ph="DELETE FROM " />
+            <marker date="1492687722431" expanded="true" signature="1460:1616" ph="SELECT id_pr... " />
+            <marker date="1492687722431" expanded="true" signature="1460:1617" ph="SELECT id_pr... " />
+            <marker date="1492687722431" expanded="true" signature="1816:1967" ph="SELECT id_pr... " />
+            <marker date="1492687722431" expanded="true" signature="2211:2494" ph="UPDATE produ... " />
           </folding>
         </state>
       </provider>
