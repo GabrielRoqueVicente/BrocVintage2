@@ -31,7 +31,7 @@ class ProductManager
 
     public function delete(Product $product)
     {
-        $this->_db->exec('DELETE FROM products WHERE id = ' .$product->id_product());
+        $this->_db->exec('DELETE FROM products WHERE id_product = ' .$product->id_product());
     }
 
     public function get($id_product)
