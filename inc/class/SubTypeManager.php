@@ -1,7 +1,6 @@
 <?php
-require(NavClass.php);
-
-class NavManager
+// Manager Sub Type
+class SubTypeManager
 {
     private $_db;
 

@@ -1,6 +1,6 @@
 <?php
-//Class Nav
-class Nav
+//Class Sub Type
+class SubType
 {
     //===ATTRIBUTES===
 
@@ -13,12 +13,10 @@ class Nav
     //Dynamic class hydrate
     public function hydrate(array $datas)
     {
-        foreach ($datas as $key => $value)
-        {
-            $method = 'set'.ucfirst($key);
+        foreach ($datas as $key => $value) {
+            $method = 'set' . ucfirst($key);
 
-            if (method_exists($this, $method))
-            {
+            if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
@@ -28,28 +26,25 @@ class Nav
 
     public function setId($idSubType)
     {
-        $idSubType = (int) $idSubType;
+        $idSubType = (int)$idSubType;
 
-        if ($idSubType > 0)
-        {
+        if ($idSubType > 0) {
             $this->_id = $idSubType;
         }
     }
 
     public function setSubTypeName($subTypeName)
     {
-        if (is_string($subTypeName) && strlen($subTypeName) <= 40)
-        {
+        if (is_string($subTypeName) && strlen($subTypeName) <= 40) {
             $this->_autor = $subTypeName;
         }
     }
 
     public function setIdProductType($idProductType)
     {
-        $idProductType = (int) $idProductType;
+        $idProductType = (int)$idProductType;
 
-        if ($idProductType > 0)
-        {
+        if ($idProductType > 0) {
             $this->_id = $idProductType;
         }
     }
@@ -70,3 +65,4 @@ class Nav
     {
         return $this->_idProductType;
     }
+}

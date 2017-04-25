@@ -1,7 +1,6 @@
 <?php
-require(ProductTypeClass.php);
-
-class ProductTypeManager
+// Product Type Manager
+class TypeManager
 {
     private $_db;
 
@@ -45,7 +44,7 @@ class ProductTypeManager
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $products[] = new Product($datas);
+            $products[] = new ProductType($datas);
         }
 
         return $products;

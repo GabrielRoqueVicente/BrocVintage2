@@ -1,6 +1,5 @@
 <?php
-require(ProductClass.php);
-
+// Product Manager
 class ProductManager
 {
     private $_db;
