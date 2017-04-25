@@ -10,6 +10,11 @@ class SubType
 
     //===PROPERTIES===
 
+    public function __construct(array $datas)
+    {
+        $this->hydrate($datas);
+    }
+
     //Dynamic class hydrate
     public function hydrate(array $datas)
     {
@@ -24,28 +29,28 @@ class SubType
 
     //===SETTERS===
 
-    public function setId($idSubType)
+    public function setId_Sub_Type($idSubType)
     {
         $idSubType = (int)$idSubType;
 
         if ($idSubType > 0) {
-            $this->_id = $idSubType;
+            $this->_idSubType = $idSubType;
         }
     }
 
-    public function setSubTypeName($subTypeName)
+    public function setName($subTypeName)
     {
         if (is_string($subTypeName) && strlen($subTypeName) <= 40) {
-            $this->_autor = $subTypeName;
+            $this->_subTypeName = $subTypeName;
         }
     }
 
-    public function setIdProductType($idProductType)
+    public function setId_Product_Type($idProductType)
     {
         $idProductType = (int)$idProductType;
 
         if ($idProductType > 0) {
-            $this->_id = $idProductType;
+            $this->_idProductType = $idProductType;
         }
     }
 

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/ProductClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/ProductManager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/ProductTypeClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/ProductTypeManager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/SubTypeClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/admin/class/SubTypeManager.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/init.inc.php" afterPath="$PROJECT_DIR$/inc/init.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ProductTypeClass.php" afterPath="$PROJECT_DIR$/inc/class/ProductTypeClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ProductTypeManager.php" afterPath="$PROJECT_DIR$/inc/class/ProductTypeManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/SubTypeClass.php" afterPath="$PROJECT_DIR$/inc/class/SubTypeClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/nav.php" afterPath="$PROJECT_DIR$/inc/nav.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.inc.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="init.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+            <state relative-caret-position="567">
+              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -45,45 +42,28 @@
         <entry file="file://$PROJECT_DIR$/inc/nav.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+              <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubTypeClass.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SubTypeClass.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/class/SubTypeClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductClass.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/ProductClass.php">
+      <file leaf-file-name="ProductTypeClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductTypeManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-              <folding>
-                <marker date="1493130448036" expanded="true" signature="247:363" ph="INSERT INTO products_types... " />
-                <marker date="1493130448036" expanded="true" signature="641:692" ph="DELETE FROM " />
-                <marker date="1493130448036" expanded="true" signature="755:801" ph="DELETE FROM " />
-                <marker date="1493130448036" expanded="true" signature="982:1055" ph="SELECT id_pr... products_types" />
-                <marker date="1493130448036" expanded="true" signature="1256:1318" ph="SELECT id_pr... products_types" />
-                <marker date="1493130448036" expanded="true" signature="1575:1649" ph="UPDATE produ... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,31 +84,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/head.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductTypeClass.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeClass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>data</find>
+      <find>dump</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,12 +111,12 @@
         <option value="$PROJECT_DIR$/inc/admin/class/ProductManager.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/inc/Nav.php" />
-        <option value="$PROJECT_DIR$/inc/class/SubTypeClass.php" />
-        <option value="$PROJECT_DIR$/inc/class/ProductTypeClass.php" />
         <option value="$PROJECT_DIR$/inc/class/SubTypeManager.php" />
-        <option value="$PROJECT_DIR$/inc/class/ProductTypeManager.php" />
-        <option value="$PROJECT_DIR$/inc/nav.php" />
         <option value="$PROJECT_DIR$/inc/init.inc.php" />
+        <option value="$PROJECT_DIR$/inc/class/ProductTypeManager.php" />
+        <option value="$PROJECT_DIR$/inc/class/ProductTypeClass.php" />
+        <option value="$PROJECT_DIR$/inc/nav.php" />
+        <option value="$PROJECT_DIR$/inc/class/SubTypeClass.php" />
       </list>
     </option>
   </component>
@@ -351,12 +312,12 @@
       <updated>1492601813880</updated>
       <workItem from="1492601815268" duration="12849000" />
       <workItem from="1492674288706" duration="10386000" />
-      <workItem from="1493104051472" duration="22324000" />
+      <workItem from="1493104051472" duration="29118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45559000" />
+    <option name="totallyTimeSpent" value="52353000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,18 +598,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/SubTypeClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/head.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/ProductClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+          <folding>
+            <marker date="1493135498333" expanded="true" signature="247:363" ph="INSERT INTO products_types... " />
+            <marker date="1493135498333" expanded="true" signature="641:692" ph="DELETE FROM " />
+            <marker date="1493135498333" expanded="true" signature="755:801" ph="DELETE FROM " />
+            <marker date="1493135498333" expanded="true" signature="982:1055" ph="SELECT id_pr... products_types" />
+            <marker date="1493135498333" expanded="true" signature="1260:1308" ph="SELECT id_pr... products_types" />
+            <marker date="1493135498333" expanded="true" signature="1260:1322" ph="SELECT id_pr... products_types" />
+            <marker date="1493135498333" expanded="true" signature="1587:1661" ph="UPDATE produ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -667,49 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeManager.php">
+    <entry file="file://$PROJECT_DIR$/inc/class/SubTypeClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding>
-            <marker date="1493130448036" expanded="true" signature="247:363" ph="INSERT INTO products_types... " />
-            <marker date="1493130448036" expanded="true" signature="641:692" ph="DELETE FROM " />
-            <marker date="1493130448036" expanded="true" signature="755:801" ph="DELETE FROM " />
-            <marker date="1493130448036" expanded="true" signature="982:1055" ph="SELECT id_pr... products_types" />
-            <marker date="1493130448036" expanded="true" signature="1256:1318" ph="SELECT id_pr... products_types" />
-            <marker date="1493130448036" expanded="true" signature="1575:1649" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/ProductTypeClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/ProductClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+        <state relative-caret-position="420">
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding />
         </state>
       </provider>

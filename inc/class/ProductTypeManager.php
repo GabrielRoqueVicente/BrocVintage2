@@ -38,16 +38,16 @@ class TypeManager
 
     public function getListProductType()
     {
-        $products = [];
+        $productTypes = [];
 
         $q = $this->_db->query('SELECT id_product_type, name FROM products_types ORDER BY name');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $products[] = new ProductType($datas);
+            $productTypes[] = new ProductType($datas);
         }
 
-        return $products;
+        return $productTypes;
     }
 
     public function update(Product_type $productType)

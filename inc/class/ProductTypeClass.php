@@ -9,11 +9,17 @@ class ProductType
 
     //===PROPERTIES===
 
+    public function __construct(array $datas)
+    {
+        $this->hydrate($datas);
+    }
+
     //Dynamic class hydrate
     public function hydrate(array $datas)
     {
-        foreach ($datas as $key => $value) {
-            $method = 'set' . ucfirst($key);
+        foreach ($datas as $key => $value)
+        {
+            $method = 'set'.ucfirst($key);
 
             if (method_exists($this, $method)) {
                 $this->$method($value);
@@ -23,18 +29,20 @@ class ProductType
 
     //===SETTERS===
 
-    public function setIdProductType($idProductType)
+    public function setId_Product_Type($idProductType)
     {
-        $idProductType = (int)$idProductType;
+        $idProductType = (int) $idProductType;
 
-        if ($idProductType > 0) {
-            $this->_id = $idProductType;
+        if ($idProductType > 0)
+        {
+            $this->_idProductType = $idProductType;
         }
     }
 
-    public function setTypeName($typeName)
+    public function setName($typeName)
     {
-        if (is_string($typeName) && strlen($typeName) <= 40) {
+        if (is_string($typeName) && strlen($typeName) <= 40)
+        {
             $this->_typeName = $typeName;
         }
     }
