@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin/class/ProductManager.php" afterPath="$PROJECT_DIR$/inc/admin/class/ProductManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/admin/class/ProductTypeClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/admin/class/ProductTypeManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/admin/class/SubTypeClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/admin/class/SubTypeManager.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -353,12 +356,12 @@
       <updated>1492601813880</updated>
       <workItem from="1492601815268" duration="12849000" />
       <workItem from="1492674288706" duration="10386000" />
-      <workItem from="1493104051472" duration="12302000" />
+      <workItem from="1493104051472" duration="12398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35537000" />
+    <option name="totallyTimeSpent" value="35633000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
