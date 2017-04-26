@@ -22,6 +22,11 @@ class Product
 
     //===PROPERTIES===
 
+    public function __construct(array $datas)
+    {
+        $this->hydrate($datas);
+    }
+
         //Dynamic class hydrate
     public function hydrate(array $datas)
     {
@@ -76,7 +81,7 @@ class Product
 
     public function setDisponibilty($disponibility)
     {
-        if(is_string($disponibility) $$ $disponibility == ('dis' || 'res' || 'ind'))
+        if(is_string($disponibility) && $disponibility == ('dis' || 'res' || 'ind'))
         {
             $this->_disponibility = $disponibility;
         }
