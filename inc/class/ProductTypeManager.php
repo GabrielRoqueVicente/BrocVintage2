@@ -40,7 +40,7 @@ class TypeManager
     {
         $productTypes = [];
 
-        $q = $this->_db->query('SELECT id_product_type, name FROM products_types ORDER BY name');
+        $q = $this->_db->query('SELECT id_product_type, name FROM products_types');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

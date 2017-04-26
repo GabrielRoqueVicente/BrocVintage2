@@ -10,7 +10,40 @@ $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
 
 $types = $typeManager->getListProductType();
-var_dump($types);
 $subTypes = $subTypeManager->getListProductSubType();
-var_dump($subTypes);
 ?>
+
+<!--
+<ul>
+    <li>
+
+    </li>
+    <ul>
+
+    </ul>
+</ul>
+-->
+
+<?php
+foreach ($types as $type)
+{
+    echo '<ul>';
+    echo '<li>' . $type->typeName() . '</li>';
+
+    foreach ($subTypes as $subType)
+    {
+        if ($type->idProductType() == $subType->idProductType()) {
+
+            echo '<ul><li>' . $subType->subTypeName() . '</li></ul>';
+
+
+        } else {
+
+        }
+
+    }
+    echo '</ul>';
+}
+
+?>
+

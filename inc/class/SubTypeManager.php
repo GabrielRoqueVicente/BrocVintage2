@@ -39,7 +39,7 @@ class SubTypeManager
     public function getListProductSubType()
     {
         $subTypes = [];
-        $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types ORDER BY name');
+        $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
