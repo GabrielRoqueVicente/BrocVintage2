@@ -27,15 +27,14 @@ class Product
         $this->hydrate($datas);
     }
 
-        //Dynamic class hydrate
+    //Dynamic class hydrate
     public function hydrate(array $datas)
     {
         foreach ($datas as $key => $value)
         {
             $method = 'set'.ucfirst($key);
 
-            if (method_exists($this, $method))
-            {
+            if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
@@ -55,7 +54,7 @@ class Product
 
     public function setAutor($autor)
     {
-        if (is_string($autor) && strlen($autor) <= 40)
+        if (is_string($autor) && strlen($autor) <= 50)
         {
             $this->_autor = $autor;
         }
@@ -63,25 +62,24 @@ class Product
 
     public function setYear($year)
     {
-        if(is_date($year))
+        $year = (int) $year;
+        if($year >= 1000 && $year <= 3000)
         {
             $this->_year = $year;
         }
-
     }
 
-    public function setEntryDate($EntryDate)
+    public function setEntryDate($entryDate)
     {
-        if(is_date($EntryDate))
-        {
-            $this->_EntryDate = $EntryDate;
-        }
-
+        //if(is_date($EntryDate))
+        //{
+            $this->_entryDate = $entryDate;
+        //}
     }
 
-    public function setDisponibilty($disponibility)
+    public function setDisponibility($disponibility)
     {
-        if(is_string($disponibility) && $disponibility == ('dis' || 'res' || 'ind'))
+        if($disponibility == 'dis'|| $disponibility == 'res' || $disponibility == 'ind')
         {
             $this->_disponibility = $disponibility;
         }
@@ -89,9 +87,7 @@ class Product
 
     public function setName($name)
     {
-        $name = (int) $name;
-
-        if (is_string($name) && strlen($name) <= 40)
+        if (is_string($name) && strlen($name) <= 255)
         {
             $this->_name = $name;
         }
@@ -109,8 +105,7 @@ class Product
     public function setPrice($price)
     {
         $price = (float) $price;
-
-        if(is_float($price))
+        if(is_float($price) && $price >= 0 && $price <= 9999)
         {
             $this->_price = $price;
         }
@@ -118,9 +113,12 @@ class Product
 
     public function setPromotion($promotion)
     {
-        if(is_bool($promotion))
+        if(is_null($promotion))
         {
-            $this->_promotion = $promotion;
+            $this->_promotion = 0;
+        }elseif($promotion == 1)
+        {
+            $this->_promotion = 1;
         }
     }
 

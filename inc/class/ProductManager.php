@@ -12,18 +12,18 @@ class ProductManager
     public function add(Product $product)
     {
         $q = $this->_db->prepare('INSERT INTO products(autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type) 
-                                  VALUES(:autor, :year, :price, :disponibility, :entry_date, :name, :description, :promotion, :id_product_type, :id_sub_type)');
+                                  VALUES(:autor, :year, :price, :disponibility, NOW(), :name, :description, :promotion, :id_product_type, :id_sub_type)');
 
         $q->bindValue(':autor', $product->autor());
         $q->bindValue(':year', $product->year());
         $q->bindValue(':price', $product->price());
         $q->bindValue(':disponibility', $product->disponibility());
-        $q->bindValue(':entry_date', $product->entry_date());
+        //$q->bindValue(':entry_date', $product->entryDate());
         $q->bindValue(':name', $product->name());
         $q->bindValue(':description', $product->description());
         $q->bindValue(':promotion', $product->promotion(), PDO::PARAM_INT);
-        $q->bindValue(':id_product_type', $product->id_product_type(), PDO::PARAM_INT);
-        $q->bindValue(':id_sub_type', $product->id_sub_type(), PDO::PARAM_INT);
+        $q->bindValue(':id_product_type', $product->productType(), PDO::PARAM_INT);
+        $q->bindValue(':id_sub_type', $product->productSubType(), PDO::PARAM_INT);
 
         $q->execute();
     }
@@ -64,13 +64,13 @@ class ProductManager
         $q->bindValue(':year', $product->year());
         $q->bindValue(':price', $product->price());
         $q->bindValue(':disponibility', $product->disponibility());
-        $q->bindValue(':entry_date', $product->entry_date());
+        $q->bindValue(':entry_date', $product->entryDate());
         $q->bindValue(':name', $product->name());
         $q->bindValue(':description', $product->description());
         $q->bindValue(':promotion', $product->promotion(), PDO::PARAM_INT);
-        $q->bindValue(':id_product_type', $product->id_product_type(), PDO::PARAM_INT);
-        $q->bindValue(':id_sub_type', $product->id_sub_type(), PDO::PARAM_INT);
-        $q->bindValue(':id_product', $product->id_prouct(), PDO::PARAM_INT);
+        $q->bindValue(':id_product_type', $product->productType(), PDO::PARAM_INT);
+        $q->bindValue(':id_sub_type', $product->productSubType(), PDO::PARAM_INT);
+        $q->bindValue(':id_product', $product->idProduct(), PDO::PARAM_INT);
 
         $q->execute();
     }

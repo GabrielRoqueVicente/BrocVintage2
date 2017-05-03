@@ -7,16 +7,32 @@ require(DOCUMENT_ROOT . 'inc\class\ProductTypeClass.php');
 require(DOCUMENT_ROOT . 'inc\class\ProductTypeManager.php');
 require(DOCUMENT_ROOT . 'inc\class\SubTypeClass.php');
 require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
+require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
+require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
 //Objects instance
 
-//$Product = new Product($db);
+$productManager = new ProductManager($db);
 $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
+//$pictureManager = new pictureManager($db);
 
-//$products = $Product->getList();
+
+$products = $productManager->getList();
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
+//$pictures = $picture->getListPicture();
+
+// DATA PROCESSING
+
+if (isset($_POST))
+{
+    var_dump($_POST['price']);
+    $product = new Product($_POST);
+    var_dump($product);
+    $productManager->add($product);
+}
+
 ?>
 
 
@@ -24,20 +40,20 @@ $subTypes = $subTypeManager->getListProductSubType();
  * Update Form
 -->
 
-<form method="post" action="#" autocomplete="on">
+<form method="POST" enctype="multipart/form-data" autocomplete="on">
 
     <fieldset>
         <legend>Informations produit</legend>
 
         <p>
             <label for="name">Nom du produit* : </label><br />
-            <input type="text" name="name" id="name"  maxlength="40" autofocus required /><br />
+            <input type="text" name="name" id="name"  maxlength="255" autofocus required /><br />
 
             <label for="autor">Créateur : </label><br />
-            <input type="text" name="autor" id="autor"  maxlength="40" /><br>
+            <input type="text" name="autor" id="autor"  maxlength="50" /><br>
 
             <label for="year">Année de creation : </label><br />
-            <input type="date" name="year" id="year" placeholder="jj/mm/aaaa" /><br />
+            <input type="number" name="year" id="year" placeholder="aaaa" min="1000" max="3000" /><br />
 
             <label for="description">Description du produit* : </label><br />
             <textarea name="description" id="description" rows="20" cols="100" required></textarea><br>
@@ -53,7 +69,7 @@ $subTypes = $subTypeManager->getListProductSubType();
             <label for="price">Prix : </label>
             <input type="number" name="price" id="price" min="0" max="9999.99" step="0.01" /> €<br />
 
-            <input type="checkbox" name="1" id="promotion" />
+            <input type="checkbox" name="promotion" value="1" id="promotion" />
             <label for="promotion">Promotion</label><br />
         </p>
 
@@ -93,24 +109,24 @@ $subTypes = $subTypeManager->getListProductSubType();
 
     </fieldset>
 
-    <!--<fieldset>
+    <fieldset>
         <legend>Images</legend>
 
         <p>
             <label for="primaryPicture">Image principale* : </label><br />
-            <input type="text" name="primaryPicture" id="primaryPicture" required /><br />
+            <input type="file" name="primaryPicture" id="primaryPicture" required /><br />
 
             <label for="picture1">Image 1 : </label><br />
-            <input type="text" name="picture1" id="picture1" /><br />
+            <input type="file" name="picture1" id="picture1" /><br />
 
             <label for="picture2">Image 2 : </label><br />
-            <input type="text" name="picture2" id="picture2"><br />
+            <input type="file" name="picture2" id="picture2"><br />
 
             <label for="picture3">Image 3 : </label><br />
-            <input type="text" name="picture3" id="picture3" /><br />
+            <input type="file" name="picture3" id="picture3" /><br />
         </p>
 
-    </fieldset> -->
+    </fieldset>
 
     <input type="submit" value="Envoyer" /> <input type="reset" value="Vider" />
 
