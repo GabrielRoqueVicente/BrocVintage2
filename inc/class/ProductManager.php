@@ -37,7 +37,7 @@ class ProductManager
     {
         $id_product = (int) $id_product;
 
-        $q = $this->_db->query('SELECT id_product autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products WHERE id_product = ' .$id_product);
+        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products WHERE id_product = ' .$id_product);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
         return new Product($datas);
@@ -46,7 +46,7 @@ class ProductManager
     public function getList()
     {
         $products = [];
-        $q = $this->_db->query('SELECT id_product autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY name');
+        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY name');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
@@ -54,6 +54,14 @@ class ProductManager
         }
 
         return $products;
+    }
+
+    public function getLast()
+    {
+        $q = $this->_db->query('SELECT MAX(id_product) FROM products');
+        $last = $q->fetch(PDO::FETCH_ASSOC);
+        $last = (int) $last['MAX(id_product)'];
+        return $last;
     }
 
     public function update(Product $product)

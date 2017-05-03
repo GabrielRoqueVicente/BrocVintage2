@@ -7,8 +7,7 @@ class Picture
     private $_idPicture;
     private $_picName;
     private $_picSize;
-    private $_picTitle;
-    private $_picDescription;
+    private $_picAlt;
     private $_picFinalName;
     private $_picFileDate;
     private $_idProduct;
@@ -23,19 +22,21 @@ class Picture
     //Dynamic class hydrate
     public function hydrate(array $datas)
     {
-        foreach ($datas as $key => $value)
+        /*foreach ($datas as $key => $value)
         {
             $method = 'set'.ucfirst($key);
 
             if (method_exists($this, $method)) {
                 $this->$method($value);
             }
-        }
+        }*/
+        $this->setPicName($_FILES['primaryPicture']['name']);
+        $this->setPicSize($_FILES['primaryPicture']['size']);
     }
 
     //===SETTERS===
 
-    public function setId_picture($idPicture)
+    public function setIdPicture($idPicture)
     {
         $idPicture = (int) $idPicture;
 
@@ -63,19 +64,11 @@ class Picture
         }
     }
 
-    public function setPicTitle($picTitle)
+    public function setPicAlt($picAlt)
     {
-        if (is_string($picTitle) && strlen($picTitle) <= 50)
+        if (is_string($picAlt) && strlen($picAlt) <= 255)
         {
-            $this->_picTitle = $picTitle;
-        }
-    }
-
-    public function setPicDescription($picDescription)
-    {
-        if (is_string($picDescription) && strlen($picDescription) <= 255)
-        {
-            $this->_picDescription = $picDescription;
+            $this->_picAlt = $picAlt;
         }
     }
 
@@ -122,14 +115,9 @@ class Picture
         return $this->_picSize;
     }
 
-    public function picTitle()
+    public function picAlt()
     {
-        return $this->_picTitle;
-    }
-
-    public function picDescription()
-    {
-        return $this->_picDescription;
+        return $this->_Alt;
     }
 
     public function picFinalName()
