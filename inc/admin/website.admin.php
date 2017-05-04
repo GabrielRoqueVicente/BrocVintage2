@@ -24,8 +24,7 @@ $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getListPicture();
 
 // DATA PROCESSING
-
-/*if (!empty($_POST) && !empty($_FILES))
+if (!empty($_POST) && !empty($_FILES))
 {
     // Insert new product into DB.
     $product = new Product($_POST);
@@ -33,23 +32,47 @@ $pictures = $pictureManager->getListPicture();
 
     // Insert pictures into DB.
     $lastProduct =$productManager->getLast();
+    if (isset($_FILES['primaryPicture']) && $_FILES['primaryPicture']['error'] == 0)
+    {
+        $primaryPicture = new Picture ($_FILES['primaryPicture'], $_POST['pAlt']);
+        $primaryPicture->setIdProduct($lastProduct);
+        $pictureManager->addPicture($primaryPicture);
+    }
+
+    if (isset($_FILES['picture1']) && $_FILES['picture1']['error'] == 0)
+    {
+        $picture1 = new Picture ($_FILES['picture1'], $_POST['1Alt']);
+        $picture1->setIdProduct($lastProduct);
+        $pictureManager->addPicture($picture1);
+    }
+
+    if (isset($_FILES['picture2']) && $_FILES['picture2']['error'] == 0)
+    {
+        $picture2 = new Picture ($_FILES['picture2'], $_POST['2Alt']);
+        $picture2->setIdProduct($lastProduct);
+        $pictureManager->addPicture($picture2);
+    }
+
+    if (isset($_FILES['picture3']) && $_FILES['picture3']['error'] == 0)
+    {
+        $picture3 = new Picture ($_FILES['picture3'], $_POST['3Alt']);
+        $picture3->setIdProduct($lastProduct);
+        $pictureManager->addPicture($picture3);
+    }
+}
 
 
-
-}*/
-
-$lastProduct =$productManager->getLast();
-$primaryPicture = new Picture ($_FILES);
-//$pictureManager->addPicture($picture);
 var_dump($_FILES);
 var_dump($primaryPicture);
-var_dump($_FILES['primaryPicture']['name']);
+var_dump($picture1);
+var_dump($picture2);
+var_dump($picture3);
 
 ?>
 
 
 <!--
- * Update Form
+ * UPDATE FORM
 -->
 
 <form method="POST" enctype="multipart/form-data" autocomplete="on">
@@ -126,23 +149,23 @@ var_dump($_FILES['primaryPicture']['name']);
 
         <p>
             <label for="primaryPicture">Image principale* : </label><br />
-            <input type="file" name="primaryPicture" id="primaryPicture" required />
-            <label for="pAlt">Alt* : </label><br />
+            <input type="file" name="primaryPicture" id="primaryPicture" required /><br />
+            <label for="pAlt">Alt* : </label>
             <input type="text" name="pAlt" id="pAlt"  maxlength="255"required /><br />
 
             <label for="picture1">Image 1 : </label><br />
             <input type="file" name="picture1" id="picture1" /><br />
-            <label for="1Alt">Alt : </label><br />
+            <label for="1Alt">Alt : </label>
             <input type="text" name="1Alt" id="1Alt"  maxlength="255" /><br />
 
             <label for="picture2">Image 2 : </label><br />
             <input type="file" name="picture2" id="picture2"><br />
-            <label for="2Alt">Alt : </label><br />
+            <label for="2Alt">Alt : </label>
             <input type="text" name="2Alt" id="2Alt"  maxlength="255" /><br />
 
             <label for="picture3">Image 3 : </label><br />
             <input type="file" name="picture3" id="picture3" /><br />
-            <label for="3Alt">Alt : </label><br />
+            <label for="3Alt">Alt : </label>
             <input type="text" name="3Alt" id="3Alt"  maxlength="255" /><br />
         </p>
 

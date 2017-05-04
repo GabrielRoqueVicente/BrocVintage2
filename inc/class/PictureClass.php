@@ -14,24 +14,18 @@ class Picture
 
     //===PROPERTIES===
 
-    public function __construct(array $datas)
+    public function __construct(array $datas, $alt)
     {
-        $this->hydrate($datas);
+        $this->hydrate($datas, $alt);
     }
 
     //Dynamic class hydrate
-    public function hydrate(array $datas)
+    public function hydrate(array $datas, $alt)
     {
-        /*foreach ($datas as $key => $value)
-        {
-            $method = 'set'.ucfirst($key);
-
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }*/
-        $this->setPicName($_FILES['primaryPicture']['name']);
-        $this->setPicSize($_FILES['primaryPicture']['size']);
+        $this->setPicName($datas['name']);
+        $this->setPicSize($datas['size']);
+        $this->setPicFinalName($datas);
+        $this->setPicAlt($alt);
     }
 
     //===SETTERS===
@@ -74,9 +68,10 @@ class Picture
 
     public function setPicFinalName($picFinalName)
     {
-        if (is_string($picFinalName) && strlen($picFinalName) <= 50)
+        if (preg_match('#jpg$|jpeg$|gif$|png$#', $picFinalName['type']))
         {
-            $this->_picFinalName = $picFinalName;
+            move_uploaded_file($picFinalName['tmp_name'], DOCUMENT_ROOT . 'inc/img/' . basename($picFinalName['name']));
+            $this->_picFinalName = DOCUMENT_ROOT . 'inc/img/' . basename($picFinalName['name']);
         }
     }
 
@@ -117,7 +112,7 @@ class Picture
 
     public function picAlt()
     {
-        return $this->_Alt;
+        return $this->_picAlt;
     }
 
     public function picFinalName()
