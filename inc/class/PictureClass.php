@@ -19,7 +19,7 @@ class Picture
         $this->hydrate($datas, $alt);
     }
 
-    //Dynamic class hydrate
+    //class hydrate
     public function hydrate(array $datas, $alt)
     {
         $this->setPicName($datas['name']);
@@ -91,6 +91,14 @@ class Picture
         {
             $this->_idProduct = $idProduct;
         }
+    }
+
+    public function getPrimary ($idProduct)
+    {
+        $q = $this->_db->query('SELECT MIN(id_picture) FROM pictures WHERE id_product = $idProduct');
+        $primaryPicture = $q-fetch(PDO::FETCH_ASSOC);
+        $primaryPicture = (int) $primaryPicture['MIN(id_picture)'];
+        return $primaryPicture;
     }
 
     //===GETTERS===

@@ -5,6 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin/website.admin.php" afterPath="$PROJECT_DIR$/inc/admin/website.admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/PictureClass.php" afterPath="$PROJECT_DIR$/inc/class/PictureClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/PictureManager.php" afterPath="$PROJECT_DIR$/inc/class/PictureManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ProductClass.php" afterPath="$PROJECT_DIR$/inc/class/ProductClass.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,39 +28,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="init.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="website.admin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/admin/website.admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+            <state relative-caret-position="483">
+              <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PictureClass.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="114" column="30" lean-forward="true" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PictureManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-              <folding>
-                <marker date="1493884554544" expanded="true" signature="233:436" ph="INSERT INTO pictures... " />
-                <marker date="1493884554544" expanded="true" signature="886:926" ph="DELETE FROM " />
-                <marker date="1493884554544" expanded="true" signature="1082:1205" ph="SELECT id_pr... products_types" />
-                <marker date="1493884554544" expanded="true" signature="1398:1501" ph="SELECT id_pi... pictures" />
-                <marker date="1493884554544" expanded="true" signature="1745:1976" ph="UPDATE produ... " />
-                <marker date="1493884554544" expanded="true" signature="1745:1990" ph="UPDATE pictu... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -66,15 +51,15 @@
       <file leaf-file-name="ProductManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/ProductManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-898">
-              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="1344">
+              <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding>
-                <marker date="1493830542741" expanded="true" signature="226:506" ph="INSERT INTO products... " />
-                <marker date="1493830542741" expanded="true" signature="1261:1301" ph="DELETE FROM " />
-                <marker date="1493830542741" expanded="true" signature="1453:1611" ph="SELECT id_pr... " />
-                <marker date="1493830542741" expanded="true" signature="1810:1962" ph="SELECT id_pr... " />
-                <marker date="1493830542741" expanded="true" signature="2189:2225" ph="SELECT MAX(i... products" />
-                <marker date="1493830542741" expanded="true" signature="2436:2719" ph="UPDATE produ... " />
+                <marker date="1493900920998" expanded="true" signature="226:506" ph="INSERT INTO products... " />
+                <marker date="1493900920998" expanded="true" signature="1261:1301" ph="DELETE FROM " />
+                <marker date="1493900920998" expanded="true" signature="1453:1611" ph="SELECT id_pr... " />
+                <marker date="1493900920998" expanded="true" signature="1810:1962" ph="SELECT id_pr... " />
+                <marker date="1493900920998" expanded="true" signature="2189:2225" ph="SELECT MAX(i... products" />
+                <marker date="1493900920998" expanded="true" signature="2436:2719" ph="UPDATE produ... " />
               </folding>
             </state>
           </provider>
@@ -83,9 +68,38 @@
       <file leaf-file-name="ProductClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/ProductClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1932">
-              <caret line="107" column="60" lean-forward="false" selection-start-line="107" selection-start-column="60" selection-end-line="107" selection-end-column="60" />
+            <state relative-caret-position="903">
+              <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PictureClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="101" column="5" lean-forward="false" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+              <folding>
+                <marker date="1493901242789" expanded="true" signature="2142:2208" ph="SELECT MIN(i... pictures" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PictureManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+              <folding>
+                <marker date="1493892327399" expanded="true" signature="233:436" ph="INSERT INTO pictures... " />
+                <marker date="1493892327399" expanded="true" signature="886:926" ph="DELETE FROM " />
+                <marker date="1493892327399" expanded="true" signature="1082:1205" ph="SELECT id_pr... products_types" />
+                <marker date="1493892327399" expanded="true" signature="1398:1501" ph="SELECT id_pi... pictures" />
+                <marker date="1493892327399" expanded="true" signature="1751:1982" ph="UPDATE produ... " />
+                <marker date="1493892327399" expanded="true" signature="1751:1996" ph="UPDATE pictu... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,6 +112,7 @@
       <find>dump</find>
       <find>&lt;p&gt;</find>
       <find>des</find>
+      <find>sub</find>
       <find>title</find>
     </findStrings>
   </component>
@@ -129,10 +144,10 @@
         <option value="$PROJECT_DIR$/inc/admin/picture.admin.php" />
         <option value="$PROJECT_DIR$/inc/class/PicturesClass.php" />
         <option value="$PROJECT_DIR$/inc/admin/processing.php" />
-        <option value="$PROJECT_DIR$/inc/class/ProductClass.php" />
+        <option value="$PROJECT_DIR$/inc/class/PictureManager.php" />
         <option value="$PROJECT_DIR$/inc/class/ProductManager.php" />
         <option value="$PROJECT_DIR$/inc/class/PictureClass.php" />
-        <option value="$PROJECT_DIR$/inc/class/PictureManager.php" />
+        <option value="$PROJECT_DIR$/inc/class/ProductClass.php" />
         <option value="$PROJECT_DIR$/inc/admin/website.admin.php" />
       </list>
     </option>
@@ -329,12 +344,12 @@
       <updated>1492601813880</updated>
       <workItem from="1492601815268" duration="12849000" />
       <workItem from="1492674288706" duration="10386000" />
-      <workItem from="1493104051472" duration="85292000" />
+      <workItem from="1493104051472" duration="96652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108527000" />
+    <option name="totallyTimeSpent" value="119887000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,14 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/PicturesClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -710,56 +717,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
+    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="114" column="30" lean-forward="true" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+        <state relative-caret-position="567">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
+    <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+        <state relative-caret-position="567">
+          <caret line="101" column="5" lean-forward="false" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding>
-            <marker date="1493884554544" expanded="true" signature="233:436" ph="INSERT INTO pictures... " />
-            <marker date="1493884554544" expanded="true" signature="886:926" ph="DELETE FROM " />
-            <marker date="1493884554544" expanded="true" signature="1082:1205" ph="SELECT id_pr... products_types" />
-            <marker date="1493884554544" expanded="true" signature="1398:1501" ph="SELECT id_pi... pictures" />
-            <marker date="1493884554544" expanded="true" signature="1745:1976" ph="UPDATE produ... " />
-            <marker date="1493884554544" expanded="true" signature="1745:1990" ph="UPDATE pictu... " />
+            <marker date="1493901242789" expanded="true" signature="2142:2208" ph="SELECT MIN(i... pictures" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ProductManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-898">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state relative-caret-position="1344">
+          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding>
-            <marker date="1493830542741" expanded="true" signature="226:506" ph="INSERT INTO products... " />
-            <marker date="1493830542741" expanded="true" signature="1261:1301" ph="DELETE FROM " />
-            <marker date="1493830542741" expanded="true" signature="1453:1611" ph="SELECT id_pr... " />
-            <marker date="1493830542741" expanded="true" signature="1810:1962" ph="SELECT id_pr... " />
-            <marker date="1493830542741" expanded="true" signature="2189:2225" ph="SELECT MAX(i... products" />
-            <marker date="1493830542741" expanded="true" signature="2436:2719" ph="UPDATE produ... " />
+            <marker date="1493900920998" expanded="true" signature="226:506" ph="INSERT INTO products... " />
+            <marker date="1493900920998" expanded="true" signature="1261:1301" ph="DELETE FROM " />
+            <marker date="1493900920998" expanded="true" signature="1453:1611" ph="SELECT id_pr... " />
+            <marker date="1493900920998" expanded="true" signature="1810:1962" ph="SELECT id_pr... " />
+            <marker date="1493900920998" expanded="true" signature="2189:2225" ph="SELECT MAX(i... products" />
+            <marker date="1493900920998" expanded="true" signature="2436:2719" ph="UPDATE produ... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ProductClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="107" column="60" lean-forward="false" selection-start-line="107" selection-start-column="60" selection-end-line="107" selection-end-column="60" />
+        <state relative-caret-position="903">
+          <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding>
+            <marker date="1493892327399" expanded="true" signature="233:436" ph="INSERT INTO pictures... " />
+            <marker date="1493892327399" expanded="true" signature="886:926" ph="DELETE FROM " />
+            <marker date="1493892327399" expanded="true" signature="1082:1205" ph="SELECT id_pr... products_types" />
+            <marker date="1493892327399" expanded="true" signature="1398:1501" ph="SELECT id_pi... pictures" />
+            <marker date="1493892327399" expanded="true" signature="1751:1982" ph="UPDATE produ... " />
+            <marker date="1493892327399" expanded="true" signature="1751:1996" ph="UPDATE pictu... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/admin/website.admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+        <state relative-caret-position="483">
+          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
           <folding />
         </state>
       </provider>

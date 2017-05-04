@@ -15,10 +15,10 @@ class Product
     private $_promotion;
     private $_productType;
     private $_productSubType;
-    private $_primaryPicture;
+    /*private $_primaryPicture;
     private $_picture1;
     private $_picture2;
-    private $_picture3;
+    private $_picture3;*/
 
     //===PROPERTIES===
 
@@ -36,19 +36,24 @@ class Product
 
             if (method_exists($this, $method)) {
                 $this->$method($value);
+
             }
+            /*$this->setPrimaryPicture($this->_idProduct);
+            $this->setPicture1();
+            $this->setPicture2();
+            $this->setPicture3();*/
         }
     }
 
     //===SETTERS===
 
-    public function setId($idProduct)
+    public function setId_Product($idProduct)
     {
         $idProduct = (int) $idProduct;
 
         if ($idProduct > 0)
         {
-            $this->_id = $idProduct;
+            $this->_idProduct = $idProduct;
         }
     }
 
@@ -69,7 +74,7 @@ class Product
         }
     }
 
-    public function setEntryDate($entryDate)
+    public function setEntry_Date($entryDate)
     {
         //if(is_date($EntryDate))
         //{
@@ -122,7 +127,7 @@ class Product
         }
     }
 
-    public function setProductType($productType)
+    public function setId_Product_Type($productType)
     {
         $productType = (int) $productType;
 
@@ -132,7 +137,7 @@ class Product
         }
     }
 
-    public function setProductSubType($productSubType)
+    public function setId_Sub_Type($productSubType)
     {
         $productSubType = (int) $productSubType;
 
@@ -149,49 +154,26 @@ class Product
     ===================================================================================================================*/
 
 
-    public function setPrimaryPicture($primaryPicture)
+   /* public function setPrimaryPicture()
     {
-        /*if()
-        {
-            trigger_error('', E_USER_WARNING);
-            return;
-        }*/
-
+        $primaryPicture = productManager->getPrimary($this->_idProduct);
         $this->_primaryPicture = $primaryPicture;
     }
 
     public function setPicture1($picture1)
     {
-        /*if()
-        {
-            trigger_error('', E_USER_WARNING);
-            return;
-        }*/
-
         $this->_picture1 = $picture1;
     }
 
     public function setPicture2($picture2)
     {
-        /*if()
-        {
-            trigger_error('', E_USER_WARNING);
-            return;
-        }*/
-
         $this->_picture2 = $picture2;
     }
 
     public function setPicture3($picture3)
     {
-        /*if()
-        {
-            trigger_error('', E_USER_WARNING);
-            return;
-        }*/
-
         $this->_picture3 = $picture3;
-    }
+    }*/
 
     //===GETTERS===
 

@@ -21,7 +21,10 @@ $pictureManager = new PictureManager($db);
 $products = $productManager->getList();
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
-$pictures = $pictureManager->getListPicture();
+//$pictures = $pictureManager->getListPicture();
+
+
+var_dump($products);
 
 // DATA PROCESSING
 if (!empty($_POST) && !empty($_FILES))
@@ -31,6 +34,7 @@ if (!empty($_POST) && !empty($_FILES))
     $productManager->add($product);
 
     // Insert pictures into DB.
+
     $lastProduct =$productManager->getLast();
     if (isset($_FILES['primaryPicture']) && $_FILES['primaryPicture']['error'] == 0)
     {
@@ -60,13 +64,6 @@ if (!empty($_POST) && !empty($_FILES))
         $pictureManager->addPicture($picture3);
     }
 }
-
-
-var_dump($_FILES);
-var_dump($primaryPicture);
-var_dump($picture1);
-var_dump($picture2);
-var_dump($picture3);
 
 ?>
 
