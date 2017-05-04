@@ -46,7 +46,7 @@ class PictureManager
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $pictures[] = new Picture($datas, $alt);
+            $pictures[] = new Picture($datas, $alt=0);
         }
 
         return $pictures;

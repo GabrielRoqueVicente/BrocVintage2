@@ -21,10 +21,11 @@ $pictureManager = new PictureManager($db);
 $products = $productManager->getList();
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
-//$pictures = $pictureManager->getListPicture();
+$pictures = $pictureManager->getListPicture();
 
 
 var_dump($products);
+var_dump($pictures);
 
 // DATA PROCESSING
 if (!empty($_POST) && !empty($_FILES))

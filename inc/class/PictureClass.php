@@ -20,17 +20,32 @@ class Picture
     }
 
     //class hydrate
-    public function hydrate(array $datas, $alt)
+
+    public function hydrate(array $datas, $alt = 0)
     {
-        $this->setPicName($datas['name']);
-        $this->setPicSize($datas['size']);
-        $this->setPicFinalName($datas);
-        $this->setPicAlt($alt);
+        if($alt !== 0) //Hydrate from form
+        {
+            $this->setPic_name($datas['name']);
+            $this->setPic_size($datas['size']);
+            $this->setPic_final_name($datas);
+            $this->setPicAlt($alt);
+        }else{ //Dynamic Hydrate
+            foreach ($datas as $key => $value)
+            {
+                $method = 'set'.ucfirst($key);
+
+                if (method_exists($this, $method)) {
+                    $this->$method($value);
+
+                }
+
+            }
+        }
     }
 
     //===SETTERS===
 
-    public function setIdPicture($idPicture)
+    public function setId_picture($idPicture)
     {
         $idPicture = (int) $idPicture;
 
@@ -40,7 +55,7 @@ class Picture
         }
     }
 
-    public function setPicName($picName)
+    public function setPic_name($picName)
     {
         if (is_string($picName) && strlen($picName) <= 20)
         {
@@ -48,7 +63,7 @@ class Picture
         }
     }
 
-    public function setPicSize($picSize)
+    public function setPic_Size($picSize)
     {
         $picSize = (int) $picSize;
 
@@ -58,7 +73,7 @@ class Picture
         }
     }
 
-    public function setPicAlt($picAlt)
+    public function setPic_alt($picAlt)
     {
         if (is_string($picAlt) && strlen($picAlt) <= 255)
         {
@@ -66,7 +81,7 @@ class Picture
         }
     }
 
-    public function setPicFinalName($picFinalName)
+    public function setPicfinalname($picFinalName) //DB version
     {
         if (preg_match('#jpg$|jpeg$|gif$|png$#', $picFinalName['type']))
         {
@@ -75,17 +90,19 @@ class Picture
         }
     }
 
-    public function setPicFileDate($picFileDate)
+    public function setPic_final_name($picFinalName) //Calling DB version
     {
-        if (is_date($picFileDate))
-        {
-            $this->_picFileDate = $picFileDate;
-        }
+       $this->_picFinalName = $picFinalName;
     }
 
-    public function setIdProduct($idProduct)
+    public function setPic_file_date($picFileDate)
     {
-        $idPicture = (int) $idProduct;
+        $this->_picFileDate = $picFileDate;
+    }
+
+    public function setId_product($idProduct)
+    {
+        $idProduct = (int) $idProduct;
 
         if ($idProduct > 0)
         {
