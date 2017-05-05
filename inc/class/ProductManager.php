@@ -18,12 +18,11 @@ class ProductManager
         $q->bindValue(':year', $product->year());
         $q->bindValue(':price', $product->price());
         $q->bindValue(':disponibility', $product->disponibility());
-        //$q->bindValue(':entry_date', $product->entryDate());
         $q->bindValue(':name', $product->name());
         $q->bindValue(':description', $product->description());
         $q->bindValue(':promotion', $product->promotion(), PDO::PARAM_INT);
         $q->bindValue(':id_product_type', $product->productType(), PDO::PARAM_INT);
-        $q->bindValue(':id_sub_type', $product->productSubType(), PDO::PARAM_INT);
+        $q->bindValue(':id_sub_type', $product->subType(), PDO::PARAM_INT);
 
         $q->execute();
     }

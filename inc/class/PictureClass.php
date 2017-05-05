@@ -27,8 +27,8 @@ class Picture
         {
             $this->setPic_name($datas['name']);
             $this->setPic_size($datas['size']);
-            $this->setPic_final_name($datas);
-            $this->setPicAlt($alt);
+            $this->setPicFinalName($datas);
+            $this->setPic_Alt($alt);
         }else{ //Dynamic Hydrate
             foreach ($datas as $key => $value)
             {
@@ -81,12 +81,12 @@ class Picture
         }
     }
 
-    public function setPicfinalname($picFinalName) //DB version
+    public function setPicfinalName($picFinalName) //DB version
     {
         if (preg_match('#jpg$|jpeg$|gif$|png$#', $picFinalName['type']))
         {
             move_uploaded_file($picFinalName['tmp_name'], DOCUMENT_ROOT . 'inc/img/' . basename($picFinalName['name']));
-            $this->_picFinalName = DOCUMENT_ROOT . 'inc/img/' . basename($picFinalName['name']);
+            $this->_picFinalName = 'img/' . basename($picFinalName['name']);
         }
     }
 
@@ -141,6 +141,11 @@ class Picture
     }
 
     public function picFinalName()
+    {
+        return $this->_picFinalName;
+    }
+
+    public function pic_final_name()
     {
         return $this->_picFinalName;
     }

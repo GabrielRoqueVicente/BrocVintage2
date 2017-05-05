@@ -10,6 +10,8 @@ require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
+
+
 //Objects instance
 
 $productManager = new ProductManager($db);
@@ -24,8 +26,10 @@ $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getListPicture();
 
 
-var_dump($products);
-var_dump($pictures);
+/*var_dump($products);
+var_dump($types);
+var_dump($subTypes);*/
+var_dump($_FILES);
 
 // DATA PROCESSING
 if (!empty($_POST) && !empty($_FILES))
@@ -40,32 +44,32 @@ if (!empty($_POST) && !empty($_FILES))
     if (isset($_FILES['primaryPicture']) && $_FILES['primaryPicture']['error'] == 0)
     {
         $primaryPicture = new Picture ($_FILES['primaryPicture'], $_POST['pAlt']);
-        $primaryPicture->setIdProduct($lastProduct);
+        $primaryPicture->setId_Product($lastProduct);
         $pictureManager->addPicture($primaryPicture);
     }
 
     if (isset($_FILES['picture1']) && $_FILES['picture1']['error'] == 0)
     {
         $picture1 = new Picture ($_FILES['picture1'], $_POST['1Alt']);
-        $picture1->setIdProduct($lastProduct);
+        $picture1->setId_Product($lastProduct);
         $pictureManager->addPicture($picture1);
     }
 
     if (isset($_FILES['picture2']) && $_FILES['picture2']['error'] == 0)
     {
         $picture2 = new Picture ($_FILES['picture2'], $_POST['2Alt']);
-        $picture2->setIdProduct($lastProduct);
+        $picture2->setId_Product($lastProduct);
         $pictureManager->addPicture($picture2);
     }
 
     if (isset($_FILES['picture3']) && $_FILES['picture3']['error'] == 0)
     {
         $picture3 = new Picture ($_FILES['picture3'], $_POST['3Alt']);
-        $picture3->setIdProduct($lastProduct);
+        $picture3->setId_Product($lastProduct);
         $pictureManager->addPicture($picture3);
     }
 }
-
+include(DOCUMENT_ROOT . 'inc\head.inc.php');
 ?>
 
 
@@ -119,6 +123,7 @@ if (!empty($_POST) && !empty($_FILES))
                 foreach ($types as $type)
                 {
                 echo '<option value="' . $type->idProductType() . '">' . $type->typeName() . '</option>';
+                    var_dump($type->idProductType());
                 }
                 ?>
 
@@ -179,6 +184,85 @@ if (!empty($_POST) && !empty($_FILES))
 <!--
  * Products Administration
 -->
+
+    <?php
+    foreach ($products as $product)
+    {
+        echo '
+        <table>
+            <tr>
+                <td><strong>' . $product->name() . '</strong></td>
+                <td>' . $product->autor() . '</td>
+                <td>' . $product->year() . '</td>
+                <td>' . $product->entryDate() . '</td>
+            </tr>
+            <tr>';
+
+        switch ($product->disponibility())
+        {
+            case 'dis':
+                echo '<td>Disponible</td>';
+                break;
+
+            case 'ind':
+                echo '<td>Indisponible</td>';
+                break;
+
+            case 'res':
+                echo '<td>Reservé</td>';
+                break;
+        }
+
+        echo '<td>' . $product->price() . ' Frs</td>';
+
+        switch ($product->promotion())
+        {
+            case 0:
+                echo '<td>N\'est pas en promotion</td>';
+                break;
+
+            case 1:
+                echo '<td>En promotion</td>';
+                break;
+        }
+
+        foreach ($types as $type)
+        {
+            if($product->productType() == $type->idProductType())
+            {
+                echo '<td>' . $type->typeName() .'</td>';
+            }
+        }
+
+        foreach ($subTypes as $subType)
+        {
+            if($product->SubType() == $subType->idSubType())
+            {
+                echo '<td>' . $subType->subTypeName() .'</td>';
+            }
+        }
+
+        echo '</tr>';
+
+        foreach ($pictures as $picture)
+        {
+            if($picture->idProduct() == $product->idProduct())
+            {
+                echo '<td><img src="../' . $picture->pic_final_name() .'" alt="' . $picture->picAlt() .'" height="42" width="42" /></td>';
+            }
+        }
+
+        echo '<tr><td colspan="5">' . $product->description() . '</td></tr><br />
+        </table>';
+    }
+
+    ?>
+
+
+
+
+              
+
 
 <!--
  * Types Administration

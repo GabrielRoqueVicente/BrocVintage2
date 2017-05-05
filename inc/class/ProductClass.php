@@ -113,6 +113,15 @@ class Product
         }
     }
 
+    public function setProductType($productType)
+    {
+        $productType = (int)$productType;
+
+        if (is_int($productType) && $productType >= 1 && $productType <= 100) {
+            $this->_productType = $productType;
+        }
+    }
+
     public function setId_Product_Type($productType)
     {
         $productType = (int)$productType;
@@ -123,6 +132,15 @@ class Product
     }
 
     public function setId_Sub_Type($productSubType)
+    {
+        $productSubType = (int)$productSubType;
+
+        if (is_int($productSubType) && $productSubType >= 1 && $productSubType <= 100) {
+            $this->_productSubType = $productSubType;
+        }
+    }
+
+    public function setProductSubType($productSubType)
     {
         $productSubType = (int)$productSubType;
 
@@ -183,7 +201,7 @@ class Product
         return $this->_productType;
     }
 
-    public function productSubType()
+    public function subType()
     {
         return $this->_productSubType;
     }
