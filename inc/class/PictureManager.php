@@ -32,7 +32,7 @@ class PictureManager
     {
         $idPicture = (int) $idPicture;
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures WHERE id_picture = ' .$idPicture);
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures WHERE id_picture = ' . $idPicture);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
         return $datas;
@@ -50,6 +50,20 @@ class PictureManager
         }
 
         return $pictures;
+    }
+
+    public function getProductPicture($idProduct)
+    {
+        $productPictures = [];
+
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures WHERE (id_product =' . $idProduct . ')ORDER BY id_picture') ;
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $productPictures[] = new Picture($datas, $alt=0);
+        }
+
+        return $productPictures;
     }
 
     public function update(Picture $picture)

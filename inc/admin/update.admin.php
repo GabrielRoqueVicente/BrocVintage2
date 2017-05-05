@@ -21,10 +21,11 @@ $pictureManager = new PictureManager($db);
 $product = $productManager->get($_GET['idProduct']);
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
-$pictures = $pictureManager->getListPicture();
+$pictures = $pictureManager->getProductPicture($_GET['idProduct']);
 
 var_dump($product);
-var_dump($subTypes);
+var_dump($pictures);
+var_dump($pictures[0]->picFinalName());
 
 // SI $_POST UPDATE
 
@@ -55,6 +56,35 @@ if($disponibility != null )
             $res = 'checked';
         }
     }
+}
+
+// Pictures Update
+
+$primaryPicture = $pictures[0]->picFinalName();
+$pAlt = $pictures[0]->picAlt();
+$picture1 = '';
+$alt1 = '';
+$picture2 = '';
+$alt2 = '';
+$picture3 = '';
+$alt3 = '';
+
+if(isset($pictures[1]))
+{
+    $picture1 = $pictures[1]->picFinalName();
+    $alt1 = $pictures[1]->picAlt();
+}
+
+if(isset($pictures[2]))
+{
+    $picture2 = $pictures[2]->picFinalName();
+    $alt2 = $pictures[2]->picAlt();
+}
+
+if(isset($pictures[3]))
+{
+    $picture3 = $pictures[3]->picFinalName();
+    $alt3 = $pictures[3]->picAlt();
 }
 
 
@@ -143,28 +173,32 @@ if($disponibility != null )
 
         <p>
             <label for="primaryPicture">Image principale* : </label><br />
-            <input type="file" name="primaryPicture" id="primaryPicture" required /><br />
+            <input type="file" name="primaryPicture" id="primaryPicture" /><br />
             <label for="pAlt">Alt* : </label>
-            <input type="text" name="pAlt" id="pAlt"  maxlength="255" required /><br />
+            <input type="text" name="pAlt" id="pAlt" maxlength="255" value="<?php echo $pAlt; ?>" /><br />
+            <input type="text" name="primaryPicture" value="<?php echo $primaryPicture; ?>" hidden>
 
             <label for="picture1">Image 1 : </label><br />
             <input type="file" name="picture1" id="picture1" /><br />
             <label for="1Alt">Alt : </label>
-            <input type="text" name="1Alt" id="1Alt"  maxlength="255" /><br />
+            <input type="text" name="1Alt" id="1Alt" maxlength="255" value="<?php echo $alt1; ?>" /><br />
+            <input type="text" name="picture1" value="<?php echo $picture1; ?>" hidden>
 
             <label for="picture2">Image 2 : </label><br />
             <input type="file" name="picture2" id="picture2"><br />
             <label for="2Alt">Alt : </label>
-            <input type="text" name="2Alt" id="2Alt"  maxlength="255" /><br />
+            <input type="text" name="2Alt" id="2Alt" maxlength="255" value="<?php echo $alt2; ?>" /><br />
+            <input type="text" name="picture2" value="<?php echo $picture2; ?>" hidden>
 
             <label for="picture3">Image 3 : </label><br />
             <input type="file" name="picture3" id="picture3" /><br />
             <label for="3Alt">Alt : </label>
-            <input type="text" name="3Alt" id="3Alt"  maxlength="255" /><br />
+            <input type="text" name="3Alt" id="3Alt" maxlength="255" value="<?php echo $alt3; ?>" /><br />
+            <input type="text" name="picture3" value="<?php echo $picture3; ?>" hidden>
         </p>
 
     </fieldset>
 
-    <input type="submit" value="Envoyer" /> <input type="reset" value="Vider" />
+    <input type="submit" value="Modifier" /> <input type="reset" value="Réinitialiser" />
 
 </form>
