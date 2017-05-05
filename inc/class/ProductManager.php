@@ -65,8 +65,9 @@ class ProductManager
 
     public function update(Product $product)
     {
-        $q = $this->_db->prepare('UPDATE products SET autor = :autor, year = :year, price = :price, disponibility = :disponibility, entry_date = :entry_date, name = :name, description = :description, promotion = :promotion, id_product_type = :id_product_type, id_sub_type = :id_sub_type WHERE id_product = :id_product');
+        $q = $this->_db->prepare('UPDATE products SET id_product = :id_product, autor = :autor, year = :year, price = :price, disponibility = :disponibility, entry_date = :entry_date, name = :name, description = :description, promotion = :promotion, id_product_type = :id_product_type, id_sub_type = :id_sub_type WHERE id_product = :id_product');
 
+        $q->bindValue(':id_product', $product->idProduct(), PDO::PARAM_INT);
         $q->bindValue(':autor', $product->autor());
         $q->bindValue(':year', $product->year());
         $q->bindValue(':price', $product->price());
@@ -76,8 +77,8 @@ class ProductManager
         $q->bindValue(':description', $product->description());
         $q->bindValue(':promotion', $product->promotion(), PDO::PARAM_INT);
         $q->bindValue(':id_product_type', $product->productType(), PDO::PARAM_INT);
-        $q->bindValue(':id_sub_type', $product->productSubType(), PDO::PARAM_INT);
-        $q->bindValue(':id_product', $product->idProduct(), PDO::PARAM_INT);
+        $q->bindValue(':id_sub_type', $product->subType(), PDO::PARAM_INT);
+
 
         $q->execute();
     }

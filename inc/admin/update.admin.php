@@ -23,16 +23,64 @@ $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getProductPicture($_GET['idProduct']);
 
-var_dump($product);
-var_dump($pictures);
-var_dump($pictures[0]->picFinalName());
 
-// SI $_POST UPDATE
+var_dump($_POST);
 
+// DATA PROCESSING
+
+if (!empty($_POST))
+{
+    // Insert new product into DB.
+    $productUp = new Product($_POST);
+    $productUp->setId_Product($product->idProduct());
+    $productUp->setEntry_Date($product->entryDate());
+    var_dump($productUp);
+    $productManager->update($productUp);
+
+    // Insert pictures into DB.
+    if (!empty($_FILES))
+    {
+        if (isset($_FILES['primaryPicture']) && $_FILES['primaryPicture']['error'] == 0)
+        {
+            $primaryPicture = new Picture ($_FILES['primaryPicture'], $_POST['pAlt']);
+            $primaryPicture->setId_picture($pictures[0]->idPicture());
+            $primaryPicture->setPic_file_date($pictures[0]->picFileDate());
+            $primaryPicture->setId_product($_GET['idProduct']);
+            $pictureManager->update($primaryPicture);
+        }
+
+        if (isset($_FILES['picture1']) && $_FILES['picture1']['error'] == 0)
+        {
+            $picture1 = new Picture ($_FILES['picture1'], $_POST['1Alt']);
+            $picture1->setId_picture($pictures[1]->idPicture());
+            $picture1->setPic_file_date($pictures[1]->picFileDate());
+            $picture1->setId_product($_GET['idProduct']);
+            $pictureManager->update($picture1);
+        }
+
+        if (isset($_FILES['picture2']) && $_FILES['picture2']['error'] == 0)
+        {
+            $picture2->setId_picture($pictures[2]->idPicture());
+            $picture2->setPic_file_date($pictures[2]->picFileDate());
+            $picture2->setId_product($_GET['idProduct']);
+            $pictureManager->update($picture2);
+        }
+
+        if (isset($_FILES['picture3']) && $_FILES['picture3']['error'] == 0)
+        {
+            $picture3->setId_picture($pictures[3]->idPicture());
+            $picture3->setPic_file_date($pictures[3]->picFileDate());
+            $picture3->setId_product($_GET['idProduct']);
+            $pictureManager->update($picture3);
+        }
+    }
+}
+
+//VARIABLES
 
 // Diponibility Value
 
-$disponibility = $product->disponibility() ;
+$disponibility = $product->disponibility();
 $dis = '';
 $ind = '';
 $res = '';
@@ -57,6 +105,20 @@ if($disponibility != null )
         }
     }
 }
+
+// Promotion
+
+
+$promotion = $product->promotion();
+$checkbox = '';
+
+if($promotion != null)
+{
+    $checkbox = 'checked' ;
+}
+
+
+
 
 // Pictures Update
 
@@ -118,7 +180,7 @@ if(isset($pictures[3]))
             <label for="price">Prix : </label>
             <input type="number" name="price" id="price" min="0" max="9999.99" step="0.01" value="<?php echo $product->price(); ?>" /> €<br />
 
-            <input type="checkbox" name="promotion" value="<?php echo $product->promotion(); ?>" id="promotion" />
+            <input type="checkbox" name="promotion" value="1" id="promotion" <?php echo $checkbox;?> />
             <label for="promotion">Promotion</label><br />
         </p>
 
