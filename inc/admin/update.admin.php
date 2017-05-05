@@ -24,8 +24,6 @@ $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getProductPicture($_GET['idProduct']);
 
 
-var_dump($_POST);
-
 // DATA PROCESSING
 
 if (!empty($_POST))
@@ -34,7 +32,6 @@ if (!empty($_POST))
     $productUp = new Product($_POST);
     $productUp->setId_Product($product->idProduct());
     $productUp->setEntry_Date($product->entryDate());
-    var_dump($productUp);
     $productManager->update($productUp);
 
     // Insert pictures into DB.
@@ -74,6 +71,7 @@ if (!empty($_POST))
             $pictureManager->update($picture3);
         }
     }
+    header('Location: website.admin.php');
 }
 
 //VARIABLES
@@ -148,7 +146,6 @@ if(isset($pictures[3]))
     $picture3 = $pictures[3]->picFinalName();
     $alt3 = $pictures[3]->picAlt();
 }
-
 
 ?>
 <form method="POST" enctype="multipart/form-data" autocomplete="on">
