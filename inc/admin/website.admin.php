@@ -11,7 +11,6 @@ require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
 
-
 //Objects instance
 
 $productManager = new ProductManager($db);
@@ -19,17 +18,16 @@ $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
 $pictureManager = new PictureManager($db);
 
-
 $products = $productManager->getList();
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getListPicture();
 
-
 /*var_dump($products);
 var_dump($types);
-var_dump($subTypes);*/
-var_dump($_FILES);
+var_dump($subTypes);
+var_dump($_FILES);*/
+
 
 // DATA PROCESSING
 if (!empty($_POST) && !empty($_FILES))
@@ -69,13 +67,12 @@ if (!empty($_POST) && !empty($_FILES))
         $pictureManager->addPicture($picture3);
     }
 }
-include(DOCUMENT_ROOT . 'inc\head.inc.php');
 ?>
-
 
 <!--
  * UPDATE FORM
 -->
+
 
 <form method="POST" enctype="multipart/form-data" autocomplete="on">
 
@@ -154,7 +151,7 @@ include(DOCUMENT_ROOT . 'inc\head.inc.php');
             <label for="primaryPicture">Image principale* : </label><br />
             <input type="file" name="primaryPicture" id="primaryPicture" required /><br />
             <label for="pAlt">Alt* : </label>
-            <input type="text" name="pAlt" id="pAlt"  maxlength="255"required /><br />
+            <input type="text" name="pAlt" id="pAlt"  maxlength="255" required /><br />
 
             <label for="picture1">Image 1 : </label><br />
             <input type="file" name="picture1" id="picture1" /><br />
@@ -177,8 +174,6 @@ include(DOCUMENT_ROOT . 'inc\head.inc.php');
     <input type="submit" value="Envoyer" /> <input type="reset" value="Vider" />
 
 </form>
-
-
 
 
 <!--
@@ -252,22 +247,10 @@ include(DOCUMENT_ROOT . 'inc\head.inc.php');
             }
         }
 
-        echo '<tr><td colspan="5">' . $product->description() . '</td></tr><br />
+        echo '<tr><td colspan="5">' . $product->description() . '</td></tr>
         </table>';
+
+        echo '<a href="update.admin.php?idProduct=' . $product->idProduct() . '"><img src="..\img\update.png" alt="Modifier" height="15" width="15" /></a>';
+        echo '<a href="delete.admin.php?idProduct=' . $product->idProduct() . '"><img src="..\img\delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
     }
-
-    ?>
-
-
-
-
-              
-
-
-<!--
- * Types Administration
--->
-
-<!--
- * SubTypes Administration
--->
+?>
