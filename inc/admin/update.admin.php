@@ -43,6 +43,7 @@ if (!empty($_POST))
             $primaryPicture->setId_picture($pictures[0]->idPicture());
             $primaryPicture->setPic_file_date($pictures[0]->picFileDate());
             $primaryPicture->setId_product($_GET['idProduct']);
+            $primaryPicture->setPicFinalName($_FILES['primaryPicture'], $_GET['idProduct']);
             $pictureManager->update($primaryPicture);
         }
 
@@ -52,22 +53,27 @@ if (!empty($_POST))
             $picture1->setId_picture($pictures[1]->idPicture());
             $picture1->setPic_file_date($pictures[1]->picFileDate());
             $picture1->setId_product($_GET['idProduct']);
+            $picture1->setPicFinalName($_FILES['picture1'], $_GET['idProduct']);
             $pictureManager->update($picture1);
         }
 
         if (isset($_FILES['picture2']) && $_FILES['picture2']['error'] == 0)
         {
+            $picture2 = new Picture ($_FILES['picture2'], $_POST['2Alt']);
             $picture2->setId_picture($pictures[2]->idPicture());
             $picture2->setPic_file_date($pictures[2]->picFileDate());
             $picture2->setId_product($_GET['idProduct']);
+            $picture2->setPicFinalName($_FILES['picture2'], $_GET['idProduct']);
             $pictureManager->update($picture2);
         }
 
         if (isset($_FILES['picture3']) && $_FILES['picture3']['error'] == 0)
         {
+            $picture3 = new Picture ($_FILES['picture3'], $_POST['3Alt']);
             $picture3->setId_picture($pictures[3]->idPicture());
             $picture3->setPic_file_date($pictures[3]->picFileDate());
             $picture3->setId_product($_GET['idProduct']);
+            $picture3->setPicFinalName($_FILES['picture3'], $_GET['idProduct']);
             $pictureManager->update($picture3);
         }
     }

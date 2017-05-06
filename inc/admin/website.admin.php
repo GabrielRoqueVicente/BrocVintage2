@@ -23,11 +23,6 @@ $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
 $pictures = $pictureManager->getListPicture();
 
-/*var_dump($products);
-var_dump($types);
-var_dump($subTypes);*/
-var_dump($_FILES);
-
 
 // DATA PROCESSING
 if (!empty($_POST) && !empty($_FILES))
@@ -71,6 +66,7 @@ if (!empty($_POST) && !empty($_FILES))
         $picture3->setPicFinalName($_FILES['picture3'], $lastProduct);
         $pictureManager->addPicture($picture3);
     }
+    header("Refresh:0");
 }
 ?>
 

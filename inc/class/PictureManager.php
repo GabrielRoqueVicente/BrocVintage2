@@ -47,7 +47,7 @@ class PictureManager
     {
         $pictures = [];
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures');
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures ORDER BY id_picture');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
