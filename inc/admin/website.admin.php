@@ -25,8 +25,8 @@ $pictures = $pictureManager->getListPicture();
 
 /*var_dump($products);
 var_dump($types);
-var_dump($subTypes);
-var_dump($_FILES);*/
+var_dump($subTypes);*/
+var_dump($_FILES);
 
 
 // DATA PROCESSING
@@ -44,6 +44,7 @@ if (!empty($_POST) && !empty($_FILES))
     {
         $primaryPicture = new Picture ($_FILES['primaryPicture'], $_POST['pAlt']);
         $primaryPicture->setId_Product($lastProduct);
+        $primaryPicture->setPicFinalName($_FILES['primaryPicture'], $lastProduct);
         $pictureManager->addPicture($primaryPicture);
     }
 
@@ -51,6 +52,7 @@ if (!empty($_POST) && !empty($_FILES))
     {
         $picture1 = new Picture ($_FILES['picture1'], $_POST['1Alt']);
         $picture1->setId_Product($lastProduct);
+        $picture1->setPicFinalName($_FILES['picture1'], $lastProduct);
         $pictureManager->addPicture($picture1);
     }
 
@@ -58,6 +60,7 @@ if (!empty($_POST) && !empty($_FILES))
     {
         $picture2 = new Picture ($_FILES['picture2'], $_POST['2Alt']);
         $picture2->setId_Product($lastProduct);
+        $picture2->setPicFinalName($_FILES['picture2'], $lastProduct);
         $pictureManager->addPicture($picture2);
     }
 
@@ -65,6 +68,7 @@ if (!empty($_POST) && !empty($_FILES))
     {
         $picture3 = new Picture ($_FILES['picture3'], $_POST['3Alt']);
         $picture3->setId_Product($lastProduct);
+        $picture3->setPicFinalName($_FILES['picture3'], $lastProduct);
         $pictureManager->addPicture($picture3);
     }
 }
