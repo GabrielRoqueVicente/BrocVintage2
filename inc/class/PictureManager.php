@@ -28,6 +28,11 @@ class PictureManager
         $this->_db->exec('DELETE FROM pictures WHERE id_picture = ' .$picture->id_picture());
     }
 
+    public function deleteProductPicture($idProduct)
+    {
+        $this->_db->exec('DELETE FROM pictures WHERE id_product = ' . $idProduct);
+    }
+
     public function getPicture($idPicture)
     {
         $idPicture = (int) $idPicture;

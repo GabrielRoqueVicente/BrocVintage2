@@ -39,6 +39,7 @@ if (!empty($_POST) && !empty($_FILES))
     // Insert pictures into DB.
 
     $lastProduct =$productManager->getLast();
+
     if (isset($_FILES['primaryPicture']) && $_FILES['primaryPicture']['error'] == 0)
     {
         $primaryPicture = new Picture ($_FILES['primaryPicture'], $_POST['pAlt']);

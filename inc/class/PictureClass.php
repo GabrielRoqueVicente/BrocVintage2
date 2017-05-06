@@ -81,12 +81,12 @@ class Picture
         }
     }
 
-    public function setPicfinalName($picFinalName) //DB version
+    public function setPicfinalName($picture) //DB version
     {
-        if (preg_match('#jpg$|jpeg$|gif$|png$#', $picFinalName['type']))
+        if (preg_match('#jpg$|jpeg$|gif$|png$#', $picture['type']))
         {
-            move_uploaded_file($picFinalName['tmp_name'], DOCUMENT_ROOT . 'inc/img/' . basename($picFinalName['name']));
-            $this->_picFinalName = 'img/' . basename($picFinalName['name']);
+            move_uploaded_file($picture['tmp_name'], DOCUMENT_ROOT . 'inc/img/' . basename($picture['name']));
+            $this->_picFinalName = 'img/' . basename($picture['name']);
         }
     }
 

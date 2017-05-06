@@ -14,11 +14,24 @@ require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 //Objects instance
 
 $productManager = new ProductManager($db);
-$typeManager = new TypeManager($db);
-$subTypeManager = new SubTypeManager($db);
 $pictureManager = new PictureManager($db);
 
-$products = $productManager->getList();
-$types = $typeManager->getListProductType();
-$subTypes = $subTypeManager->getListProductSubType();
-$pictures = $pictureManager->getListPicture();
+$product = $productManager->get($_GET['idProduct']);
+$pictures = $pictureManager->getProductPicture($_GET['idProduct']);
+
+if(isset($_GET['idProduct']))
+{
+    $productManager->delete($product);
+
+    foreach ($pictures as $picture)
+    {
+       unlink (DOCUMENT_ROOT . 'inc/' . $picture->picFinalName());
+    }
+
+    $pictureManager->deleteProductPicture($_GET['idProduct']);
+    header('Location: website.admin.php');
+
+
+}else{
+    header('Location: website.admin.php');
+}

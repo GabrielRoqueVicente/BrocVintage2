@@ -148,6 +148,9 @@ if(isset($pictures[3]))
 }
 
 ?>
+
+<!-- UPDATE FORM -->
+
 <form method="POST" enctype="multipart/form-data" autocomplete="on">
 
     <fieldset>
