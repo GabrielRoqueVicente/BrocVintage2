@@ -29,7 +29,17 @@ class ProductType
 
     //===SETTERS===
 
-    public function setId_Product_Type($idProductType)
+    public function setIdProductType($idProductType) // DB IN
+    {
+        $idProductType = (int) $idProductType;
+
+        if ($idProductType > 0)
+        {
+            $this->_idProductType = $idProductType;
+        }
+    }
+
+    public function setId_product_type($idProductType) // DB OUT
     {
         $idProductType = (int) $idProductType;
 

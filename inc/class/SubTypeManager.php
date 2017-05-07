@@ -26,6 +26,11 @@ class SubTypeManager
         $this->_db->exec('DELETE FROM sub_types WHERE id_sub_type = ' .$productSubType->id_sub_type());
     }
 
+    public function deleteProductType(ProductType $productType)
+    {
+        $this->_db->exec('DELETE FROM sub_types WHERE id_product_type = ' .$productType->idProductType());
+    }
+
     public function getProductSubType($idProductSubType)
     {
         $idProductSubType = (int) $idProductSubType;
@@ -33,13 +38,26 @@ class SubTypeManager
         $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types WHERE id_sub_type = ' .$idProductSubType);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
-        return $datas;
+        return new SubType ($datas);
     }
 
     public function getListProductSubType()
     {
         $subTypes = [];
         $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types');
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $subTypes[] = new SubType($datas);
+        }
+
+        return $subTypes;
+    }
+
+    public function getPTProductSubType($productType) //Get sub-products by product types.
+    {
+        $subTypes = [];
+        $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types WHERE id_product_type =' . $productType);
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

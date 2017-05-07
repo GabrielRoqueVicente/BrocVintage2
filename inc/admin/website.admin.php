@@ -126,7 +126,7 @@ if (!empty($_POST) && !empty($_FILES))
                 ?>
 
             </select>
-            <a href="#"> Ajouter un type de produit</a><br />
+            <a href="type.admin.php"> Gestion types de produit</a><br />
 
             <label for="productSubType">Sous-type de produit : </label><br />
             <select name="productSubType" id="productSubType">
@@ -140,7 +140,7 @@ if (!empty($_POST) && !empty($_FILES))
                 ?>
 
             </select>
-            <a href="#"> Ajouter un sous-type de produit</a><br />
+            <a href="subType.admin.php"> Gestion sous-types de produit</a><br />
         </p>
 
     </fieldset>
