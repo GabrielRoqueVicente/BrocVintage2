@@ -121,7 +121,6 @@ if (!empty($_POST) && !empty($_FILES))
                 foreach ($types as $type)
                 {
                 echo '<option value="' . $type->idProductType() . '">' . $type->typeName() . '</option>';
-                    var_dump($type->idProductType());
                 }
                 ?>
 

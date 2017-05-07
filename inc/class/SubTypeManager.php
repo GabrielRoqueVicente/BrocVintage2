@@ -14,9 +14,9 @@ class SubTypeManager
         $q = $this->_db->prepare('INSERT INTO sub_types(id_sub_type, name, id_product_type) 
                                   VALUES(:id_sub_type, :name, :id_product_type)');
 
-        $q->bindValue(':id_sub_type', $productSubType->id_product_type(), PDO::PARAM_INT);
-        $q->bindValue(':name', $productSubType->name());
-        $q->bindValue(':id_product_type', $productSubType->id_product_type(), PDO::PARAM_INT);
+        $q->bindValue(':id_sub_type', $productSubType->idSubType(), PDO::PARAM_INT);
+        $q->bindValue(':name', $productSubType->subTypeName());
+        $q->bindValue(':id_product_type', $productSubType->idProductType(), PDO::PARAM_INT);
 
         $q->execute();
     }
@@ -35,7 +35,7 @@ class SubTypeManager
     {
         $idProductSubType = (int) $idProductSubType;
 
-        $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types WHERE id_sub_type = ' .$idProductSubType);
+        $q = $this->_db->query('SELECT id_sub_type, name, id_product_type FROM sub_types WHERE id_Sub_Type = ' .$idProductSubType);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
         return new SubType ($datas);

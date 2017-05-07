@@ -19,7 +19,6 @@ var_dump($_GET);
 if(!empty($_GET['idProductType']))
 {
     $type = $typeManager->getProductType($_GET['idProductType']);
-    var_dump($_GET['idProductType']);
     $subTypes = $subTypeManager->getPTProductSubType($_GET['idProductType']);
 
 

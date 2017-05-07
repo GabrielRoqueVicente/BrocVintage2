@@ -38,6 +38,15 @@ class SubType
         }
     }
 
+    public function setIdSubType($idSubType)
+    {
+        $idSubType = (int)$idSubType;
+
+        if ($idSubType > 0) {
+            $this->_idSubType = $idSubType;
+        }
+    }
+
     public function setName($subTypeName)
     {
         if (is_string($subTypeName) && strlen($subTypeName) <= 40) {
@@ -54,9 +63,23 @@ class SubType
         }
     }
 
+    public function setIdProductType($idProductType)
+    {
+        $idProductType = (int)$idProductType;
+
+        if ($idProductType > 0) {
+            $this->_idProductType = $idProductType;
+        }
+    }
+
     //===GETTERS===
 
     public function idSubType()
+    {
+        return $this->_idSubType;
+    }
+
+    public function id_Sub_Type()
     {
         return $this->_idSubType;
     }
