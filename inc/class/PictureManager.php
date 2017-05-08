@@ -49,6 +49,17 @@ class PictureManager
         return $datas;
     }
 
+    public function getPrimaryPicture($idArticle)
+    {
+        $idArticle = (int) $idArticle;
+
+        $q = $this->_db->query('SELECT MIN(id_picture) FROM pictures WHERE id_article = ' . $idArticle);
+        $primary = $q->fetch(PDO::FETCH_ASSOC);
+        $primary = (int) $primary['MIN(id_picture)'];
+
+        return $primary;
+    }
+
     public function getListPicture()
     {
         $pictures = [];
@@ -82,6 +93,20 @@ class PictureManager
         $articlePictures = [];
 
         $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_article =' . $idArticle . ')ORDER BY id_picture') ;
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $articlePictures[] = new Picture($datas, $alt=0);
+        }
+
+        return $articlePictures;
+    }
+
+    public function getNewsPicture($idArticle, $primaryPicture) //Fetch all pictures without the primary
+    {
+        $articlePictures = [];
+
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_article =' . $idArticle . ' && id_picture !=' . $primaryPicture. ')ORDER BY id_picture') ;
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

@@ -1,7 +1,8 @@
 <?php
-require('\inc\init.inc.php');
+require('inc\init.inc.php');
 
-include('inc\haut.inc.php');
-include('inc\Nav.php');
+include('inc\head.inc.php');
 
-include('inc\bas.inc.php');
+include('inc\body.inc.php');
+
+include('inc\foot.inc.php');

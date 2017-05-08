@@ -53,6 +53,7 @@ class ArticleManager
         $q = $this->_db->query('SELECT MAX(id_article) FROM articles');
         $last = $q->fetch(PDO::FETCH_ASSOC);
         $last = (int) $last['MAX(id_article)'];
+
         return $last;
     }
 
