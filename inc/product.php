@@ -1,5 +1,5 @@
 <?php
-// Require list
+// REQUIRE LIST
 require('init.inc.php');
 require(DOCUMENT_ROOT . 'inc\class\ProductClass.php');
 require(DOCUMENT_ROOT . 'inc\class\ProductManager.php');
@@ -13,10 +13,12 @@ if(empty($_GET['idProduct']))
     header('Location: ..\index.php');
 }
 
-//Objects instance
+//OBJETCS INSTANCE
 
 $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
+
+// VARIABLES
 
 $product = $productManager->get($_GET['idProduct']);
 $primary = $pictureManager->getPrimaryPicture2($_GET['idProduct']);

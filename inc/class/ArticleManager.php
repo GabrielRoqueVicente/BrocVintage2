@@ -48,6 +48,19 @@ class ArticleManager
         return $articles;
     }
 
+    public function getDateList() //Getting list ordered by date
+    {
+        $articles = [];
+        $q = $this->_db->query('SELECT id_article, entry_date, title, text FROM articles ORDER BY entry_date DESC');
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $articles[] = new Article($datas);
+        }
+
+        return $articles;
+    }
+
     public function getLast()
     {
         $q = $this->_db->query('SELECT MAX(id_article) FROM articles');
