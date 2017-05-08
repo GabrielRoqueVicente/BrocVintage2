@@ -49,11 +49,22 @@ class PictureManager
         return $datas;
     }
 
-    public function getPrimaryPicture($idArticle)
+    public function getPrimaryPicture($idArticle) //Primary for articles
     {
         $idArticle = (int) $idArticle;
 
         $q = $this->_db->query('SELECT MIN(id_picture) FROM pictures WHERE id_article = ' . $idArticle);
+        $primary = $q->fetch(PDO::FETCH_ASSOC);
+        $primary = (int) $primary['MIN(id_picture)'];
+
+        return $primary;
+    }
+
+    public function getPrimaryPicture2($idProduct) //Primary for products
+    {
+        $idProduct = (int) $idProduct;
+
+        $q = $this->_db->query('SELECT MIN(id_picture) FROM pictures WHERE id_product = ' . $idProduct);
         $primary = $q->fetch(PDO::FETCH_ASSOC);
         $primary = (int) $primary['MIN(id_picture)'];
 
@@ -102,11 +113,11 @@ class PictureManager
         return $articlePictures;
     }
 
-    public function getNewsPicture($idArticle, $primaryPicture) //Fetch all pictures without the primary
+    public function getNewsPicture($idArticle, $primaryPicture) //Fetch all pictures without the primary for articles.
     {
         $articlePictures = [];
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_article =' . $idArticle . ' && id_picture !=' . $primaryPicture. ')ORDER BY id_picture') ;
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_article =' . $idArticle . ' && id_picture !=' . $primaryPicture. ')ORDER BY id_picture');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
@@ -114,6 +125,19 @@ class PictureManager
         }
 
         return $articlePictures;
+    }
+
+    public function getNewsPicture2($idProduct, $primaryPicture) //Fetch all pictures without the primary for products.
+    {
+        $productPictures = [];
+
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_product =' . $idProduct . ' && id_picture !=' . $primaryPicture. ')ORDER BY id_picture');
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $productPictures[] = new Picture($datas, $alt=0);
+        }
+
+        return $productPictures;
     }
 
     public function update(Picture $picture)

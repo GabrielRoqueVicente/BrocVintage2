@@ -30,7 +30,7 @@ $pictures = $pictureManager->getNewsPicture($_GET['idArticle'], $primary['id_pic
 
 <h2><strong><?php echo $article->title(); ?></strong></h2>
 <p>
-    <img src="<?php echo $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+    <img src="<?php echo $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="400">
     <?php echo $article->text() ; ?>
 </p>
 
