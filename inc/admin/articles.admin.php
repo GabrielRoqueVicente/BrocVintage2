@@ -16,6 +16,8 @@ $pictures = $pictureManager->getListPicture();
 
 // DATA PROCESSING
 
+var_dump($_POST);
+
 if (!empty($_POST) && !empty($_FILES))
 {
     // Insert new article into DB.

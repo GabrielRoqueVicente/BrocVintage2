@@ -34,11 +34,16 @@ class PictureManager
         $this->_db->exec('DELETE FROM pictures WHERE id_product = ' . $idProduct);
     }
 
+    public function deleteArticlePicture($idArticle)
+    {
+        $this->_db->exec('DELETE FROM pictures WHERE id_article = ' . $idArticle);
+    }
+
     public function getPicture($idPicture)
     {
         $idPicture = (int) $idPicture;
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures WHERE id_picture = ' . $idPicture);
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE id_picture = ' . $idPicture);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
         return $datas;
@@ -48,7 +53,7 @@ class PictureManager
     {
         $pictures = [];
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures ORDER BY id_picture');
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures ORDER BY id_picture');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
@@ -62,7 +67,7 @@ class PictureManager
     {
         $productPictures = [];
 
-        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product FROM pictures WHERE (id_product =' . $idProduct . ')ORDER BY id_picture') ;
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_product =' . $idProduct . ')ORDER BY id_picture') ;
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
@@ -70,6 +75,20 @@ class PictureManager
         }
 
         return $productPictures;
+    }
+
+    public function getArticlePicture($idArticle)
+    {
+        $articlePictures = [];
+
+        $q = $this->_db->query('SELECT id_picture, pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article FROM pictures WHERE (id_article =' . $idArticle . ')ORDER BY id_picture') ;
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $articlePictures[] = new Picture($datas, $alt=0);
+        }
+
+        return $articlePictures;
     }
 
     public function update(Picture $picture)
