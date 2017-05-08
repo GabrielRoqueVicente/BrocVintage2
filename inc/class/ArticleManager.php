@@ -60,10 +60,10 @@ class ArticleManager
     {
         $q = $this->_db->prepare('UPDATE articles SET id_article = :id_article, entry_date = :entry_date, title = :title, text = :text WHERE id_article = :id_article');
 
-        $q->bindValue(':id_article', $product->id_article(), PDO::PARAM_INT);
-        $q->bindValue(':entry_date', $product->entryDate());
-        $q->bindValue(':title', $product->title());
-        $q->bindValue(':text', $product->text());
+        $q->bindValue(':id_article', $article->id_article(), PDO::PARAM_INT);
+        $q->bindValue(':entry_date', $article->entryDate());
+        $q->bindValue(':title', $article->title());
+        $q->bindValue(':text', $article->text());
 
         $q->execute();
     }
