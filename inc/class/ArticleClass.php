@@ -70,6 +70,11 @@ class Article
         return $this->_idArticle;
     }
 
+    public function id_article()
+    {
+        return $this->_idArticle;
+    }
+
     public function entryDate()
     {
         return $this->_entryDate;
