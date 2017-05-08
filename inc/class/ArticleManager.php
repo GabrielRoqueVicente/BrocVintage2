@@ -9,13 +9,13 @@ class ArticleManager
         $this->setDb($db);
     }
 
-    public function add(Product $product)
+    public function add(Article $article)
     {
         $q = $this->_db->prepare('INSERT INTO articles(entry_date, title, text) 
                                   VALUES(NOW(), :title, :text )');
 
-        $q->bindValue(':title', $product->title());
-        $q->bindValue(':text', $product->text());
+        $q->bindValue(':title', $article->title());
+        $q->bindValue(':text', $article->text());
 
         $q->execute();
     }
@@ -32,7 +32,7 @@ class ArticleManager
         $q = $this->_db->query('SELECT id_article,entry_date, title, text FROM articles WHERE id_article = ' .$idArticle);
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
-        return new Product($datas);
+        return new Article($datas);
     }
 
     public function getList()
@@ -42,7 +42,7 @@ class ArticleManager
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {
-            $articles[] = new Product($datas);
+            $articles[] = new Article($datas);
         }
 
         return $articles;

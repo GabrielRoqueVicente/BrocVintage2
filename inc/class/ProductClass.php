@@ -33,10 +33,6 @@ class Product
                 $this->$method($value);
 
             }
-            /*$this->setPrimaryPicture($this->_idProduct);
-            $this->setPicture1();
-            $this->setPicture2();
-            $this->setPicture3();*/
         }
     }
 

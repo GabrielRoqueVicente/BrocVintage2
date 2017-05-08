@@ -11,6 +11,7 @@ class Picture
     private $_picFinalName;
     private $_picFileDate;
     private $_idProduct;
+    private $_idArticle;
 
     //===PROPERTIES===
 
@@ -109,6 +110,16 @@ class Picture
         }
     }
 
+    public function setId_article($idArticle)
+    {
+        $idArticle = (int) $idArticle;
+
+        if ($idArticle > 0)
+        {
+            $this->_idArticle = $idArticle;
+        }
+    }
+
     public function getPrimary ($idProduct)
     {
         $q = $this->_db->query('SELECT MIN(id_picture) FROM pictures WHERE id_product = $idProduct');
@@ -157,5 +168,10 @@ class Picture
     public function idProduct()
     {
         return $this->_idProduct;
+    }
+
+    public function idArticle()
+    {
+        return $this->_idArticle;
     }
 }

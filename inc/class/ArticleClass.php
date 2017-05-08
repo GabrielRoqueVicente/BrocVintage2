@@ -1,6 +1,6 @@
 <?php
 //Class Article
-class Articles
+class Article
 {
     //===ATTRIBUTES===
 

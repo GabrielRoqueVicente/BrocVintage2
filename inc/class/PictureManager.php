@@ -11,14 +11,15 @@ class PictureManager
 
     public function addPicture(Picture $picture)
     {
-        $q = $this->_db->prepare('INSERT INTO pictures(pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product) 
-                                  VALUES(:pic_name, :pic_size, :pic_alt, :pic_final_name, NOW(), :id_product)');
+        $q = $this->_db->prepare('INSERT INTO pictures(pic_name, pic_size, pic_alt, pic_final_name, pic_file_date, id_product, id_article) 
+                                  VALUES(:pic_name, :pic_size, :pic_alt, :pic_final_name, NOW(), :id_product, :id_article)');
 
         $q->bindValue(':pic_name', $picture->picName());
         $q->bindValue(':pic_size', $picture->picSize(), PDO::PARAM_INT);
         $q->bindValue(':pic_alt', $picture->picAlt());
         $q->bindValue(':pic_final_name', $picture->picFinalName());
         $q->bindValue(':id_product', $picture->idProduct(), PDO::PARAM_INT);
+        $q->bindValue(':id_article', $picture->idArticle(), PDO::PARAM_INT);
 
         $q->execute();
     }
@@ -73,7 +74,7 @@ class PictureManager
 
     public function update(Picture $picture)
     {
-        $q = $this->_db->prepare('UPDATE pictures SET  id_picture = :id_picture, pic_name = :pic_name, pic_size = :pic_size, pic_alt = :pic_alt, pic_final_name = :pic_final_name, pic_file_date = :pic_file_date, id_product = :id_product WHERE id_picture = :id_picture');
+        $q = $this->_db->prepare('UPDATE pictures SET  id_picture = :id_picture, pic_name = :pic_name, pic_size = :pic_size, pic_alt = :pic_alt, pic_final_name = :pic_final_name, pic_file_date = :pic_file_date, id_product = :id_product, id_article = :id_article  WHERE id_picture = :id_picture');
 
         $q->bindValue(':id_picture', $picture->idPicture(), PDO::PARAM_INT);
         $q->bindValue(':pic_name', $picture->picName());
@@ -82,6 +83,7 @@ class PictureManager
         $q->bindValue(':pic_final_name', $picture->picFinalName());
         $q->bindValue(':pic_file_date', $picture->picFileDate());
         $q->bindValue(':id_product', $picture->idProduct(), PDO::PARAM_INT);
+        $q->bindValue(':id_article', $picture->idArticle(), PDO::PARAM_INT);
 
         $q->execute();
     }
