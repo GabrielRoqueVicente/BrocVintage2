@@ -29,20 +29,20 @@ for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
     $offset = '';
     if(($y + $z ) % 3 == 0 && $i !== 0)
     {
-        $offset = ' col-md-offset-3';
+       // $offset = ' col-md-offset-3';
         echo  '<div class="row">';
     }
     if(!empty($products[$y]) && (!empty($articles[$z])))
     {
         if(strtotime($products[$y]->entryDate()) > strtotime($articles[$z]->entryDate()))
         {
-            echo '<div class="col-md-3'. $offset .'">';
+            echo '<div class="col-md-4'. $offset .'">';
             $idProduct = $products[$y]->idProduct();
             include('product.php');
             $y++;
             echo'</div>';
         }else{
-            echo '<div class="col-md-3'. $offset .'">';
+            echo '<div class="col-md-4'. $offset .'">';
             $idArticle = $articles[$z]->idArticle();
             include('article.php');
             $z++;
@@ -50,14 +50,14 @@ for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
         }
     }elseif(empty($products[$y]) && (!empty($articles[$z])))
     {
-        echo '<div class="col-md-3'. $offset .'">';
+        echo '<div class="col-md-4'. $offset .'">';
         $idArticle = $articles[$z]->idArticle();
         include('article.php');
         $z++;
         echo'</div>';
     }elseif(!empty($products[$y]) && (empty($articles[$z])))
     {
-        echo '<div class="col-md-3'. $offset .'">';
+        echo '<div class="col-md-4'. $offset .'">';
         $idProduct = $products[$y]->idProduct();
         include('product.php');
         $y++;

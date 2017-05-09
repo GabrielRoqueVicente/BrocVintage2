@@ -5,6 +5,7 @@ $subTypeManager = new SubTypeManager($db);
 
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
+$nTypes = count($types);
 ?>
 
 <!--
@@ -19,7 +20,7 @@ $subTypes = $subTypeManager->getListProductSubType();
 -->
 
 <?php
-foreach ($types as $type)
+/*foreach ($types as $type)
 {
     echo '<ul class=""nav nav-pills nav-stacked">';
     echo '<li>' . $type->typeName() . '</li>';
@@ -37,7 +38,50 @@ foreach ($types as $type)
 
     }
     echo '</ul>';
-}
-
+}*/
 ?>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Broc'Vintage</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <?php
+            foreach($types as $type)
+            {
+                ?>
+                <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $type->typeName(); ?>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <?php
+                foreach ($subTypes as $subType)
+                {
+                    if ($type->idProductType() == $subType->idProductType())
+                    {
+                        ?>
+                        <li><a href="#"><?php echo $subType->subTypeName(); ?></a></li>
+                        <?php
+                    }
+                }
 
+                ?>
+                </ul>
+                </li>
+                    <?php
+            }
+            ?>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
