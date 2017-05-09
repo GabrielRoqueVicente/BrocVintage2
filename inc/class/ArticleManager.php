@@ -64,7 +64,7 @@ class ArticleManager
     public function getDateList2($productDateA, $productDateB) //Getting news between articles.
     {
         $articles = [];
-        $q = $this->_db->query('SELECT id_article, entry_date, title, text FROM articles WHERE entry_date < '. $productDateA .' && entry_date > '. $productDateB .' ORDER BY entry_date DESC');
+        $q = $this->_db->query('SELECT id_article, entry_date, title, text FROM articles WHERE UNIX_TIMESTAMP(entry_date) <' .  strtotime($productDateA) . '  AND  UNIX_TIMESTAMP(entry_date) > "'. strtotime($productDateB) .'" ORDER BY entry_date DESC');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

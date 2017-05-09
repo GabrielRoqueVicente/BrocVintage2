@@ -26,50 +26,57 @@ $articleManager->getDateList();
 =====================NEWS DISPLAY==========================
 ===========================================================*/
 
-$y=0;
-$idLastArticle=0;
+$newsDisplay = 9; //Setting number of displayed news per page.
 
-for($i =0; $i<9 ; $i++) //Getting and sorting products and dates.
+$y=0; //Products counter
+$z=0; //Articles counter
+
+for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
 {
-
-    if($i == 0) //Checking if their is a product added after the last article.
+    if(($y + $z ) % 3 == 0)
     {
-        if(strtotime($products[0]->entryDate()) > strtotime($articles[0]->entryDate()))
-        {
-            var_dump($products[0]);
-            $y++;
-            $i++;
-            var_dump($y);
-        }
+        echo  '<div class="row">';
     }
-
-    if($i !== 0) //Sorting the articles by 9
+    if(!empty($products[$y]) && (!empty($articles[$z])))
     {
-        if(isset($products[$y+1])) //Checking if there is articles to insert between products
+        if(strtotime($products[$y]->entryDate()) > strtotime($articles[$z]->entryDate()))
         {
-            $productDateA = $products[$y]->entryDate();
-            $productDateB = $products[$y+1]->entryDate();
-            $articles2 = $articleManager->getDateList($productDateA, $productDateB);
-
-            if(!empty($articles2)) //Inserting articles between products
-            {
-                foreach ($articles2 as $article)
-                {
-                    if ($i !== 9 && $article->idArticle() > $idLastArticle)
-                    {
-                        var_dump($article);
-                        $idLastArticle = $article->idArticle();
-                        $i++;
-                    }
-                }
-            }
-        }
-
-        if(isset($products[$y]))
-        {
-            var_dump($products[$y]);
+            echo '<div class="col-md-3">';
+            $idProduct = $products[$y]->idProduct();
+            include('product.php');
             $y++;
-            var_dump($y);
+            echo'</div>';
+        }else{
+            echo '<div class="col-md-3">';
+            $idArticle = $articles[$z]->idArticle();
+            include('article.php');
+            $z++;
+            echo'</div>';
         }
+    }elseif(empty($products[$y]) && (!empty($articles[$z])))
+    {
+        echo '<div class="col-md-3">';
+        $idArticle = $articles[$z]->idArticle();
+        include('article.php');
+        $z++;
+        echo'</div>';
+    }elseif(!empty($products[$y]) && (empty($articles[$z])))
+    {
+        echo '<div class="col-md-3">';
+        $idProduct = $products[$y]->idProduct();
+        include('product.php');
+        $y++;
+        echo'</div>';
+    }
+    if(($y + $z ) % 3 == 0)
+    {
+        echo  '</div>';
     }
 }
+
+var_dump($y);
+var_dump($z);
+
+
+
+?>

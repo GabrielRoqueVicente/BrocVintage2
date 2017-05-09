@@ -1,14 +1,7 @@
 <?php
-// Require list
-require('init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleManager.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
-
 //REDIRECT
 
-if(empty($_GET['idArticle']))
+if(empty($_GET['idArticle']) && empty($idArticle))
 {
     header('Location: ..\index.php');
 }
@@ -18,11 +11,22 @@ if(empty($_GET['idArticle']))
 $articleManager = new ArticleManager($db);
 $pictureManager = new PictureManager($db);
 
+if(!empty($_GET['idArticle']))
+{
+    $article = $articleManager->get($_GET['idArticle']);
+    $primary = $pictureManager->getPrimaryPicture($_GET['idArticle']);
+    $primary = $pictureManager->getPicture($primary);
+    $pictures = $pictureManager->getNewsPicture($_GET['idArticle'], $primary['id_picture']);
+}
 
-$article = $articleManager->get($_GET['idArticle']);
-$primary = $pictureManager->getPrimaryPicture($_GET['idArticle']);
-$primary = $pictureManager->getPicture($primary);
-$pictures = $pictureManager->getNewsPicture($_GET['idArticle'], $primary['id_picture']);
+if(!empty($idArticle))
+{
+    $article = $articleManager->get($idArticle);
+    $primary = $pictureManager->getPrimaryPicture($idArticle);
+    $primary = $pictureManager->getPicture($primary);
+    $pictures = $pictureManager->getNewsPicture($idArticle, $primary['id_picture']);
+}
+
 
 ?>
 

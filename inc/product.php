@@ -1,14 +1,7 @@
 <?php
-// REQUIRE LIST
-require('init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductManager.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
-
 //REDIRECT
 
-if(empty($_GET['idProduct']))
+if(empty($_GET['idProduct']) && empty($idProduct))
 {
     header('Location: ..\index.php');
 }
@@ -19,11 +12,21 @@ $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
 
 // VARIABLES
+if(!empty($_GET['idProduct']))
+{
+    $product = $productManager->get($_GET['idProduct']);
+    $primary = $pictureManager->getPrimaryPicture2($_GET['idProduct']);
+    $primary = $pictureManager->getPicture($primary);
+    $pictures = $pictureManager->getNewsPicture2($_GET['idProduct'], $primary['id_picture']);
+}
 
-$product = $productManager->get($_GET['idProduct']);
-$primary = $pictureManager->getPrimaryPicture2($_GET['idProduct']);
-$primary = $pictureManager->getPicture($primary);
-$pictures = $pictureManager->getNewsPicture2($_GET['idProduct'], $primary['id_picture']);
+if(!empty($idProduct))
+{
+    $product = $productManager->get($idProduct);
+    $primary = $pictureManager->getPrimaryPicture2($idProduct);
+    $primary = $pictureManager->getPicture($primary);
+    $pictures = $pictureManager->getNewsPicture2($idProduct, $primary['id_picture']);
+}
 
 ?>
 
