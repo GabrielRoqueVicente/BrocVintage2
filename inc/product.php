@@ -34,7 +34,7 @@ if(!empty($idProduct))
 
 <h2><strong><?php echo $product->name(); ?></strong></h2>
 <p>
-    <img src="<?php echo $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="400">
+    <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
     <?php
 
     if($product->autor() != NULL )
@@ -67,10 +67,15 @@ if(!empty($idProduct))
 </p>
 
 <?php
-foreach($pictures as $picture)
+
+if(!empty($_GET['idProduct']))
 {
-    ?>
-    <img src="<?php echo $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> " width="200">
-    <?php
+    foreach($pictures as $picture)
+    {
+        ?>
+        <img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
+        <?php
+    }
 }
+
 ?>

@@ -1,9 +1,4 @@
 <?php
-// Require list
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeManager.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
 
 $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
@@ -26,7 +21,7 @@ $subTypes = $subTypeManager->getListProductSubType();
 <?php
 foreach ($types as $type)
 {
-    echo '<ul>';
+    echo '<ul class=""nav nav-pills nav-stacked">';
     echo '<li>' . $type->typeName() . '</li>';
 
     foreach ($subTypes as $subType)

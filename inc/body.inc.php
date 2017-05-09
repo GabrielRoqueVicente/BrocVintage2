@@ -10,9 +10,9 @@
             <?php include('Nav.php'); ?>
         </div>
 
-        <div class="col-md-9">
-            <?php include('news.php'); ?>
-        </div>
+        <?php include('news.php'); ?>
+
+
     </div>
 
 </div>

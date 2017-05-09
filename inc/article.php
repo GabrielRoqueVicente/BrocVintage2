@@ -34,15 +34,20 @@ if(!empty($idArticle))
 
 <h2><strong><?php echo $article->title(); ?></strong></h2>
 <p>
-    <img src="<?php echo $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="400">
+    <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
     <?php echo $article->text() ; ?>
 </p>
 
 <?php
-foreach($pictures as $picture)
+
+if(!empty($_GET['idArticle']))
 {
-?>
-    <img src="<?php echo $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> " width="200">
-<?php
+    foreach($pictures as $picture)
+    {
+        ?>
+        <img src="<?php echo URL .'\inc\\'. $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
+        <?php
+    }
 }
+
 ?>
