@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/body.inc.php" afterPath="$PROJECT_DIR$/inc/body.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ArticleManager.php" afterPath="$PROJECT_DIR$/inc/class/ArticleManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ProductManager.php" afterPath="$PROJECT_DIR$/inc/class/ProductManager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/news.php" afterPath="$PROJECT_DIR$/inc/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/product.php" afterPath="$PROJECT_DIR$/inc/product.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="news.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="420">
+              <caret line="53" column="72" lean-forward="false" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -43,27 +41,29 @@
       <file leaf-file-name="ArticleManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/ArticleManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="53" column="116" lean-forward="true" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="116" />
+            <state relative-caret-position="420">
+              <caret line="63" column="95" lean-forward="true" selection-start-line="63" selection-start-column="95" selection-end-line="63" selection-end-column="95" />
               <folding>
-                <marker date="1494266805288" expanded="true" signature="226:336" ph="INSERT INTO articles... " />
-                <marker date="1494266805288" expanded="true" signature="551:591" ph="DELETE FROM " />
-                <marker date="1494266805288" expanded="true" signature="739:814" ph="SELECT id_pr... " />
-                <marker date="1494266805288" expanded="true" signature="1012:1068" ph="SELECT id_ar... articles" />
-                <marker date="1494266805288" expanded="true" signature="1354:1435" ph="SELECT id_ar... articles" />
-                <marker date="1494266805288" expanded="true" signature="1662:1698" ph="SELECT MAX(i... articles" />
-                <marker date="1494266805288" expanded="true" signature="1910:2031" ph="UPDATE produ... " />
-                <marker date="1494266805288" expanded="true" signature="1910:2041" ph="UPDATE artic... " />
+                <marker date="1494313290797" expanded="true" signature="226:336" ph="INSERT INTO articles... " />
+                <marker date="1494313290797" expanded="true" signature="551:591" ph="DELETE FROM " />
+                <marker date="1494313290797" expanded="true" signature="739:814" ph="SELECT id_pr... " />
+                <marker date="1494313290797" expanded="true" signature="1012:1068" ph="SELECT id_ar... articles" />
+                <marker date="1494313290797" expanded="true" signature="1354:1410" ph="SELECT id_ar... articles" />
+                <marker date="1494313290797" expanded="true" signature="1354:1435" ph="SELECT id_ar... articles" />
+                <marker date="1494313290797" expanded="true" signature="1752:1908" ph="SELECT id_ar... articles" />
+                <marker date="1494313290797" expanded="true" signature="2135:2171" ph="SELECT MAX(i... articles" />
+                <marker date="1494313290797" expanded="true" signature="2383:2504" ph="UPDATE produ... " />
+                <marker date="1494313290797" expanded="true" signature="2383:2514" ph="UPDATE artic... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductManager.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/ProductManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="60" column="165" lean-forward="false" selection-start-line="60" selection-start-column="165" selection-end-line="60" selection-end-column="165" />
+            <state relative-caret-position="42">
+              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
               <folding>
                 <marker date="1494266814574" expanded="true" signature="226:506" ph="INSERT INTO products... " />
                 <marker date="1494266814574" expanded="true" signature="1191:1231" ph="DELETE FROM " />
@@ -183,9 +183,9 @@
         <option value="$PROJECT_DIR$/inc/body.inc.php" />
         <option value="$PROJECT_DIR$/inc/product.php" />
         <option value="$PROJECT_DIR$/inc/functions.inc.php" />
-        <option value="$PROJECT_DIR$/inc/news.php" />
-        <option value="$PROJECT_DIR$/inc/class/ArticleManager.php" />
         <option value="$PROJECT_DIR$/inc/class/ProductManager.php" />
+        <option value="$PROJECT_DIR$/inc/class/ArticleManager.php" />
+        <option value="$PROJECT_DIR$/inc/news.php" />
       </list>
     </option>
   </component>
@@ -382,12 +382,12 @@
       <workItem from="1492601815268" duration="12849000" />
       <workItem from="1492674288706" duration="10386000" />
       <workItem from="1493104051472" duration="156583000" />
-      <workItem from="1494228469756" duration="32695000" />
+      <workItem from="1494228469756" duration="43327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236656000" />
+    <option name="totallyTimeSpent" value="247288000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -768,35 +768,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/ArticleManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="53" column="116" lean-forward="true" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="116" />
-          <folding>
-            <marker date="1494266805288" expanded="true" signature="226:336" ph="INSERT INTO articles... " />
-            <marker date="1494266805288" expanded="true" signature="551:591" ph="DELETE FROM " />
-            <marker date="1494266805288" expanded="true" signature="739:814" ph="SELECT id_pr... " />
-            <marker date="1494266805288" expanded="true" signature="1012:1068" ph="SELECT id_ar... articles" />
-            <marker date="1494266805288" expanded="true" signature="1354:1435" ph="SELECT id_ar... articles" />
-            <marker date="1494266805288" expanded="true" signature="1662:1698" ph="SELECT MAX(i... articles" />
-            <marker date="1494266805288" expanded="true" signature="1910:2031" ph="UPDATE produ... " />
-            <marker date="1494266805288" expanded="true" signature="1910:2041" ph="UPDATE artic... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ProductManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="60" column="165" lean-forward="false" selection-start-line="60" selection-start-column="165" selection-end-line="60" selection-end-column="165" />
+        <state relative-caret-position="42">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding>
             <marker date="1494266814574" expanded="true" signature="226:506" ph="INSERT INTO products... " />
             <marker date="1494266814574" expanded="true" signature="1191:1231" ph="DELETE FROM " />
@@ -807,6 +782,33 @@
             <marker date="1494266814574" expanded="true" signature="2567:2603" ph="SELECT MAX(i... products" />
             <marker date="1494266814574" expanded="true" signature="2814:3123" ph="UPDATE produ... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/ArticleManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="63" column="95" lean-forward="true" selection-start-line="63" selection-start-column="95" selection-end-line="63" selection-end-column="95" />
+          <folding>
+            <marker date="1494313290797" expanded="true" signature="226:336" ph="INSERT INTO articles... " />
+            <marker date="1494313290797" expanded="true" signature="551:591" ph="DELETE FROM " />
+            <marker date="1494313290797" expanded="true" signature="739:814" ph="SELECT id_pr... " />
+            <marker date="1494313290797" expanded="true" signature="1012:1068" ph="SELECT id_ar... articles" />
+            <marker date="1494313290797" expanded="true" signature="1354:1410" ph="SELECT id_ar... articles" />
+            <marker date="1494313290797" expanded="true" signature="1354:1435" ph="SELECT id_ar... articles" />
+            <marker date="1494313290797" expanded="true" signature="1752:1908" ph="SELECT id_ar... articles" />
+            <marker date="1494313290797" expanded="true" signature="2135:2171" ph="SELECT MAX(i... articles" />
+            <marker date="1494313290797" expanded="true" signature="2383:2504" ph="UPDATE produ... " />
+            <marker date="1494313290797" expanded="true" signature="2383:2514" ph="UPDATE artic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="53" column="72" lean-forward="false" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
