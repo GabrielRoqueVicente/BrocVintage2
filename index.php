@@ -11,6 +11,8 @@ require(DOCUMENT_ROOT . 'inc/class/ArticleClass.php');
 require(DOCUMENT_ROOT . 'inc/class/ArticleManager.php');
 require(DOCUMENT_ROOT . 'inc/class/PictureClass.php');
 require(DOCUMENT_ROOT . 'inc/class/PictureManager.php');
+require(DOCUMENT_ROOT . 'inc/class/UserClass.php');
+require(DOCUMENT_ROOT . 'inc/class/UserManager.php');
 
 include('inc/head.inc.php');
 

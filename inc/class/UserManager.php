@@ -92,6 +92,15 @@ class UserManager
         $q->execute();
     }
 
+
+    public function getEmail($email)
+    {
+        $q = $this->_db->query('SELECT * FROM users WHERE email = ' . $email);
+        $datas = $q->fetch(PDO::FETCH_ASSOC);
+
+        return new User($datas);
+    }
+
     public function setDb(PDO $db)
     {
         $this->_db = $db;

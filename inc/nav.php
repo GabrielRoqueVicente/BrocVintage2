@@ -79,8 +79,8 @@ $nTypes = count($types);
             ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+          <li><a href="?page=registration"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
       </ul>
     </div>
   </div>

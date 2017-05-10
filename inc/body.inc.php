@@ -8,7 +8,22 @@
 
     <div class="row">
 
-        <?php include('news.php'); ?>
+        <?php
+        if(isset($_GET['page']))
+        {
+           if($_GET['page'] == 'registration')
+           {
+               include('registration.php');
+           }
+
+        }else{
+            include('news.php');
+        }
+
+
+
+
+        ?>
 
 
     </div>
