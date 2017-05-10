@@ -64,10 +64,7 @@ class Product
 
     public function setEntry_Date($entryDate)
     {
-        //if(is_date($EntryDate))
-        //{
         $this->_entryDate = $entryDate;
-        //}
     }
 
     public function setDisponibility($disponibility)
