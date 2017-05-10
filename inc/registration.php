@@ -20,15 +20,31 @@ if(!empty($_POST))
 
     //CHECKS
 
-    if(!(strlen($_POST['name']) <= 20))
+    if(!(strlen($_POST['surname']) <= 20))
     {
 
         $error .= '<div class="erreur">Le nom ne peux pas dépasser 20 caractères.</div>';
     }
 
-    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
+    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
     {
         $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
+    }
+
+    if(!(strlen($_POST['name']) <= 20))
+    {
+
+        $error .= '<div class="erreur">Le prénom ne peux pas dépasser 20 caractères.</div>';
+    }
+
+    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
+    {
+        $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
+    }
+
+    if(!strlen($_POST['phone']) <= 14)
+    {
+        $error .= '<div class="erreur"></div>';
     }
 
     // Check if user exist in DB.
@@ -66,38 +82,47 @@ $error .= $error;
 echo $error;
 ?>
 <h1>Formulaire d'inscription</h1>
-<form method="POST" action="">
+<form method="POST" action="" autocomplete>
 
-    <label for="title">Civilité : </label><br>
+    <label for="title">Civilité : </label><br />
     <input type="radio" name="title" value="H" checked>Mr
-    <input type="radio" name="title" value="F">Mme<br>
+    <input type="radio" name="title" value="F">Mme<br />
 
-    <label for="surname">Nom : </label><br>
-    <input type="text" id="surname" name="surname" placeholder="Nom">
-    <input type="text" id="name" name="name" placeholder="Prénom"><br>
+    <label for="surname">Nom : </label><br />
+    <input type="text" id="surname" name="surname" placeholder="Nom" maxlength="20" required>
+    <input type="text" id="name" name="name" placeholder="Prénom" maxlength="20" required><br />
 
-    <label for="password">Mot de passe : </label><br>
-    <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
+    <label for="password">Mot de passe : </label><br />
+    <input type="password" id="password" name="password" placeholder="Mot de passe" required><br />
 
-    <label for="email">Email : </label><br>
-    <input type="email" id="email" name="email" placeholder="exemple@gmail.com"><br>
+    <label for="email">Email : </label><br />
+    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><br />
 
-    <label for="international_code">Télephone : </label><br>
-    <select id="international_code" name="international_code" onchange="change()";>
-        <option value="+41" style="background-image:url(inc/img/CH.png); no-repeat; width:23px; height:17px;" selected>  +41</option>
-        <option value="+33" style="background-image:url(inc/img/FR.png); no-repeat; width:23px; height:17px;">  +33</option>
-        <option value="+32" style="background-image:url(inc/img/BE.png); no-repeat; width:23px; height:17px;">  +32</option>
-        <option value="+49" style="background-image:url(inc/img/DE.png); no-repeat; width:23px; height:17px;">  +49</option>
-    <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone"><br><br>
+    <label for="international_code">Télephone : </label><br />
+    <div class="flag">
+    <select id="international_code" name="international_code">
+        <option value="+41" selected>  +41</option>
+        <option value="+33">  +33</option>
+        <option value="+32">  +32</option>
+        <option value="+49">  +49</option>
+    </div>
+    <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone" maxlength="14"><br /><br />
 
-    <label for="post_code">Code postal :</label><br>
-    <input type="text" id="post_code" name="post_code" placeholder="Code Postal"><br>
+    <label for="adress">Adresse : </label><br />
+    <textarea id="adress" name="adress" placeholder="votre dresse"></textarea><br />
 
-    <label for="city">Ville : </label><br>
-    <input type="text" id="city" name="city" placeholder="Ville"><br>
+    <label for="post_code">Code postal :</label><br />
+    <input type="text" id="post_code" name="post_code" placeholder="Code Postal" maxlength="5"><br />
 
-    <label for="adress">Adresse : </label><br>
-    <textarea id="adress" name="adress" placeholder="votre dresse"></textarea><br><br>
+    <label for="city">Ville : </label><br />
+    <input type="text" id="city" name="city" placeholder="Ville" maxlength="20"><br /><br />
 
     <input name="submit" value="Envoyer" type="submit"><input type="reset" value="Vider" />
 </form>
+
+<!--
+<option value="+41" style="background-image:url(inc/img/CH.png); no-repeat; width:23px; height:17px;" selected>  +41</option>
+        <option value="+33" style="background-image:url(inc/img/FR.png); no-repeat; width:23px; height:17px;">  +33</option>
+        <option value="+32" style="background-image:url(inc/img/BE.png); no-repeat; width:23px; height:17px;">  +32</option>
+        <option value="+49" style="background-image:url(inc/img/DE.png); no-repeat; width:23px; height:17px;">  +49</option>
+-->

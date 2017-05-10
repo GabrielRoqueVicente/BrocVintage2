@@ -51,21 +51,27 @@ class User
 
     public function setSurname($surname)
     {
-        if (is_string($surname) && strlen($surname) <= 20) {
+        if (is_string($surname) && strlen($surname) <= 20)
+        {
+            $surname=htmlspecialchars($surname);
             $this->_surname = $surname;
         }
     }
 
     public function setName($name)
     {
-        if (is_string($name) && strlen($name) <= 20) {
+        if (is_string($name) && strlen($name) <= 20)
+        {
+            $name=htmlspecialchars($name);
             $this->_name = $name;
         }
     }
 
     public function setEmail($email)
     {
-        if (is_string($email) && strlen($email) <= 40) {
+        if (is_string($email) && strlen($email) <= 40)
+        {
+            $email=htmlspecialchars($email);
             $this->_email = $email;
         }
     }
@@ -100,7 +106,9 @@ class User
 
     public function setCity($city)
     {
-        if (is_string($city) && strlen($city) <= 20) {
+        if (is_string($city) && strlen($city) <= 20)
+        {
+            $city=htmlspecialchars($city);
             $this->_city = $city;
         }
     }
@@ -114,7 +122,9 @@ class User
 
     public function setAddress($address)
     {
-        if (is_string($address)) {
+        if (is_string($address))
+        {
+            $address=htmlspecialchars($address);
             $this->_address = $address;
         }
 
