@@ -14,6 +14,9 @@
            if($_GET['page'] == 'registration')
            {
                include('registration.php');
+           }elseif($_GET['page'] == 'connection')
+           {
+               include('connection.php');
            }
 
         }else{

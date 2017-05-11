@@ -79,8 +79,17 @@ $nTypes = count($types);
             ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
-          <li><a href="?page=registration"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+          <?php
+          if (!isConnected())
+          {
+              echo '<li><a href="?page=connection"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>';
+              echo '<li><a href="?page=registration"><span class="glyphicon glyphicon-user"></span> S\'inscrire</a></li>';
+
+          }else{
+              echo '<li><a href="?page=connection&action=out"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>';
+          }
+          ?>
+
       </ul>
     </div>
   </div>

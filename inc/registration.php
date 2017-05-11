@@ -2,7 +2,7 @@
 //REDIRECT
 if(isConnected())
 {
-    //header('location: profil.php');
+    header('location: profil.php');
 }
 
 //OBJECTS INSTANCE
