@@ -1,15 +1,9 @@
 <?php
-// Require list
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleManager.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
 //Redirect
 if(!isAdmin())
 {
-    header('location: ../index.php');
+    header('location:' . URL . '/index.php');
 }
 
 //Objects instance
@@ -150,14 +144,14 @@ foreach ($articles as $article)
     {
         if($picture->idArticle() == $article->idArticle())
         {
-            echo '<td><img src="../' . $picture->pic_final_name() .'" alt="' . $picture->picAlt() .'" height="42" width="42" /></td>';
+            echo '<td><img src="' . URL . '/inc/' . $picture->pic_final_name() .'" alt="' . $picture->picAlt() .'" height="42" width="42" /></td>';
         }
     }
 
     echo '<tr><td colspan="5">' . $article->text() . '</td></tr>
         </table>';
 
-    echo '<a href="updateArticle.admin.php?idArticle=' . $article->idArticle() . '"><img src="..\img\update.png" alt="Modifier" height="15" width="15" /></a>';
-    echo '<a href="deleteArticle.admin.php?idArticle=' . $article->idArticle() . '"><img src="..\img\delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
+    echo '<a href="' . URL . '/inc/admin/updateArticle.admin.php?idArticle=' . $article->idArticle() . '"><img src="' . URL . '/inc/img/update.png" alt="Modifier" height="15" width="15" /></a>';
+    echo '<a href="' . URL . '/inc/admin/deleteArticle.admin.php?idArticle=' . $article->idArticle() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
 }
 ?>

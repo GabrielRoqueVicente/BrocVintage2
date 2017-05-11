@@ -3,7 +3,7 @@
 //Redirect
 if(!isAdmin())
 {
-    header('location: ../index.php');
+    header('location:' . URL . '/index.php');
 }
 
 
@@ -121,7 +121,7 @@ if (!empty($_POST) && !empty($_FILES))
                 ?>
 
             </select>
-            <a href="type.admin.php"> Gestion types de produit</a><br />
+            <a href="<?php echo URL; ?>/inc/admin/type.admin.php"> Gestion types de produit</a><br />
 
             <label for="productSubType">Sous-type de produit : </label><br />
             <select name="productSubType" id="productSubType">
@@ -135,7 +135,7 @@ if (!empty($_POST) && !empty($_FILES))
                 ?>
 
             </select>
-            <a href="subType.admin.php"> Gestion sous-types de produit</a><br />
+            <a href="<?php echo URL; ?>/inc/admin/subType.admin.php"> Gestion sous-types de produit</a><br />
         </p>
 
     </fieldset>
@@ -246,7 +246,7 @@ if (!empty($_POST) && !empty($_FILES))
         echo '<tr><td colspan="5">' . $product->description() . '</td></tr>
         </table>';
 
-        echo '<a href="update.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/update.png" alt="Modifier" height="15" width="15" /></a>';
-        echo '<a href="delete.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
+        echo '<a href="' . URL . '/inc/admin/update.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/update.png" alt="Modifier" height="15" width="15" /></a>';
+        echo '<a href="' . URL . '/inc/admin/delete.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
     }
 ?>

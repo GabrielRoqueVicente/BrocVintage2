@@ -9,7 +9,7 @@ require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
 //Redirect
 if(!isAdmin())
 {
-    header('location: ../index.php');
+    header('location:' . URL . '/index.php');
 }
 
 //Objects instance

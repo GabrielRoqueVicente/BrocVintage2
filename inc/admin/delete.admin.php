@@ -13,7 +13,7 @@ require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 //Redirect
 if(!isAdmin())
 {
-    header('location: ../index.php');
+    header('location:' . URL . '/index.php');
 }
 
 
