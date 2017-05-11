@@ -15,84 +15,6 @@ $userManager = new UserManager($db);
 $users = $userManager->getList();
 $error = '';
 
-if(!empty($_POST))
-{
-
-    //CHECKS
-
-    if(!(strlen($_POST['surname']) <= 20))
-    {
-
-        $error .= '<div class="erreur">Le nom ne peux pas dépasser 20 caractères.</div>';
-        var_dump($error);
-    }
-
-    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
-    {
-        $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
-        var_dump($error);
-    }
-
-    if(!(strlen($_POST['name']) <= 20))
-    {
-
-        $error .= '<div class="erreur">Le prénom ne peux pas dépasser 20 caractères.</div>';
-        var_dump($error);
-    }
-
-    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
-    {
-        $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
-        var_dump($error);
-    }
-
-    if(!(strlen($_POST['phone']) <= 11))
-    {
-        $error .= '<div class="erreur"> Le numéro de téléphone ne peux pas dépasser 11 caractères.</div>';
-        var_dump($error);
-    }
-
-    if(!preg_match('#^[0-9]+$#', $_POST['phone']))
-    {
-        $error .= '<div class="erreur">Le numéro de téléphone ne peux comporter que des chiffres.</div>';
-        var_dump($error);
-    }
-
-    var_dump($_POST);
-
-    // Check if user exist in DB.
-
-
-    $userEmail = $userManager->getEmail($_POST['email']);
-
-    if(!empty($userEmail))
-    {
-        $error .= '<div class="erreur">Vous êtes déjà inscrit.</div>';
-        var_dump($error);
-    }
-
-    //DATA PROCESSING
-
-    if(empty($error))
-    {
-        $_POST['password'] = hash('sha256' , $_POST['password']);
-
-
-
-        foreach($_POST as $key => $value)
-        {
-            $_POST[$key] = addslashes($_POST[$key]);
-        }
-
-        // INSERT INTO DB
-
-        $user = new User($_POST);
-        $userManager->add($user);
-    }
-}
-
-// REGISTRATION FORM
-
 
 ?>
 <h1>Gestion utilisateurs</h1>
@@ -103,44 +25,154 @@ echo $error;
 
 if(!empty($_GET['idUser']))
 {
+    //VARIABLES OBJETCS FUNCTIONS
+    $userUpp = $userManager->get($_GET['idUser']);
 
-    $user = $userManager->get($_GET['idUser']);
-    var_dump($user);
+    $H='';
+    $F='';
+    if($userUpp->title() == 'H')
+    {
+        $H = 'checked';
+    }else{
+        $F = 'checked';
+    }
+
+    $CH = '';
+    $FR = '';
+    $BE = '';
+    $DE = '';
+    switch($userUpp->internationalCode())
+    {
+        case '+41' :
+            $CH = 'selected';
+            break;
+
+        case '+33' :
+            $FR = 'selected';
+            break;
+
+        case '+32' :
+            $BE = 'selected';
+            break;
+
+        case '+49' :
+            $DE = 'selected';
+            break;
+    }
+
+    $user='';
+    $admin='';
+
+    if($userUpp->status() == 'admin')
+    {
+        $admin = 'checked';
+    }else{
+        $user = 'checked';
+    }
+
+    // UPPLOAD FORM
+    if(!empty($_POST))
+    {
+
+        //CHECKS
+
+        if(!(strlen($_POST['surname']) <= 20))
+        {
+
+            $error .= '<div class="erreur">Le nom ne peux pas dépasser 20 caractères.</div>';
+            var_dump($error);
+        }
+
+        if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
+        {
+            $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
+            var_dump($error);
+        }
+
+        if(!(strlen($_POST['name']) <= 20))
+        {
+
+            $error .= '<div class="erreur">Le prénom ne peux pas dépasser 20 caractères.</div>';
+            var_dump($error);
+        }
+
+        if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
+        {
+            $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
+            var_dump($error);
+        }
+
+        if(!(strlen($_POST['phone']) <= 11))
+        {
+            $error .= '<div class="erreur"> Le numéro de téléphone ne peux pas dépasser 11 caractères.</div>';
+            var_dump($error);
+        }
+
+        if(!preg_match('#^[0-9]+$#', $_POST['phone']))
+        {
+            $error .= '<div class="erreur">Le numéro de téléphone ne peux comporter que des chiffres.</div>';
+            var_dump($error);
+        }
+
+        //DATA PROCESSING
+
+        if(empty($error))
+        {
+            foreach($_POST as $key => $value)
+            {
+                $_POST[$key] = addslashes($_POST[$key]);
+            }
+
+            // UPPDATE USERS
+            var_dump($_POST);
+            $userManager->update($_POST);
+        }
+    }
+
+
 ?>
 <form method="POST" action="" autocomplete>
 
-    <label for="title">Civilité* : </label><br />
-    <input type="radio" name="title" value="H" checked>Mr
-    <input type="radio" name="title" value="F">Mme<br />
+    <input type="number" name="idUser" value="<?php echo $userUpp->idUser(); ?>" hidden >
 
-    <label for="surname">Nom* : </label><br />
-    <input type="text" id="surname" name="surname" placeholder="Nom" maxlength="20" required>
-    <input type="text" id="name" name="name" placeholder="Prénom" maxlength="20" required><br />
+    <label for="title">Civilité : </label><br />
+    <input type="radio" name="title" value="H" <?php echo $H; ?>>Mr
+    <input type="radio" name="title" value="F" <?php echo $F; ?>>Mme<br />
 
-    <label for="password">Mot de passe* : </label><br />
-    <input type="password" id="password" name="password" placeholder="Mot de passe" required><br />
+    <label for="surname">Nom : </label><br />
+    <input type="text" id="surname" name="surname" placeholder="Nom" value="<?php echo $userUpp->surname(); ?>" maxlength="20">
+    <input type="text" id="name" name="name" placeholder="Prénom" value="<?php echo $userUpp->name(); ?>" maxlength="20"><br />
 
-    <label for="email">Email* : </label><br />
-    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><br />
+    <!-- <label for="password">Changer mot de passe: </label><br />-->
+    <input type="password" id="password" name="password" placeholder="Mot de passe" value="<?php echo $userUpp->password(); ?>" hidden><br />
+
+    <label for="email">Email : </label><br />
+    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" value="<?php echo $userUpp->email(); ?>" maxlength="40"><br />
 
     <label for="international_code">Télephone : </label><br />
     <div class="flag">
         <select id="international_code" name="international_code">
-            <option value="+41" selected>  +41</option>
-            <option value="+33">  +33</option>
-            <option value="+32">  +32</option>
-            <option value="+49">  +49</option>
+            <option value="+41" <?php echo $CH; ?> >  +41</option>
+            <option value="+33" <?php echo $FR; ?> >  +33</option>
+            <option value="+32" <?php echo $BE; ?> >  +32</option>
+            <option value="+49" <?php echo $DE; ?> >  +49</option>
     </div>
-    <input type="text" id="phone" name="phone" placeholder="123456789" maxlength="11"><br /><br />
+    <input type="text" id="phone" name="phone" placeholder="123456789" value="<?php echo $userUpp->phone(); ?>" maxlength="11"><br /><br />
 
     <label for="address">Adresse : </label><br />
-    <textarea id="address" name="address" placeholder="votre dresse"></textarea><br />
+    <textarea id="address" name="address" placeholder="votre dresse" ><?php echo $userUpp->address(); ?></textarea><br />
 
     <label for="post_code">Code postal :</label><br />
-    <input type="text" id="post_code" name="post_code" placeholder="Code Postal" maxlength="5"><br />
+    <input type="text" id="post_code" name="post_code" placeholder="Code Postal" value="<?php echo $userUpp->postCode(); ?>" maxlength="5"><br />
 
     <label for="city">Ville : </label><br />
-    <input type="text" id="city" name="city" placeholder="Ville" maxlength="20"><br /><br />
+    <input type="text" id="city" name="city" placeholder="Ville" value="<?php echo $userUpp->city(); ?>" maxlength="20"><br />
+
+    <label for="title">Status : </label><br />
+    <input type="radio" name="status" value="user" <?php echo $user; ?>>Utilisateur
+    <input type="radio" name="status" value="admin" <?php echo $admin; ?>>Admin<br /><br />
+
+    <input type="text" name="subscriptionDate" value="<?php echo $userUpp->subscriptionDate(); ?>" hidden>
 
     <input name="submit" value="Modifier" type="submit"><input type="reset" value="Vider" />
 </form>

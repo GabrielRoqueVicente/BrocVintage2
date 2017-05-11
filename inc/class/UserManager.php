@@ -69,23 +69,23 @@ class UserManager
         return $idUsers;
     }
 
-    public function update(User $user)
+    public function update($user)
     {
-        $q = $this->_db->prepare('UPDATE users SET surname = :surname, name = :name, email = :email, password = :password, international_code = :international_code, phone = :phone, title = :title, city = :city, post_code = :post_code, address = :address, status = :status, subscription_date = :subscription_date WHERE id_user = :id_user');
+        $q = $this->_db->prepare('UPDATE users SET id_user = :id_user, surname = :surname, name = :name, email = :email, password = :password, international_code = :international_code, phone = :phone, title = :title, city = :city, post_code = :post_code, address = :address, status = :status, subscription_date = :subscription_date WHERE id_user = :id_user');
 
-        $q->bindValue(':id_user', $user->idUser(), PDO::PARAM_INT);
-        $q->bindValue(':surname', $user->surname());
-        $q->bindValue(':name', $user->name());
-        $q->bindValue(':email', $user->email());
-        $q->bindValue(':password', $user->password());
-        $q->bindValue(':international_code', $user->internationalCode());
-        $q->bindValue(':phone', $user->phone());
-        $q->bindValue(':title', $user->title());
-        $q->bindValue(':city', $user->city());
-        $q->bindValue(':post_code', $user->postCode());
-        $q->bindValue(':address', $user->address());
-        $q->bindValue(':status', $user->status());
-        $q->bindValue(':subscription_date', $user->subscriptionDate());
+        $q->bindValue(':id_user', $user['idUser'], PDO::PARAM_INT);
+        $q->bindValue(':surname', $user['surname']);
+        $q->bindValue(':name', $user['name']);
+        $q->bindValue(':email', $user['email']);
+        $q->bindValue(':password', $user['password']);
+        $q->bindValue(':international_code', $user['international_code']);
+        $q->bindValue(':phone', $user['phone']);
+        $q->bindValue(':title', $user['title']);
+        $q->bindValue(':city', $user['city']);
+        $q->bindValue(':post_code', $user['post_code']);
+        $q->bindValue(':address', $user['address']);
+        $q->bindValue(':status', $user['status']);
+        $q->bindValue(':subscription_date', $user['subscriptionDate']);
 
 
         $q->execute();
@@ -94,8 +94,8 @@ class UserManager
 
     public function getEmail($email)
     {
-        $q = $this->_db->query("SELECT * FROM users WHERE email = '$email'");
-        $data = $q->fetch(PDO::FETCH_ASSOC);
+        $q = $this_db->query("SELECT * FROM users WHERE email = '$email'");
+        $data = $result->fetch(PDO::FETCH_ASSOC);
 
         return ($data);
     }
