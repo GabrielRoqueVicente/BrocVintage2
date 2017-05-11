@@ -94,8 +94,8 @@ class UserManager
 
     public function getEmail($email)
     {
-        $q = $this_db->query("SELECT * FROM users WHERE email = '$email'");
-        $data = $result->fetch(PDO::FETCH_ASSOC);
+        $q = $this->_db->query("SELECT * FROM users WHERE email = '$email'");
+        $data = $q->fetch(PDO::FETCH_ASSOC);
 
         return ($data);
     }

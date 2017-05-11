@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin/users.admin.php" afterPath="$PROJECT_DIR$/inc/admin/users.admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/UserManager.php" afterPath="$PROJECT_DIR$/inc/class/UserManager.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,17 +93,17 @@
       <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/class/UserManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="87" column="64" lean-forward="false" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+            <state relative-caret-position="2037">
+              <caret line="97" column="44" lean-forward="true" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
               <folding>
-                <marker date="1494524210989" expanded="true" signature="214:493" ph="INSERT INTO products... " />
-                <marker date="1494524210989" expanded="true" signature="1132:1166" ph="DELETE FROM " />
-                <marker date="1494524210989" expanded="true" signature="1300:1461" ph="SELECT id_pr... " />
-                <marker date="1494524210989" expanded="true" signature="1652:1796" ph="SELECT id_pr... " />
-                <marker date="1494524210989" expanded="true" signature="2076:2245" ph="SELECT id_us... users" />
-                <marker date="1494524210989" expanded="true" signature="2473:2786" ph="UPDATE users... " />
-                <marker date="1494524210989" expanded="true" signature="2473:2795" ph="UPDATE users... " />
-                <marker date="1494524210989" expanded="true" signature="3631:3673" ph="SELECT * FRO... users" />
+                <marker date="1494524447901" expanded="true" signature="214:493" ph="INSERT INTO products... " />
+                <marker date="1494524447901" expanded="true" signature="1132:1166" ph="DELETE FROM " />
+                <marker date="1494524447901" expanded="true" signature="1300:1461" ph="SELECT id_pr... " />
+                <marker date="1494524447901" expanded="true" signature="1652:1796" ph="SELECT id_pr... " />
+                <marker date="1494524447901" expanded="true" signature="2076:2245" ph="SELECT id_us... users" />
+                <marker date="1494524447901" expanded="true" signature="2473:2786" ph="UPDATE users... " />
+                <marker date="1494524447901" expanded="true" signature="2473:2795" ph="UPDATE users... " />
+                <marker date="1494524447901" expanded="true" signature="3633:3675" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -401,12 +399,12 @@
       <workItem from="1492674288706" duration="10386000" />
       <workItem from="1493104051472" duration="156583000" />
       <workItem from="1494228469756" duration="87858000" />
-      <workItem from="1494431836431" duration="31668000" />
+      <workItem from="1494431836431" duration="31789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323487000" />
+    <option name="totallyTimeSpent" value="323608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -898,17 +896,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="87" column="64" lean-forward="false" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+        <state relative-caret-position="2037">
+          <caret line="97" column="44" lean-forward="true" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
           <folding>
-            <marker date="1494524210989" expanded="true" signature="214:493" ph="INSERT INTO products... " />
-            <marker date="1494524210989" expanded="true" signature="1132:1166" ph="DELETE FROM " />
-            <marker date="1494524210989" expanded="true" signature="1300:1461" ph="SELECT id_pr... " />
-            <marker date="1494524210989" expanded="true" signature="1652:1796" ph="SELECT id_pr... " />
-            <marker date="1494524210989" expanded="true" signature="2076:2245" ph="SELECT id_us... users" />
-            <marker date="1494524210989" expanded="true" signature="2473:2786" ph="UPDATE users... " />
-            <marker date="1494524210989" expanded="true" signature="2473:2795" ph="UPDATE users... " />
-            <marker date="1494524210989" expanded="true" signature="3631:3673" ph="SELECT * FRO... users" />
+            <marker date="1494524447901" expanded="true" signature="214:493" ph="INSERT INTO products... " />
+            <marker date="1494524447901" expanded="true" signature="1132:1166" ph="DELETE FROM " />
+            <marker date="1494524447901" expanded="true" signature="1300:1461" ph="SELECT id_pr... " />
+            <marker date="1494524447901" expanded="true" signature="1652:1796" ph="SELECT id_pr... " />
+            <marker date="1494524447901" expanded="true" signature="2076:2245" ph="SELECT id_us... users" />
+            <marker date="1494524447901" expanded="true" signature="2473:2786" ph="UPDATE users... " />
+            <marker date="1494524447901" expanded="true" signature="2473:2795" ph="UPDATE users... " />
+            <marker date="1494524447901" expanded="true" signature="3633:3675" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
