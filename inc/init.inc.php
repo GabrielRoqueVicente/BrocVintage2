@@ -24,7 +24,7 @@ function isConnected()
 
 function isAdmin()
 {
-    if(isConnected() && $_SESSION['user']['status'] == 'admin' )
+    if(isConnected() && $_SESSION['status'] == 'admin' )
     {
         return TRUE;
     }

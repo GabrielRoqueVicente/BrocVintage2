@@ -25,25 +25,29 @@ if(!empty($_POST))
 {
     // Réception/traitement du formulaire.
     $user = $userManager->getEmail($_POST['email']);
+    $user = new user($user);
     if(!empty($user))
     {
         //User mail Found
         $cryptedPassword = hash('sha256', $_POST['password']);
-        if($cryptedPassword == $user['password'])
+        if($cryptedPassword == $user->password())
         {
             // Password match.
-            $_SESSION['user']= $user['email'];
+            $_SESSION['user'] = $user->email();
+            $_SESSION['status'] = $user->status();
             header('Location: index.php');
-        } else {
+        }else{
             $error .= 'Mot de passe erroné.';
             // Password dosen't match.
         }
+
     }else{
         // User Mail don't found.
         $error .= 'Il n\'y a aucun utilisateur inscrit avec ce mail.';
     }
 }
 echo $error;
+
 ?>
 
     <form method="POST" action="<?= URL ?>/index.php?page=connection">

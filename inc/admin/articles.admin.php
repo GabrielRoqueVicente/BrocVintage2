@@ -6,6 +6,12 @@ require(DOCUMENT_ROOT . 'inc\class\ArticleManager.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
+//Redirect
+if(!isAdmin())
+{
+    header('location: ../index.php');
+}
+
 //Objects instance
 
 $articleManager = new ArticleManager($db);

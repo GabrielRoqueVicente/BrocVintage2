@@ -10,6 +10,12 @@ require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
 require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
 
+//Redirect
+if(!isAdmin())
+{
+    header('location: ../index.php');
+}
+
 
 //Objects instance
 

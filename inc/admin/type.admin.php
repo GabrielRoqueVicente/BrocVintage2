@@ -6,6 +6,11 @@ require(DOCUMENT_ROOT . 'inc\class\ProductTypeManager.php');
 require(DOCUMENT_ROOT . 'inc\class\SubTypeClass.php');
 require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
 
+//Redirect
+if(!isAdmin())
+{
+    header('location: ../index.php');
+}
 
 //Objects instance
 

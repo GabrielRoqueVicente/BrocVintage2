@@ -14,7 +14,6 @@ require(DOCUMENT_ROOT . 'inc/class/PictureManager.php');
 require(DOCUMENT_ROOT . 'inc/class/UserClass.php');
 require(DOCUMENT_ROOT . 'inc/class/UserManager.php');
 
-var_dump($_SESSION);
 include('inc/head.inc.php');
 
 include('inc/body.inc.php');

@@ -1,14 +1,10 @@
 <?php
-// Require list
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductManager.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeManager.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
+
+//Redirect
+if(!isAdmin())
+{
+    header('location: ../index.php');
+}
 
 
 //Objects instance
@@ -243,14 +239,14 @@ if (!empty($_POST) && !empty($_FILES))
         {
             if($picture->idProduct() == $product->idProduct())
             {
-                echo '<td><img src="../' . $picture->pic_final_name() .'" alt="' . $picture->picAlt() .'" height="42" width="42" /></td>';
+                echo '<td><img src="' . URL . '/inc/' . $picture->pic_final_name() .'" alt="' . $picture->picAlt() .'" height="42" width="42" /></td>';
             }
         }
 
         echo '<tr><td colspan="5">' . $product->description() . '</td></tr>
         </table>';
 
-        echo '<a href="update.admin.php?idProduct=' . $product->idProduct() . '"><img src="..\img\update.png" alt="Modifier" height="15" width="15" /></a>';
-        echo '<a href="delete.admin.php?idProduct=' . $product->idProduct() . '"><img src="..\img\delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
+        echo '<a href="update.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/update.png" alt="Modifier" height="15" width="15" /></a>';
+        echo '<a href="delete.admin.php?idProduct=' . $product->idProduct() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a><br /><br />';
     }
 ?>
