@@ -11,8 +11,8 @@ class UserManager
 
     public function add(User $user)
     {
-        $q = $this->_db->prepare('INSERT INTO users(surname, name, email, password, international_code, phone, title, city, post_code, address, status, subscription_date) 
-                                  VALUES(:surname, :name, :email, :password, :international_code, :phone, :title, :city, :post_code, :address, :status, NOW())');
+        $q = $this->_db->prepare('INSERT INTO users(surname, name, email, password, international_code, phone, title, city, post_code, address, subscription_date) 
+                                  VALUES(:surname, :name, :email, :password, :international_code, :phone, :title, :city, :post_code, :address, NOW())');
 
         $q->bindValue(':surname', $user->surname());
         $q->bindValue(':name', $user->name());
@@ -24,7 +24,6 @@ class UserManager
         $q->bindValue(':city', $user->city());
         $q->bindValue(':post_code', $user->postCode());
         $q->bindValue(':address', $user->address());
-        $q->bindValue(':status', $user->status());
 
         $q->execute();
     }
@@ -95,11 +94,14 @@ class UserManager
 
     public function getEmail($email)
     {
-        $q = $this->_db->query('SELECT * FROM users WHERE email = ' . $email);
-        $datas = $q->fetch(PDO::FETCH_ASSOC);
+        $q = $this->_db->query("SELECT * FROM users WHERE email = '$email'");
+        $data = $q->fetch(PDO::FETCH_ASSOC);
 
-        return new User($datas);
+        return ($data);
     }
+
+
+
 
     public function setDb(PDO $db)
     {

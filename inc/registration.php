@@ -14,6 +14,7 @@ $userManager = new UserManager($db);
 $users = $userManager->getList();
 $error = '';
 
+var_dump($error);
 
 if(!empty($_POST))
 {
@@ -24,35 +25,51 @@ if(!empty($_POST))
     {
 
         $error .= '<div class="erreur">Le nom ne peux pas dépasser 20 caractères.</div>';
+        var_dump($error);
     }
 
     if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
     {
         $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
+        var_dump($error);
     }
 
     if(!(strlen($_POST['name']) <= 20))
     {
 
         $error .= '<div class="erreur">Le prénom ne peux pas dépasser 20 caractères.</div>';
+        var_dump($error);
     }
 
     if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
     {
         $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
+        var_dump($error);
     }
 
-    if(!strlen($_POST['phone']) <= 14)
+    if(!(strlen($_POST['phone']) <= 11))
     {
-        $error .= '<div class="erreur"></div>';
+        $error .= '<div class="erreur"> Le numéro de téléphone ne peux pas dépasser 11 caractères.</div>';
+        var_dump($error);
     }
+
+    if(!preg_match('#^[0-9]+$#', $_POST['phone']))
+    {
+        $error .= '<div class="erreur">Le numéro de téléphone ne peux comporter que des chiffres.</div>';
+        var_dump($error);
+    }
+
+    var_dump($_POST);
 
     // Check if user exist in DB.
 
+
     $userEmail = $userManager->getEmail($_POST['email']);
+
     if(!empty($userEmail))
     {
         $error .= '<div class="erreur">Vous êtes déjà inscrit.</div>';
+        var_dump($error);
     }
 
     //DATA PROCESSING
@@ -61,7 +78,6 @@ if(!empty($_POST))
     {
         $_POST['password'] = hash('sha256' , $_POST['password']);
 
-        /* /!\ PENSER A FINIR LES CONTROLES /!\ */
 
 
         foreach($_POST as $key => $value)
@@ -72,30 +88,32 @@ if(!empty($_POST))
         // INSERT INTO DB
 
         $user = new User($_POST);
-        $userManager->add(user);
+        $userManager->add($user);
     }
 }
 
 // REGISTRATION FORM
 
-$error .= $error;
-echo $error;
+
 ?>
 <h1>Formulaire d'inscription</h1>
+
+<?php $error .= $error;
+echo $error; ?>
 <form method="POST" action="" autocomplete>
 
-    <label for="title">Civilité : </label><br />
+    <label for="title">Civilité* : </label><br />
     <input type="radio" name="title" value="H" checked>Mr
     <input type="radio" name="title" value="F">Mme<br />
 
-    <label for="surname">Nom : </label><br />
+    <label for="surname">Nom* : </label><br />
     <input type="text" id="surname" name="surname" placeholder="Nom" maxlength="20" required>
     <input type="text" id="name" name="name" placeholder="Prénom" maxlength="20" required><br />
 
-    <label for="password">Mot de passe : </label><br />
+    <label for="password">Mot de passe* : </label><br />
     <input type="password" id="password" name="password" placeholder="Mot de passe" required><br />
 
-    <label for="email">Email : </label><br />
+    <label for="email">Email* : </label><br />
     <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><br />
 
     <label for="international_code">Télephone : </label><br />
@@ -106,10 +124,10 @@ echo $error;
         <option value="+32">  +32</option>
         <option value="+49">  +49</option>
     </div>
-    <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone" maxlength="14"><br /><br />
+    <input type="text" id="phone" name="phone" placeholder="123456789" maxlength="11"><br /><br />
 
-    <label for="adress">Adresse : </label><br />
-    <textarea id="adress" name="adress" placeholder="votre dresse"></textarea><br />
+    <label for="address">Adresse : </label><br />
+    <textarea id="address" name="address" placeholder="votre dresse"></textarea><br />
 
     <label for="post_code">Code postal :</label><br />
     <input type="text" id="post_code" name="post_code" placeholder="Code Postal" maxlength="5"><br />
@@ -119,6 +137,8 @@ echo $error;
 
     <input name="submit" value="Envoyer" type="submit"><input type="reset" value="Vider" />
 </form>
+
+<!-- Add Captcha -->
 
 <!--
 <option value="+41" style="background-image:url(inc/img/CH.png); no-repeat; width:23px; height:17px;" selected>  +41</option>

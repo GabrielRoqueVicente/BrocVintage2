@@ -28,10 +28,12 @@ class User
     //Dynamic class hydrate
     public function hydrate(array $datas)
     {
-        foreach ($datas as $key => $value) {
+        foreach ($datas as $key => $value)
+        {
             $method = 'set' . ucfirst($key);
 
-            if (method_exists($this, $method)) {
+            if (method_exists($this, $method))
+            {
                 $this->$method($value);
 
             }
@@ -44,7 +46,8 @@ class User
     {
         $idUser = (int)$idUser;
 
-        if ($idUser > 0) {
+        if ($idUser > 0)
+        {
             $this->_idUser = $idUser;
         }
     }
@@ -78,7 +81,8 @@ class User
 
     public function setPassword($password)
     {
-        if (is_string($password) && strlen($password) <= 64) {
+        if (is_string($password) && strlen($password) <= 64)
+        {
             $this->_password = $password;
         }
     }
@@ -92,14 +96,16 @@ class User
 
     public function setPhone($phone)
     {
-        if (is_string($phone) && strlen($phone) <= 14) {
+        if (is_string($phone) && strlen($phone) <= 11)
+        {
             $this->_phone = $phone;
         }
     }
 
     public function setTitle($title)
     {
-        if ($title == 'H' || $title == 'F') {
+        if ($title == 'H' || $title == 'F')
+        {
             $this->_title = $title;
         }
     }
@@ -115,7 +121,8 @@ class User
 
     public function setPost_Code($postCode)
     {
-        if (is_string($postCode) && strlen($postCode) <= 5) {
+        if (is_string($postCode) && strlen($postCode) <= 5)
+        {
             $this->_postCode = $postCode;
         }
     }
@@ -132,7 +139,8 @@ class User
 
     public function setStatus($status)
     {
-        if ($status == 'user' || $status == 'admin') {
+        if ($status == 'user' || $status == 'admin')
+        {
             $this->_status = $status;
         }
     }
