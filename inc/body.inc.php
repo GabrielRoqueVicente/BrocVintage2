@@ -34,7 +34,8 @@
                     include('admin/users.admin.php');
                 } elseif ($_GET['page'] == 'calendar')
                 {
-                    include('admin/calendar.admin.php');
+                    //include('admin/calendar.admin.php');
+                    include('calendar.php');
                 }
             }
 
