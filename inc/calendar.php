@@ -21,9 +21,6 @@ $hour = new DateTime('08:00');
 $formatHour = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'HH:mm');
 $formatHour->setPattern('HH:mm');
 
-
-
-
 ?>
 
 <h3><?php //echo $formatMonth->format($today); ?></h3><br />
