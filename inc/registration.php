@@ -28,7 +28,7 @@ if(!empty($_POST))
         var_dump($error);
     }
 
-    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
+    if(!preg_match('#^[a-zA-Z0-9. _-]+$#', $_POST['surname']))
     {
         $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
         var_dump($error);
@@ -41,19 +41,19 @@ if(!empty($_POST))
         var_dump($error);
     }
 
-    if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
+    if(!preg_match('#^[a-zA-Z0-9. _-]+$#', $_POST['name']))
     {
         $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
         var_dump($error);
     }
 
-    if(!(strlen($_POST['phone']) <= 11))
+    if($_POST['phone']!=='' && !(strlen($_POST['phone']) <= 11))
     {
         $error .= '<div class="erreur"> Le numéro de téléphone ne peux pas dépasser 11 caractères.</div>';
         var_dump($error);
     }
 
-    if(!preg_match('#^[0-9]+$#', $_POST['phone']))
+    if($_POST['phone']!=='' && !preg_match('#^[0-9]+$#', $_POST['phone']))
     {
         $error .= '<div class="erreur">Le numéro de téléphone ne peux comporter que des chiffres.</div>';
         var_dump($error);

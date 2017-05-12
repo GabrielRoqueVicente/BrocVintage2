@@ -83,7 +83,7 @@ if(!empty($_GET['idUser']))
             var_dump($error);
         }
 
-        if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['surname']))
+        if(!preg_match('#^[a-zA-Z0-9. _-]+$#', $_POST['surname']))
         {
             $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
             var_dump($error);
@@ -96,19 +96,19 @@ if(!empty($_GET['idUser']))
             var_dump($error);
         }
 
-        if(!preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['name']))
+        if(!preg_match('#^[a-zA-Z0-9. _-]+$#', $_POST['name']))
         {
             $error .= '<div class="erreur">Le prénom ne peux pas comporter de caractères spéciaux.</div>';
             var_dump($error);
         }
 
-        if(!(strlen($_POST['phone']) <= 11))
+        if($_POST['phone']!==''&& !(strlen($_POST['phone']) <= 11))
         {
             $error .= '<div class="erreur"> Le numéro de téléphone ne peux pas dépasser 11 caractères.</div>';
             var_dump($error);
         }
 
-        if(!preg_match('#^[0-9]+$#', $_POST['phone']))
+        if($_POST['phone']!==''&& !preg_match('#^[0-9]+$#', $_POST['phone']))
         {
             $error .= '<div class="erreur">Le numéro de téléphone ne peux comporter que des chiffres.</div>';
             var_dump($error);
@@ -181,6 +181,7 @@ if(!empty($_GET['idUser']))
 ?>
 
 <div class="container">
+    <div class="table-responsive">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -217,11 +218,12 @@ foreach($users as $user)
                 <td><?php echo $user->status(); ?></td>
                 <td><?php echo $user->subscriptionDate(); ?></td>
                 <td><?php echo '<a href="' . URL . '?page=users&idUser=' . $user->idUser() . '"><img src="' . URL . '/inc/img/update.png" alt="Modifier" height="15" width="15" /></a>'; ?></td>
-                <td><?php echo '<a href="' . URL . 'deleteUsers.php?idUser=' . $user->idUser() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a>'; ?></td>
+                <td><?php echo '<a href="' . URL . '/inc/admin/deleteUsers.admin.php?idUser=' . $user->idUser() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a>'; ?></td>
             </tr>
 <?php
 }
 ?>
             </tbody>
         </table>
+    </div>
 </div>
