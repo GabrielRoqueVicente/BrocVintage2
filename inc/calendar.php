@@ -3,7 +3,7 @@
 //VARIABLES
 
 //Today Date
-$today = new DateTime("today");
+$today = new DateTime("tomorrow");
 
 // Format days
 $formatDay = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE');
