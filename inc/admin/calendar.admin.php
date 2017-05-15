@@ -6,7 +6,7 @@ if(!isAdmin())
 }
 //Objects instance
 
-$reservationManager = new ReservationManager($db);
+$dispoManager = new DispoManager($db);
 
 //VARIABLES
 $week = $_GET['week'];
@@ -40,7 +40,7 @@ $formatHourDateTime->setPattern('HH:mm:ss');
 
 // DATA PROCESSING
 
-if(!empty($_GET['reservation'])){
+if(!empty($_GET['dispo'])){
     $error='';
 
     if($_SESSION['status'] !== 'admin')
@@ -49,19 +49,19 @@ if(!empty($_GET['reservation'])){
     }
 
 
-    if(empty($error) && !empty($reservationManager->getDate($_GET['reservation'])))
+    if(empty($error) && !empty($dispoManager->getDate($_GET['dispo'])))
     {
-        $reservationManager->delete($_GET['reservation']);
-        unset($_GET['reservation']);
-        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&reservation=');
+        $dispoManager->delete($_GET['dispo']);
+        unset($_GET['dispo']);
+        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=');
 
-    }elseif(empty($error) && $_GET['reservation'] !== $reservationManager->getDate($_GET['reservation']))
+    }elseif(empty($error) && $_GET['dispo'] !== $dispoManager->getDate($_GET['dispo']))
     {
-        $reservation['meeting_date'] = $_GET['reservation'];
-        $reservation['id_user'] = $_SESSION['idUser'];
-        $reservation = new Reservation($reservation);
-        $reservationManager->add($reservation);
-        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&reservation=');
+        $dispo['meeting_date'] = $_GET['dispo'];
+        $dispo['id_user'] = $_SESSION['idUser'];
+        $dispo = new Dispo($dispo);
+        $dispoManager->add($dispo);
+        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=');
     }
 }
 
@@ -134,12 +134,12 @@ if(!empty($_GET['reservation'])){
                     $btn = 'btn-primary';
                     $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
-                   if(!empty($reservationManager->getDate($dateTime)))
+                   if(!empty($dispoManager->getDate($dateTime)))
                     {
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td> <a href=?page=calendarAdmin&week=' . $_GET['week'] . '&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
+                    echo '<td> <a href=?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
@@ -148,12 +148,12 @@ if(!empty($_GET['reservation'])){
                     $btn = 'btn-primary';
                     $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
-                    if(!empty($reservationManager->getDate($dateTime)))
+                    if(!empty($dispoManager->getDate($dateTime)))
                     {
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
@@ -163,12 +163,12 @@ if(!empty($_GET['reservation'])){
                     $btn = 'btn-primary';
                     $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
-                    if(!empty($reservationManager->getDate($dateTime)))
+                    if(!empty($dispoManager->getDate($dateTime)))
                     {
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-10 hour');

@@ -13,6 +13,8 @@ require(DOCUMENT_ROOT . 'inc/class/PictureClass.php');
 require(DOCUMENT_ROOT . 'inc/class/PictureManager.php');
 require(DOCUMENT_ROOT . 'inc/class/UserClass.php');
 require(DOCUMENT_ROOT . 'inc/class/UserManager.php');
+require(DOCUMENT_ROOT . 'inc/class/DispoClass.php');
+require(DOCUMENT_ROOT . 'inc/class/DispoManager.php');
 require(DOCUMENT_ROOT . 'inc/class/ReservationClass.php');
 require(DOCUMENT_ROOT . 'inc/class/ReservationManager.php');
 
