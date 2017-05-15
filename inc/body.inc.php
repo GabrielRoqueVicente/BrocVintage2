@@ -38,12 +38,6 @@
                 } elseif ($_GET['page'] == 'calendarAdmin')
                 {
                     include('admin/calendar.admin.php');
-                }elseif ($_GET['page'] == 'calendarDeleteAdmin')
-                {
-                    include('admin/deleteReservation.admin.php');
-                }elseif ($_GET['page'] == 'disponibilityAdmin')
-                {
-                    include('admin/disponibility.admin.php');
                 }
             }
 

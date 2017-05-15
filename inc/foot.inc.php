@@ -16,7 +16,7 @@ if(isAdmin())
                     <li><a href="?page=products">Produits</a></li>
                     <li><a href="?page=articles">Articles</a></li>
                     <li><a href="?page=users">Utilisateurs</a></li>
-                    <li><a href="?page=calendarAdmin">Calendrier</a></li>
+                    <li><a href="?page=calendarAdmin&week=0">Calendrier</a></li>
                 </ul>
             </div>
         </div>
