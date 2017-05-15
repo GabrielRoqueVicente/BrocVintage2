@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/body.inc.php" afterPath="$PROJECT_DIR$/inc/body.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/calendar.php" afterPath="$PROJECT_DIR$/inc/calendar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ReservationManager.php" afterPath="$PROJECT_DIR$/inc/class/ReservationManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/connection.php" afterPath="$PROJECT_DIR$/inc/connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/foot.inc.php" afterPath="$PROJECT_DIR$/inc/foot.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/nav.php" afterPath="$PROJECT_DIR$/inc/nav.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +19,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="nav.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/nav.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+              <folding>
+                <element signature="e#283#651#0#PHP" expanded="true" />
+                <marker date="1494846720470" expanded="true" signature="738:1068" ph="..." />
+                <marker date="1494846720470" expanded="true" signature="738:1125" ph="..." />
+                <marker date="1494846720470" expanded="true" signature="770:1057" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="foot.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/foot.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="53" />
+            <state relative-caret-position="63">
+              <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -54,20 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="body.inc.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="body.inc.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="61" />
+            <state relative-caret-position="609">
+              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendar.admin.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calendar.admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/admin/calendar.admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="168">
               <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
               <folding>
                 <marker date="1494846237515" expanded="true" signature="2468:2728" ph="..." />
@@ -213,7 +226,6 @@
         <option value="$PROJECT_DIR$/inc/js/brocVintage.js" />
         <option value="$PROJECT_DIR$/inc/class/UserClass.php" />
         <option value="$PROJECT_DIR$/../BrocVintage/connexion.php" />
-        <option value="$PROJECT_DIR$/inc/nav.php" />
         <option value="$PROJECT_DIR$/inc/init.inc.php" />
         <option value="$PROJECT_DIR$/inc/admin/website.admin.php" />
         <option value="$PROJECT_DIR$/inc/admin/articles.admin.php" />
@@ -232,13 +244,14 @@
         <option value="$PROJECT_DIR$/inc/class/ReservationClass.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/inc/connection.php" />
-        <option value="$PROJECT_DIR$/inc/foot.inc.php" />
         <option value="$PROJECT_DIR$/inc/calendar.php" />
         <option value="$PROJECT_DIR$/inc/admin/deleteReservation.admin.php" />
         <option value="$PROJECT_DIR$/inc/admin/disponibility.admin.php" />
-        <option value="$PROJECT_DIR$/inc/body.inc.php" />
         <option value="$PROJECT_DIR$/inc/class/ReservationManager.php" />
         <option value="$PROJECT_DIR$/inc/admin/calendar.admin.php" />
+        <option value="$PROJECT_DIR$/inc/foot.inc.php" />
+        <option value="$PROJECT_DIR$/inc/nav.php" />
+        <option value="$PROJECT_DIR$/inc/body.inc.php" />
       </list>
     </option>
   </component>
@@ -387,12 +400,12 @@
       <workItem from="1492674288706" duration="10386000" />
       <workItem from="1493104051472" duration="156583000" />
       <workItem from="1494228469756" duration="87858000" />
-      <workItem from="1494431836431" duration="75062000" />
+      <workItem from="1494431836431" duration="75882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366881000" />
+    <option name="totallyTimeSpent" value="367701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,19 +572,6 @@
         <state relative-caret-position="63">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="84" column="49" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="49" />
-          <folding>
-            <element signature="e#283#651#0#PHP" expanded="true" />
-            <marker date="1494497622845" expanded="true" signature="721:1051" ph="..." />
-            <marker date="1494497622845" expanded="true" signature="721:1108" ph="..." />
-            <marker date="1494497622845" expanded="true" signature="753:1040" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -866,14 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/foot.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/admin/website.admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -882,14 +874,6 @@
             <marker date="1494506903584" expanded="true" signature="6144:6419" ph="..." />
             <marker date="1494506903584" expanded="true" signature="6161:6402" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +923,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/admin/calendar.admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="168">
           <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
           <folding>
             <marker date="1494846237515" expanded="true" signature="2468:2728" ph="..." />
@@ -955,6 +939,35 @@
             <marker date="1494846237515" expanded="true" signature="6574:6583" ph="..." />
             <marker date="1494846237515" expanded="true" signature="6740:6749" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/foot.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+          <folding>
+            <element signature="e#283#651#0#PHP" expanded="true" />
+            <marker date="1494846720470" expanded="true" signature="738:1068" ph="..." />
+            <marker date="1494846720470" expanded="true" signature="738:1125" ph="..." />
+            <marker date="1494846720470" expanded="true" signature="770:1057" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
