@@ -33,6 +33,7 @@ if(!empty($_POST))
         if($cryptedPassword == $user->password())
         {
             // Password match.
+            $_SESSION['idUser'] = $user->idUser();
             $_SESSION['user'] = $user->email();
             $_SESSION['status'] = $user->status();
             header('Location: index.php');

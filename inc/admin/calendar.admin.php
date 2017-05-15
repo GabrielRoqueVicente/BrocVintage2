@@ -1,5 +1,4 @@
 <?php
-var_dump($_SESSION);
 //Redirect
 if(!isAdmin())
 {
@@ -48,20 +47,19 @@ if(!empty($_GET['reservation'])){
     }
 
 
-    if(empty($error) && $_GET['reservation'] == $reservationManager->getDate($_GET['reservation']))
+    if(empty($error) && !empty($reservationManager->getDate($_GET['reservation'])))
+    {
+        $reservationManager->delete($_GET['reservation']);
+        unset($_GET['reservation']);
+        header('location:' . URL .'?page=calendarAdmin&reservation=');
+
+    }elseif(empty($error) && $_GET['reservation'] !== $reservationManager->getDate($_GET['reservation']))
     {
         $reservation['meeting_date'] = $_GET['reservation'];
         $reservation['id_user'] = $_SESSION['idUser'];
         $reservation = new Reservation($reservation);
         $reservationManager->add($reservation);
-        unset($_GET['reservation']);
-        header('location:' . URL .'?page=calendarAdmin');
-
-
-        //header
-    }elseif(empty($error) && !empty($reservationManager->getDate($_GET['reservation'])))
-    {
-        header('location:' . URL . '?page=calendarDeleteAdmin&reservation=' . $_GET['reservation']);
+        header('location:' . URL .'?page=calendarAdmin&reservation=');
     }
 }
 
@@ -117,53 +115,47 @@ if(!empty($_GET['reservation'])){
                     echo '<td style="width:1px" class="active"></td>';
                 }
 
-                //////////////////// Week-End Hours//////////////////////
+                //////////////////// TABLE HOURS//////////////////////
                 if ($formatDay->format($dayI) === 'samedi')
                 {
-                    $disabled = '';
                     $btn = 'btn-primary';
                     $dateTime = $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
                    if(!empty($reservationManager->getDate($dateTime)))
                     {
-                        $disabled ='disabled';
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td> <a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button" $disabled >' . $formatHour->format($hour) . ' - ';
+                    echo '<td> <a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
                 }elseif($formatDay->format($dayI) === 'dimanche')
                 {
-                    $disabled = '';
                     $btn = 'btn-primary';
                     $dateTime = $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
                     if(!empty($reservationManager->getDate($dateTime)))
                     {
-                        $disabled ='disabled';
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td><a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button" $disabled >' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
                 }elseif($y <3) {
                     $hour = $hour->modify('+9 hour');
 
-                    $disabled = '';
                     $btn = 'btn-primary';
                     $dateTime = $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
                     if(!empty($reservationManager->getDate($dateTime)))
                     {
-                        $disabled ='disabled';
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td><a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button" $disabled >' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=calendarAdmin&reservation=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-10 hour');

@@ -21,9 +21,9 @@ class ReservationManager
         $q->execute();
     }
 
-    public function delete(Reservation $reservation)
+    public function delete($reservation)
     {
-        $this->_db->exec('DELETE FROM reservations WHERE id_reservation = ' . $reservation->idReservation());
+        $this->_db->exec("DELETE FROM reservations WHERE  meeting_date = '$reservation'");
     }
 
     public function get($idReservation)
