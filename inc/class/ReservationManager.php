@@ -36,6 +36,14 @@ class ReservationManager
         return new Reservation($datas);
     }
 
+    public function getDate($dateTime)
+    {
+        $q = $this->_db->query("SELECT meeting_date FROM reservations WHERE meeting_date ='$dateTime'");
+        $data = $q->fetch(PDO::FETCH_ASSOC);
+
+        return ($data);
+    }
+
     public function getList()
     {
         $idReservations = [];
