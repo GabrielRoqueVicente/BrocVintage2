@@ -32,7 +32,7 @@ if(!empty($idProduct))
 
 <!-- DISPLAY PRODUCT -->
 
-<h2><strong><?php echo $product->name(); ?></strong></h2>
+<h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
 <p>
     <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
     <?php

@@ -108,7 +108,7 @@ if(!empty($_GET['reservation'])){
                 }
 
                 $dayI = $dayI->modify('+1 days');
-            } 
+            }
             ?>
         <th><a href="?page=calendarAdmin&week=<?php echo $_GET['week']+1; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a></th>
     </tr>

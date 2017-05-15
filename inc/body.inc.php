@@ -20,6 +20,12 @@
            }elseif($_GET['page'] == 'connection')
            {
                include('connection.php');
+           }elseif($_GET['page'] == 'product')
+           {
+               include('product.php');
+           }elseif($_GET['page'] == 'article')
+           {
+               include('article.php');
            }
 
            // ADMIN PAGES

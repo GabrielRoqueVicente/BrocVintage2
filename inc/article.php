@@ -32,7 +32,7 @@ if(!empty($idArticle))
 
 <!-- DISPLAY ARTICLE -->
 
-<h2><strong><?php echo $article->title(); ?></strong></h2>
+<h2><a href="<?php echo URL . '?page=article&idArticle=' . $article->idArticle() ?>"><strong><?php echo $article->title(); ?></strong></a></h2>
 <p>
     <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
     <?php echo $article->text() ; ?>
