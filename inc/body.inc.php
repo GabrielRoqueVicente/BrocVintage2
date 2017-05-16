@@ -28,6 +28,14 @@
                include('article.php');
            }
 
+           if(isConnected())
+           {
+               if(isset($_GET['reservation']))
+               {
+                   include('reservation.php');
+               }
+           }
+
            // ADMIN PAGES
 
             if(isAdmin())

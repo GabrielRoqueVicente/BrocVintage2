@@ -5,9 +5,8 @@ class Reservation
     //===ATTRIBUTES===
 
     private $_idReservation;
-    private $_reservationDate;
-    private $_meetingDate;
     private $_idUser;
+    private $_idDispo;
     private $_idProduct;
 
     //===PROPERTIES===
@@ -44,16 +43,6 @@ class Reservation
         }
     }
 
-    public function setReservation_Date($reservationDate)
-    {
-        $this->_reservationDate = $reservationDate;
-    }
-
-    public function setMeeting_Date($meetingDate)
-    {
-        $this->_meetingDate = $meetingDate;
-    }
-
     public function setId_user($idUser)
     {
         $idUser = (int)$idUser;
@@ -64,14 +53,23 @@ class Reservation
         }
     }
 
-
-    public function setId_product($IdProduct)
+    public function setId_dispo($idDispo)
     {
-        $IdProduct = (int)$IdProduct;
+        $idDispo = (int)$idDispo;
 
-        if ($IdProduct > 0)
+        if ($idDispo > 0)
         {
-            $this->_IdProduct = $IdProduct;
+            $this->_idDispo = $idDispo;
+        }
+    }
+
+    public function setId_product($idProduct)
+    {
+        $idProduct = (int)$idProduct;
+
+        if ($idProduct > 0)
+        {
+            $this->_idProduct = $idProduct;
         }
     }
 
@@ -82,19 +80,14 @@ class Reservation
         return $this->_idReservation;
     }
 
-    public function reservationDate()
-    {
-        return $this->_reservationDate;
-    }
-
-    public function meetingDate()
-    {
-        return $this->_meetingDate;
-    }
-
     public function idUser()
     {
         return $this->_idUser;
+    }
+
+    public function idDispo()
+    {
+        return $this->_idDispo;
     }
 
     public function idProduct()

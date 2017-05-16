@@ -31,51 +31,62 @@ if(!empty($idProduct))
 ?>
 
 <!-- DISPLAY PRODUCT -->
+<div class="col-md-8">
+    <h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
+    <p>
+        <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+        <?php
 
-<h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
-<p>
-    <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+        if($product->autor() != NULL )
+        {
+            echo 'Designer : ' . $product->autor() .'<br />';
+        }
+
+        if($product->year() != NULL )
+        {
+            echo 'Année de création : ' . $product->year() .'<br />';
+        }
+        echo $product->description() .'<br />';
+        echo $product->price() . ' Frs';
+        switch($product->disponibility())
+        {
+            case 'dis':
+                echo ' Disponible !';
+                break;
+
+            case 'ind':
+                echo ' N\'est plus disponible !';
+                break;
+
+            case 'res':
+                echo ' Produit reservé.';
+                break;
+        }
+        ?>
+        <br />
+    </p>
+
     <?php
 
-    if($product->autor() != NULL )
+    if(!empty($_GET['idProduct']))
     {
-        echo 'Designer : ' . $product->autor() .'<br />';
-    }
-
-    if($product->year() != NULL )
-    {
-        echo 'Année de création : ' . $product->year() .'<br />';
-    }
-    echo $product->description() .'<br />';
-    echo $product->price() . ' Frs';
-    switch($product->disponibility())
-    {
-        case 'dis':
-            echo ' Disponible !';
-            break;
-
-        case 'ind':
-            echo ' N\'est plus disponible !';
-            break;
-
-        case 'res':
-            echo ' Produit reservé.';
-            break;
+        foreach($pictures as $picture)
+        {
+            ?>
+            <img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
+            <?php
+        }
     }
     ?>
-    <br />
-</p>
-
+</div>
 <?php
-
-if(!empty($_GET['idProduct']))
+if(isConnected() && $product->disponibility() == 'dis' && $_GET['page'] == 'product')
 {
-    foreach($pictures as $picture)
-    {
-        ?>
-        <img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
-        <?php
-    }
-}
-
 ?>
+    <div class="col-md-4">
+        <a href="?page=reservation&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success" role="button">Réserver</a>
+    </div>
+<?php
+}
+?>
+
