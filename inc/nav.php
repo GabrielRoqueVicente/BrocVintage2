@@ -16,7 +16,7 @@ $nTypes = count($types);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Broc'Vintage</a>
+      <a class="navbar-brand" href="<?php echo URL; ?>">Broc'Vintage</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -62,3 +62,6 @@ $nTypes = count($types);
     </div>
   </div>
 </nav>
+<br />
+<br />
+<br />

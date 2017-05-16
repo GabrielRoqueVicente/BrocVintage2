@@ -30,7 +30,7 @@
 
            if(isConnected())
            {
-               if(isset($_GET['reservation']))
+               if($_GET['page'] == 'reservation')
                {
                    include('reservation.php');
                }

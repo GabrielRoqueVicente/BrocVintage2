@@ -80,7 +80,7 @@ if(!empty($idProduct))
     ?>
 </div>
 <?php
-if(isConnected() && $product->disponibility() == 'dis' && $_GET['page'] == 'product')
+if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) && $_GET['page'] == 'product')
 {
 ?>
     <div class="col-md-4">

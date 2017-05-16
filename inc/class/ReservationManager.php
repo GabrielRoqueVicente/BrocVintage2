@@ -11,12 +11,11 @@ class ReservationManager
 
     public function add(Reservation $reservation)
     {
-        $q = $this->_db->prepare('INSERT INTO reservations(id_reservation, id_user, id_dispo, id_product) 
-                                  VALUES(:id_reservation, :id_user, :id_dispo, :id_product)');
+        $q = $this->_db->prepare('INSERT INTO reservations(id_user, id_dispo, id_product) 
+                                  VALUES(:id_user, :id_dispo, :id_product)');
 
-        $q->bindValue(':id_reservation', $reservation->idProduct(), PDO::PARAM_INT);
         $q->bindValue(':id_user', $reservation->idUser(), PDO::PARAM_INT);
-        $q->bindValue(':id_dispo', $reservation->idProduct());
+        $q->bindValue(':id_dispo', $reservation->idDispo(), PDO::PARAM_INT);
         $q->bindValue(':id_product', $reservation->idProduct(), PDO::PARAM_INT);
 
         $q->execute();
@@ -58,14 +57,27 @@ class ReservationManager
         return $idReservations;
     }
 
+    public function getUserList($idUser)
+    {
+        $idReservations = [];
+        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE id_user =' .$idUser);
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $idReservations[] = new Reservation ($datas);
+        }
+
+        return $idReservations;
+    }
+
     public function getProduct($idProduct)
     {
         $idProduct = (int) $idProduct;
 
-        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE id_reservation = ' .$idProduct);
+        $q = $this->_db->query("SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE id_product = '$idProduct'");
         $datas = $q->fetch(PDO::FETCH_ASSOC);
 
-        return new Reservation($datas);
+        return $datas;
     }
 
     public function update($reservation)

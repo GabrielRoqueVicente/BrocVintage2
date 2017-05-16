@@ -16,7 +16,7 @@ $pictureManager = new PictureManager($db);
 
 //VARIABLES
 
-$reservations = $ReservationManager-getUserList($_SESSION['idUser']);
+$reservations = $reservationManager->getUserList($_SESSION['idUser']);
 $products = $productManager->getList();
 $dispos = $dispoManager->getList();
 
@@ -24,12 +24,16 @@ $dispos = $dispoManager->getList();
 //CHECKS
 $error = '';
 
+var_dump($_GET['product']);
+var_dump($reservationManager->getProduct($_GET['product']));
+
 // Product Allready in a cart
 
-if(empty($reservationManager->getProduct($_GET['product'])))
+if($_GET['product'] !== '0' && empty($reservationManager->getProduct($_GET['product'])))
 {
     //Is still available
-    $product = $productManager->get($_GET['idProduct']);
+    $product = $productManager->get($_GET['product']);
+
     if($product->disponibility() !== 'dis')
     {
         $error += 'L\'article n\'est plus disponible';
@@ -37,9 +41,21 @@ if(empty($reservationManager->getProduct($_GET['product'])))
 
     if(empty($error))
     {
-        //add $dispo;
+        $reservation['id_user'] = $_SESSION['idUser'];
+        $reservation['id_product'] = $_GET['product'] ;
+        $reservation = new Reservation($reservation);
+        $reservationManager->add($reservation);
+        header('location:' . URL .'?page=reservation&product=0');
     }
+}
 
+//DISPLAY USER RESERVATIONS
+
+echo $error;
+
+foreach($reservations as $reservation)
+{
+    var_dump($reservation);
 }
 
 
