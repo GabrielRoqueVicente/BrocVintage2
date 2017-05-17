@@ -7,3 +7,10 @@ p img
 {
     width: 45vh;
 }
+
+table .btn
+{
+    font-size: 0.77em;
+    Font-Weight: bold;
+}
+

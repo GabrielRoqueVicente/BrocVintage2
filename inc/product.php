@@ -84,7 +84,7 @@ if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) &
 {
 ?>
     <div class="col-md-4">
-        <a href="?page=reservation&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success" role="button">Réserver</a>
+        <a href="?page=reservation&week=0&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success" role="button">Réserver</a>
     </div>
 <?php
 }

@@ -134,12 +134,12 @@ if(!empty($_GET['dispo'])){
                     $btn = 'btn-primary';
                     $dateTime = $formatDateTime->format($dayI) . $formatHourDateTime->format($hour);
 
-                   if(!empty($dispoManager->getDate($dateTime)))
+                    if(!empty($dispoManager->getDate($dateTime)))
                     {
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td> <a href=?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
@@ -157,7 +157,8 @@ if(!empty($_GET['dispo'])){
                     $hour = $hour->modify('+1 hour');
                     echo   $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-1 hour');
-                }elseif($y <3) {
+                }elseif($y <3)
+                {
                     $hour = $hour->modify('+9 hour');
 
                     $btn = 'btn-primary';

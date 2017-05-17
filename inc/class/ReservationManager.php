@@ -82,13 +82,14 @@ class ReservationManager
 
     public function update($reservation)
     {
-        $q = $this->_db->prepare('UPDATE reservations SET id_reservation = :id_reservation, reservation_date = :reservation_date, meeting_date = :meeting_date, id_user = :id_user, id_product = :id_product WHERE id_reservation = :id_reservation');
+        $q = $this->_db->prepare('UPDATE reservations SET id_reservation = :id_reservation, id_user = :id_user, id_dispo = :id_dispo, id_product = :id_product  WHERE id_reservation = :id_reservation');
 
-        $q->bindValue(':id_reservation', $reservation['idReservation'], PDO::PARAM_INT);
-        $q->bindValue(':reservation_date', $reservation->reservationDate());
-        $q->bindValue(':meeting_date', $reservation->meetingDate());
+        $q->bindValue(':id_reservation', $reservation->idReservation(), PDO::PARAM_INT);
         $q->bindValue(':id_user', $reservation->idUser(), PDO::PARAM_INT);
+        $q->bindValue(':id_dispo', $reservation->idDispo(), PDO::PARAM_INT);
         $q->bindValue(':id_product', $reservation->idProduct(), PDO::PARAM_INT);
+
+        $q->execute();
 
 
         $q->execute();
