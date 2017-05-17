@@ -47,8 +47,8 @@ if(!empty($_GET['dispo']))
         $dispo['id_user'] = $_SESSION['idUser'];
         $dispo = new Dispo($dispo);
         $dispoManager->add($dispo);
-        $dispo = $dispoManager->getDate($_GET['dispo']);
-        var_dump($dispo);
+        var_dump($_GET['dispo']);
+        $dispo = $dispoManager->getByDate($_GET['dispo']);
 
         foreach($reservations as $reservation)
         {
@@ -60,9 +60,6 @@ if(!empty($_GET['dispo']))
 
 
 }
-
-var_dump($_GET['product']);
-var_dump($reservationManager->getProduct($_GET['product']));
 
 // Product Allready in a cart
 
@@ -91,13 +88,18 @@ if($_GET['product'] !== '0' && empty($reservationManager->getProduct($_GET['prod
 echo '<div class="col-md-3">';
 echo $error;
 
+
+if($reservations[0]->idDispo() !== Null)
+{
+    echo 'Vous avez reserver les articles suivants :';
+}
+
 foreach($reservations as $reservation)
 {
     if($reservation->idDispo() == Null)
     {
         var_dump($reservation);
     }else{
-        echo 'Vous avez reserver les articles suivants :';
         var_dump($reservation);
     }
 

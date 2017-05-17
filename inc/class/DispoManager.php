@@ -40,7 +40,15 @@ class DispoManager
         $q = $this->_db->query("SELECT meeting_date FROM dispo WHERE meeting_date ='$dateTime'");
         $data = $q->fetch(PDO::FETCH_ASSOC);
 
-        return ($data);
+        return $data;
+    }
+
+    public function getByDate($dateTime)
+    {
+        $q = $this->_db->query("SELECT * FROM dispo WHERE meeting_date ='$dateTime'");
+        $data = $q->fetch(PDO::FETCH_ASSOC);
+
+        return new Dispo($data);
     }
 
     public function getList()
