@@ -37,7 +37,7 @@ if(!empty($_GET['dispo']))
         $product = $productManager->get($reservation->idProduct());
         if ($product->disponibility() !== 'dis') {
             $error += 'Un article de votre panier n\'est plus disponible';
-            //supression de la reservation concernant le produit.
+            $productManager->delete($reservation);
         }
     }
 
@@ -54,7 +54,11 @@ if(!empty($_GET['dispo']))
         {
             $reservation->setid_dispo($dispo->idDispo());
             $reservationManager->update($reservation);
+            $product = $productManager->get($reservation->idProduct());
+            $product->setDisponibility('res');
+            $productManager->update($product);
         }
+        // envoie mail Utilisateur + Admin
     }
 
 
@@ -89,22 +93,35 @@ echo '<div class="col-md-3">';
 echo $error;
 
 
-if($reservations[0]->idDispo() !== Null)
-{
-    echo 'Vous avez reserver les articles suivants :';
-}
 
+
+// DISPLAY RESERVATIONS
 foreach($reservations as $reservation)
 {
     if($reservation->idDispo() == Null)
     {
-        var_dump($reservation);
+        $primary = $pictureManager->getPrimaryPicture2($reservation->idProduct());
+        $primary = $pictureManager->getPicture($primary);
+        $product = $productManager->get($reservation->idProduct());
+        ?><img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="20%">
+        <a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a><br / ><?php
+        echo $product->price() . ' Frs<br / >
+        <span class="glyphicon glyphicon-shopping-cart"></span><br / ><br / >';
     }else{
-        var_dump($reservation);
+        $primary = $pictureManager->getPrimaryPicture2($reservation->idProduct());
+        $primary = $pictureManager->getPicture($primary);
+        $product = $productManager->get($reservation->idProduct());
+        ?><img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="20%">
+        <a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a><br / ><?php
+        echo $product->price() . ' Frs<br / >
+        Reservé <span class="glyphicon glyphicon-ok"></span><br / ><br / >';
     }
+
 
 }
 echo '</div>';
+
+//DISPLAY CALENDAR
 
 echo '<div class="col-md-9">';
 if($reservations[0]->idDispo() == Null)
@@ -112,7 +129,8 @@ if($reservations[0]->idDispo() == Null)
     include('calendar.php');
 }elseif($reservations[0]->idDispo() !== Null)
 {
-    echo 'Votre rendez-vous à été à bien été enregistré pour la date du #DATE# à #HEUR#.';
+    echo '<h2>Votre rendez-vous à été à bien été enregistré pour la date du #DATE# à #HEUR#.</h2> 
+    <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au #TEL#.<br /></h4>';
 }
 
 echo '</div>';

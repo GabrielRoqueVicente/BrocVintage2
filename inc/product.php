@@ -10,6 +10,7 @@ if(empty($_GET['idProduct']) && empty($idProduct))
 
 $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
+$reservationManager = new ReservationManager($db);
 
 // VARIABLES
 if(!empty($_GET['idProduct']))

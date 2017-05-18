@@ -5,6 +5,10 @@
 $dispoManager = new DispoManager($db);
 
 //VARIABLES
+if(!isset($_GET['week']))
+{
+    $_GET['week']=0;
+}
 $week = $_GET['week'];
 
 //Today Date
@@ -50,7 +54,7 @@ $formatHourDateTime->setPattern('HH:mm:ss');
                 <?php
             }else{
                 ?>
-                <th><a href="?page=reservation&week=<?php echo $_GET['week']-1; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a></th>
+                <th><a href="?page=reservation&week=<?php echo $_GET['week']-1; ?>&product=0"><span class="glyphicon glyphicon-chevron-left"></span></a></th>
                 <?php
             }
 
@@ -76,7 +80,7 @@ $formatHourDateTime->setPattern('HH:mm:ss');
                 $dayI = $dayI->modify('+1 days');
             }
             ?>
-            <th><a href="?page=reservation&week=<?php echo $_GET['week']+1; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a></th>
+            <th><a href="?page=reservation&week=<?php echo $_GET['week']+1; ?>&product=0"><span class="glyphicon glyphicon-chevron-right"></span></a></th>
         </tr>
         </thead>
         <tbody>
