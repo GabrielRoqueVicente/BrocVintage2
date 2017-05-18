@@ -16,7 +16,6 @@ $userManager = new UserManager($db);
 
 
 //VARIABLES
-
 $reservations = $reservationManager->getUserList($_SESSION['idUser']);
 $products = $productManager->getList();
 $dispos = $dispoManager->getList();
@@ -63,12 +62,12 @@ if(!empty($_GET['dispo']))
         }
 
         //==========MAILING==========================================================
-        //Getting reservation info
-        $formatMeeting = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE d MMMM  yyyy à HH:mm');
-        $formatMeeting->setPattern('EEEE d MMMM  yyyy à HH:mm');
-        $meeting = $formatMeeting->format($_GET['dispo']);
-        $reservations = $reservationManager->getUserList($_SESSION['idUser']);
-
+        $dispo = $dispoManager->get($reservations[0]->idDispo());
+        $meeting = $dispo->meetingDate();
+        $meeting = strtotime($meeting);
+        $formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
+        $formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
+        $meeting = $formatMeeting->format($meeting);
         $mail = $_SESSION['user']; // Destination.
         if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
         {
@@ -85,7 +84,7 @@ if(!empty($_GET['dispo']))
             $message_txt = 'Madame ' . $user->surname() .' bonjour,' . $return;
         }
 
-        $message_txt .= "Notre rendez-vous du" . $meeting ." à bien été fixé." . $return . "
+        $message_txt .= "Notre rendez-vous du " . $meeting ." à bien été fixé." . $return . "
                         Vous avez reservé les articles suivants : ". $return;
         foreach($reservations as $reservation)
         {
@@ -106,12 +105,12 @@ if(!empty($_GET['dispo']))
 
                     if($user->title() == "H")
                     {
-                        $message_txt .= 'Monsieur ' . $user->surname() .' bonjour,<br />';
+                        $message_html .= 'Monsieur ' . $user->surname() .' bonjour,<br />';
                     }else{
-                        $message_txt .= 'Madame ' . $user->surname() .' bonjour,<br />';
+                        $message_html .= 'Madame ' . $user->surname() .' bonjour,<br />';
                     }
 
-        $message_html .= "Notre rendez-vous du" . $meeting ." à bien été fixé.<br /> 
+        $message_html .= "Notre rendez-vous du " . $meeting ." à bien été fixé.<br /> 
                         Vous avez reservé les articles suivants : <br />
                         <ul>";
                     foreach($reservations as $reservation)
@@ -119,7 +118,7 @@ if(!empty($_GET['dispo']))
                         if($reservation->idDispo() !== null)
                         {
                             $product = $productManager->get($reservation->idProduct());
-                            $message_txt .= '<li>' . $product->name() . '</li>';
+                            $message_html .= '<li>' . $product->name() . '</li>';
                         }
 
                     }
@@ -169,6 +168,7 @@ if(!empty($_GET['dispo']))
         $mail = EMAIL;
         mail($mail,$sujet,$message,$header);
         //==========
+        header('location:' . URL . '/index.php');
     }
 }
 
@@ -232,15 +232,15 @@ if($reservations[0]->idDispo() == Null)
     include('calendar.php');
 }elseif($reservations[0]->idDispo() !== Null)
 {
-    echo '<h2>Votre rendez-vous à été à bien été enregistré pour la date du #DATE# à #HEUR#.</h2> 
+    $dispo = $dispoManager->get($reservations[0]->idDispo());
+    $meeting = $dispo->meetingDate();
+    $meeting = strtotime($meeting);
+    $formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
+    $formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
+    $meeting = $formatMeeting->format($meeting);
+
+    echo '<h2>Votre rendez-vous à bien été enregistré pour la date du ' . $meeting  . '.</h2>
     <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au #TEL#.<br /></h4>';
 }
 
 echo '</div>';
-
-
-
-
-
-
-
