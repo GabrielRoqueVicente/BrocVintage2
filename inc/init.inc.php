@@ -12,8 +12,11 @@ define('DOCUMENT_ROOT',
     )
 );
 
+// CONSTANT
 // Define URL
 define('URL', 'http://localhost/brocvintage2');
+//Define ADMIN MAIL
+define('EMAIL', 'gabriel.vicente.59@gmail.com');
 
 //Functions
 

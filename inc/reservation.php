@@ -12,6 +12,7 @@ $reservationManager = new ReservationManager($db);
 $dispoManager = new DispoManager($db);
 $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
+$userManager = new UserManager($db);
 
 
 //VARIABLES
@@ -19,7 +20,7 @@ $pictureManager = new PictureManager($db);
 $reservations = $reservationManager->getUserList($_SESSION['idUser']);
 $products = $productManager->getList();
 $dispos = $dispoManager->getList();
-
+$user = $userManager->get($_SESSION['idUser']);
 
 //CHECKS
 $error = '';
@@ -41,6 +42,8 @@ if(!empty($_GET['dispo']))
         }
     }
 
+// DATA PROCESSING
+
     if(empty($error))
     {
         $dispo['meeting_date'] = $_GET['dispo'];
@@ -58,11 +61,115 @@ if(!empty($_GET['dispo']))
             $product->setDisponibility('res');
             $productManager->update($product);
         }
-        // envoie mail Utilisateur + Admin
+
+        //==========MAILING==========================================================
+        //Getting reservation info
+        $formatMeeting = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE d MMMM  yyyy à HH:mm');
+        $formatMeeting->setPattern('EEEE d MMMM  yyyy à HH:mm');
+        $meeting = $formatMeeting->format($_GET['dispo']);
+        $reservations = $reservationManager->getUserList($_SESSION['idUser']);
+
+        $mail = $_SESSION['user']; // Destination.
+        if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
+        {
+            $return = "\r\n";
+        }else{
+            $return = "\n";
+        }
+
+        //=====TXT message.
+        if($user->title() == "H")
+        {
+            $message_txt = 'Monsieur ' . $user->surname() .' bonjour,' . $return;
+        }else{
+            $message_txt = 'Madame ' . $user->surname() .' bonjour,' . $return;
+        }
+
+        $message_txt .= "Notre rendez-vous du" . $meeting ." à bien été fixé." . $return . "
+                        Vous avez reservé les articles suivants : ". $return;
+        foreach($reservations as $reservation)
+        {
+            if($reservation->idDispo() !== null)
+            {
+                $product = $productManager->get($reservation->idProduct());
+                $message_txt .= $product->name() . $return;
+            }
+        }
+
+        //=====HTML message.
+        $message_html = "
+            <html>
+                <head>
+                </head>
+                <body>
+                    <p>";
+
+                    if($user->title() == "H")
+                    {
+                        $message_txt .= 'Monsieur ' . $user->surname() .' bonjour,<br />';
+                    }else{
+                        $message_txt .= 'Madame ' . $user->surname() .' bonjour,<br />';
+                    }
+
+        $message_html .= "Notre rendez-vous du" . $meeting ." à bien été fixé.<br /> 
+                        Vous avez reservé les articles suivants : <br />
+                        <ul>";
+                    foreach($reservations as $reservation)
+                    {
+                        if($reservation->idDispo() !== null)
+                        {
+                            $product = $productManager->get($reservation->idProduct());
+                            $message_txt .= '<li>' . $product->name() . '</li>';
+                        }
+
+                    }
+        $message_html .= " 
+                        </ul>
+                    </p>
+                </body>
+            </html>";
+        //==========
+
+        //=====Boundary
+        $boundary = "-----=".md5(rand());
+        //==========
+
+        //=====Défine subject.
+        $sujet = "[Broc'Vintage]Confirmation de notre rendez-vous du ". $meeting .".";
+        //=========
+
+        //=====Mail Header.
+        $header = "From: \"Broc'Vintage\"<" . EMAIL . ">".$return;
+        $header.= "Reply-to: \"Broc'Vintage\"<" . EMAIL . ">".$return;
+        $header.= "MIME-Version: 1.0".$return;
+        $header.= "Content-Type: multipart/alternative;".$return." boundary=\"$boundary\"".$return;
+        //==========
+
+        //=====Message.
+        $message = $return."--".$boundary.$return;
+        //=====Add TXT message.
+        $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$return;
+        $message.= "Content-Transfer-Encoding: 8bit".$return;
+        $message.= $return.$message_txt.$return;
+        //==========
+        $message.= $return."--".$boundary.$return;
+
+        //=====Add HTML message.
+        $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$return;
+        $message.= "Content-Transfer-Encoding: 8bit".$return;
+        $message.= $return.$message_html.$return;
+        //==========
+        $message.= $return."--".$boundary."--".$return;
+        $message.= $return."--".$boundary."--".$return;
+        //==========
+
+        //=====Sending Mail.
+        mail($mail,$sujet,$message,$header);
+        //====Sending à Copy to the Administrator
+        $mail = EMAIL;
+        mail($mail,$sujet,$message,$header);
+        //==========
     }
-
-
-
 }
 
 // Product Allready in a cart
@@ -92,10 +199,6 @@ if($_GET['product'] !== '0' && empty($reservationManager->getProduct($_GET['prod
 echo '<div class="col-md-3">';
 echo $error;
 
-
-
-
-// DISPLAY RESERVATIONS
 foreach($reservations as $reservation)
 {
     if($reservation->idDispo() == Null)
