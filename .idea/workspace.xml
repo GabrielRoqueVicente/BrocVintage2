@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/calendar.php" afterPath="$PROJECT_DIR$/inc/calendar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/DispoManager.php" afterPath="$PROJECT_DIR$/inc/class/DispoManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/reservation.php" afterPath="$PROJECT_DIR$/inc/reservation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin/calendar.admin.php" afterPath="$PROJECT_DIR$/inc/admin/calendar.admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/init.inc.php" afterPath="$PROJECT_DIR$/inc/init.inc.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +15,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="reservation.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reservation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/reservation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
@@ -33,6 +32,33 @@
                 <marker date="1495189574007" expanded="true" signature="3313:3426" ph="..." />
                 <marker date="1495189574007" expanded="true" signature="3805:4109" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.admin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/admin/calendar.admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="181" column="67" lean-forward="false" selection-start-line="181" selection-start-column="67" selection-end-line="181" selection-end-column="67" />
+              <folding>
+                <marker date="1495190583689" expanded="true" signature="3159:3168" ph="..." />
+                <marker date="1495190583689" expanded="true" signature="3553:3562" ph="..." />
+                <marker date="1495190583689" expanded="true" signature="3719:3728" ph="..." />
+                <marker date="1495190583689" expanded="true" signature="4347:4356" ph="..." />
+                <marker date="1495190583689" expanded="true" signature="7801:7810" ph="..." />
+                <marker date="1495190583689" expanded="true" signature="7967:7976" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +120,7 @@
       <file leaf-file-name="DispoClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
+            <state relative-caret-position="441">
               <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
               <folding />
             </state>
@@ -104,7 +130,7 @@
       <file leaf-file-name="calendar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/calendar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
+            <state relative-caret-position="843">
               <caret line="146" column="45" lean-forward="false" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
               <folding>
                 <marker date="1495188317924" expanded="true" signature="2347:2356" ph="..." />
@@ -205,16 +231,16 @@
         <option value="$PROJECT_DIR$/inc/class/ReservationClass.php" />
         <option value="$PROJECT_DIR$/inc/foot.inc.php" />
         <option value="$PROJECT_DIR$/inc/css/style.css" />
-        <option value="$PROJECT_DIR$/inc/admin/calendar.admin.php" />
         <option value="$PROJECT_DIR$/inc/product.php" />
         <option value="$PROJECT_DIR$/inc/body.inc.php" />
-        <option value="$PROJECT_DIR$/inc/init.inc.php" />
         <option value="$PROJECT_DIR$/inc/nav.php" />
         <option value="$PROJECT_DIR$/inc/class/ReservationManager.php" />
         <option value="$PROJECT_DIR$/inc/deleteReservations.php" />
         <option value="$PROJECT_DIR$/inc/calendar.php" />
         <option value="$PROJECT_DIR$/inc/class/DispoManager.php" />
         <option value="$PROJECT_DIR$/inc/reservation.php" />
+        <option value="$PROJECT_DIR$/inc/init.inc.php" />
+        <option value="$PROJECT_DIR$/inc/admin/calendar.admin.php" />
       </list>
     </option>
   </component>
@@ -364,12 +390,12 @@
       <workItem from="1493104051472" duration="156583000" />
       <workItem from="1494228469756" duration="87858000" />
       <workItem from="1494431836431" duration="98111000" />
-      <workItem from="1495023672059" duration="42694000" />
+      <workItem from="1495023672059" duration="44324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432624000" />
+    <option name="totallyTimeSpent" value="434254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,21 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/admin/calendar.admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="62" selection-end-column="35" />
-          <folding>
-            <marker date="1495026344328" expanded="true" signature="3159:3168" ph="..." />
-            <marker date="1495026344328" expanded="true" signature="3553:3562" ph="..." />
-            <marker date="1495026344328" expanded="true" signature="3719:3728" ph="..." />
-            <marker date="1495026344328" expanded="true" signature="4347:4356" ph="..." />
-            <marker date="1495026344328" expanded="true" signature="7029:7038" ph="..." />
-            <marker date="1495026344328" expanded="true" signature="7195:7204" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
@@ -669,14 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="188" column="24" lean-forward="false" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -803,14 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -852,21 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="146" column="45" lean-forward="false" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
-          <folding>
-            <marker date="1495188317924" expanded="true" signature="2347:2356" ph="..." />
-            <marker date="1495188317924" expanded="true" signature="2741:2750" ph="..." />
-            <marker date="1495188317924" expanded="true" signature="2907:2916" ph="..." />
-            <marker date="1495188317924" expanded="true" signature="3579:3588" ph="..." />
-            <marker date="1495188317924" expanded="true" signature="6656:6665" ph="..." />
-            <marker date="1495188317924" expanded="true" signature="6822:6831" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -891,6 +871,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="146" column="45" lean-forward="false" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
+          <folding>
+            <marker date="1495188317924" expanded="true" signature="2347:2356" ph="..." />
+            <marker date="1495188317924" expanded="true" signature="2741:2750" ph="..." />
+            <marker date="1495188317924" expanded="true" signature="2907:2916" ph="..." />
+            <marker date="1495188317924" expanded="true" signature="3579:3588" ph="..." />
+            <marker date="1495188317924" expanded="true" signature="6656:6665" ph="..." />
+            <marker date="1495188317924" expanded="true" signature="6822:6831" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/reservation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -906,6 +909,29 @@
             <marker date="1495189574007" expanded="true" signature="3289:4301" ph="..." />
             <marker date="1495189574007" expanded="true" signature="3313:3426" ph="..." />
             <marker date="1495189574007" expanded="true" signature="3805:4109" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/admin/calendar.admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="181" column="67" lean-forward="false" selection-start-line="181" selection-start-column="67" selection-end-line="181" selection-end-column="67" />
+          <folding>
+            <marker date="1495190583689" expanded="true" signature="3159:3168" ph="..." />
+            <marker date="1495190583689" expanded="true" signature="3553:3562" ph="..." />
+            <marker date="1495190583689" expanded="true" signature="3719:3728" ph="..." />
+            <marker date="1495190583689" expanded="true" signature="4347:4356" ph="..." />
+            <marker date="1495190583689" expanded="true" signature="7801:7810" ph="..." />
+            <marker date="1495190583689" expanded="true" signature="7967:7976" ph="..." />
           </folding>
         </state>
       </provider>

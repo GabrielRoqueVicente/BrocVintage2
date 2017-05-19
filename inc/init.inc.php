@@ -17,6 +17,8 @@ define('DOCUMENT_ROOT',
 define('URL', 'http://localhost/brocvintage2');
 //Define ADMIN MAIL
 define('EMAIL', 'gabriel.vicente.59@gmail.com');
+//Define ADMIN ID
+define('IDA', 6);
 
 //Functions
 

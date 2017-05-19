@@ -136,7 +136,14 @@ if(!empty($_GET['dispo'])){
 
                     if(!empty($dispoManager->getDate($dateTime)))
                     {
-                        $btn = 'btn-danger';
+                        $dispo=$dispoManager->getByDate($dateTime);
+                        if($dispo->idUser() == IDA)
+                        {
+                            $btn = 'btn-danger';
+                        }else{
+                            $btn = 'btn-success';
+                        }
+
                     }
 
                     echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
@@ -150,7 +157,13 @@ if(!empty($_GET['dispo'])){
 
                     if(!empty($dispoManager->getDate($dateTime)))
                     {
-                        $btn = 'btn-danger';
+                        $dispo=$dispoManager->getByDate($dateTime);
+                        if($dispo->idUser() == IDA)
+                        {
+                            $btn = 'btn-danger';
+                        }else{
+                            $btn = 'btn-success';
+                        }
                     }
 
                     echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
@@ -166,7 +179,13 @@ if(!empty($_GET['dispo'])){
 
                     if(!empty($dispoManager->getDate($dateTime)))
                     {
-                        $btn = 'btn-danger';
+                        $dispo=$dispoManager->getByDate($dateTime);
+                        if($dispo->idUser() == IDA)
+                        {
+                            $btn = 'btn-danger';
+                        }else{
+                            $btn = 'btn-success';
+                        }
                     }
 
                     echo '<td><a href="?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button">' . $formatHour->format($hour) . ' - ';
