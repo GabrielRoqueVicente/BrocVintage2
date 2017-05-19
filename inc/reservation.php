@@ -13,8 +13,14 @@ $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
 $userManager = new UserManager($db);
 
+$formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
+$formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
+$formatTime = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'yyyy-MM-dd HH:mm');
+$formatTime->setPattern('yyyy-MM-dd HH:mm');
 $yesterday = new DateTime("yesterday");
-$yesterday = strtotime($today);
+$day1 = clone $yesterday;
+$yesterday = $formatMeeting->format($yesterday);
+
 
 
 
@@ -66,8 +72,6 @@ if(!empty($_GET['dispo']))
         $dispo = $dispoManager->get($reservations[0]->idDispo());
         $meeting = $dispo->meetingDate();
         $meeting = strtotime($meeting);
-        $formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
-        $formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
         $meeting = $formatMeeting->format($meeting);
         $mail = $_SESSION['user']; // Destination.
         if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
@@ -239,12 +243,18 @@ if(isset($reservations[0]))
         $dispo = $dispoManager->get($reservations[0]->idDispo());
         $meeting = $dispo->meetingDate();
         $meeting = strtotime($meeting);
-        $formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
-        $formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
+        $day2 = $meeting;
         $meeting = $formatMeeting->format($meeting);
+
 
         echo '<h2>Votre rendez-vous à bien été enregistré pour la date du ' . $meeting  . '.</h2>
     <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au +41.76.578.72.52.<br /></h4>'; ?>
+        <?php
+
+        //Format the copie of $yesterday
+        $day1 = $formatTime->format($day1);
+        $day1 = strtotime($day1);
+        ?>
 
         <!-- Trigger-button -->
         <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#delMeeting">Annuler ce rendez-vous</button>
@@ -252,39 +262,30 @@ if(isset($reservations[0]))
         <!-- Modal -->
         <div id="delMeeting" class="modal fade" role="dialog">
             <div class="modal-dialog">
-                <?php
-                if($meeting <= $yesterday )
-                {?>
-                    <!--  Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
-                        </div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <?php
+
+                        if($day2 >= $day1)
+                        {
+                            echo '<h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
+                    </div>
                         <div class="modal-body">
                             <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
-                            <a href="<?php echo URL ;?>/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>
-                        </div>
-                        <div class="modal-footer">
-                        </div>
+                            <a href="' . URL . '/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>';
+                        }else{
+                            echo '<h4 class="modal-title">Annulation rendez-vous.</h4>
                     </div>
-                <?php}else{?>
-                    <!--  Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Annulation rendez-vous.</h4>
-                        </div>
                         <div class="modal-body">
-                            <h4 class="modal-title">Un rendez-vous ne peut être annuler en ligne 24 heures avant celui-ci.<br />
+                            <h4 class="modal-title">Un rendez-vous ne peut être annuler en ligne 24 heures avant la date initialement prévue.<br />
                                 Je vous serait reconnaissant de me contacter ou de me laisser un message au +41.76.578.72.52. </h4>
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
-                        </div>
-                        <div class="modal-footer">
-                        </div>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>';
+                        }?>
                     </div>
-                <?php}
-                ?>
+                    <div class="modal-footer">
+                    </div>
+                </div>
             </div>
         </div>
         <?php
@@ -292,7 +293,5 @@ if(isset($reservations[0]))
 }else{
     echo'<h2>Votre panier est vide. </h2>';
 }
-
-
 echo '</div>';
 ?>
