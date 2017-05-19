@@ -2,10 +2,13 @@
 
 $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
+$reservationManager = new ReservationManager($db);
 
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
 $nTypes = count($types);
+$reservations = $reservationManager->getCartList($_SESSION['idUser']);
+$reservations = count($reservations);
 
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -54,6 +57,8 @@ $nTypes = count($types);
               echo '<li><a href="?page=registration"><span class="glyphicon glyphicon-user"></span> S\'inscrire</a></li>';
 
           }else{
+
+              echo '<li><a href="?page=reservation&week=0&product=0&dispo=0">' . $reservations . ' <span class="glyphicon glyphicon-shopping-cart"></span></a></li>';
               echo '<li><a href="?page=connection&action=out"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>';
           }
           ?>

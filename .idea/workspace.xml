@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/reservation.php" afterPath="$PROJECT_DIR$/inc/reservation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/ReservationManager.php" afterPath="$PROJECT_DIR$/inc/class/ReservationManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/nav.php" afterPath="$PROJECT_DIR$/inc/nav.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,6 +15,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="nav.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/nav.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+              <folding>
+                <marker date="1495180110890" expanded="true" signature="459:806" ph="..." />
+                <marker date="1495180110890" expanded="true" signature="459:863" ph="..." />
+                <marker date="1495180110890" expanded="true" signature="491:795" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="product.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/product.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -27,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reservation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/reservation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1806">
@@ -50,7 +65,7 @@
       <file leaf-file-name="calendar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/calendar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
+            <state relative-caret-position="-231">
               <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
               <folding>
                 <marker date="1495095271952" expanded="true" signature="2347:2356" ph="..." />
@@ -67,7 +82,7 @@
       <file leaf-file-name="DispoManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-273">
+            <state relative-caret-position="672">
               <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
               <folding>
                 <marker date="1495030874158" expanded="true" signature="218:344" ph="INSERT INTO dispo... " />
@@ -86,7 +101,7 @@
       <file leaf-file-name="DispoClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
+            <state relative-caret-position="1354">
               <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
               <folding />
             </state>
@@ -96,7 +111,7 @@
       <file leaf-file-name="body.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="672">
               <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
               <folding>
                 <marker date="1495021184746" expanded="true" signature="1359:1390" ph="..." />
@@ -108,22 +123,28 @@
       <file leaf-file-name="ReservationManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class/ReservationManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-294">
-              <caret line="25" column="106" lean-forward="true" selection-start-line="25" selection-start-column="106" selection-end-line="25" selection-end-column="106" />
+            <state relative-caret-position="567">
+              <caret line="75" column="150" lean-forward="true" selection-start-line="75" selection-start-column="150" selection-end-line="75" selection-end-column="150" />
               <folding>
-                <marker date="1495035116001" expanded="true" signature="242:296" ph="INSERT INTO reservations... " />
-                <marker date="1495035116001" expanded="true" signature="242:373" ph="INSERT INTO reservations... " />
-                <marker date="1495035116001" expanded="true" signature="727:775" ph="DELETE FROM " />
-                <marker date="1495035116001" expanded="true" signature="727:776" ph="DELETE FROM " />
-                <marker date="1495035116001" expanded="true" signature="727:804" ph="DELETE FROM " />
-                <marker date="1495035116001" expanded="true" signature="727:806" ph="DELETE FROM " />
-                <marker date="1495035116001" expanded="true" signature="941:1035" ph="SELECT id_re... reservations" />
-                <marker date="1495035116001" expanded="true" signature="1225:1285" ph="SELECT meeti... reservations" />
-                <marker date="1495035116001" expanded="true" signature="1464:1534" ph="SELECT id_re... reservations" />
-                <marker date="1495035116001" expanded="true" signature="1819:1905" ph="SELECT id_re... reservations" />
-                <marker date="1495035116001" expanded="true" signature="2211:2301" ph="SELECT id_re... reservations" />
-                <marker date="1495035116001" expanded="true" signature="2211:2313" ph="SELECT id_re... reservations" />
-                <marker date="1495035116001" expanded="true" signature="2475:2639" ph="UPDATE reser... " />
+                <marker date="1495180051466" expanded="true" signature="242:296" ph="INSERT INTO reservations... " />
+                <marker date="1495180051466" expanded="true" signature="242:373" ph="INSERT INTO reservations... " />
+                <marker date="1495180051466" expanded="true" signature="727:775" ph="DELETE FROM " />
+                <marker date="1495180051466" expanded="true" signature="727:776" ph="DELETE FROM " />
+                <marker date="1495180051466" expanded="true" signature="727:804" ph="DELETE FROM " />
+                <marker date="1495180051466" expanded="true" signature="727:806" ph="DELETE FROM " />
+                <marker date="1495180051466" expanded="true" signature="941:1035" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="1225:1285" ph="SELECT meeti... reservations" />
+                <marker date="1495180051466" expanded="true" signature="1464:1534" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="1819:1905" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2275" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2298" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2307" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2310" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2318" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2199:2440" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2613:2703" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2613:2715" ph="SELECT id_re... reservations" />
+                <marker date="1495180051466" expanded="true" signature="2877:3041" ph="UPDATE reser... " />
               </folding>
             </state>
           </provider>
@@ -216,16 +237,16 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/inc/class/ReservationClass.php" />
         <option value="$PROJECT_DIR$/inc/foot.inc.php" />
-        <option value="$PROJECT_DIR$/inc/nav.php" />
         <option value="$PROJECT_DIR$/inc/css/style.css" />
         <option value="$PROJECT_DIR$/inc/admin/calendar.admin.php" />
         <option value="$PROJECT_DIR$/inc/class/DispoManager.php" />
-        <option value="$PROJECT_DIR$/inc/class/ReservationManager.php" />
         <option value="$PROJECT_DIR$/inc/product.php" />
         <option value="$PROJECT_DIR$/inc/body.inc.php" />
         <option value="$PROJECT_DIR$/inc/calendar.php" />
         <option value="$PROJECT_DIR$/inc/init.inc.php" />
         <option value="$PROJECT_DIR$/inc/reservation.php" />
+        <option value="$PROJECT_DIR$/inc/class/ReservationManager.php" />
+        <option value="$PROJECT_DIR$/inc/nav.php" />
       </list>
     </option>
   </component>
@@ -375,12 +396,12 @@
       <workItem from="1493104051472" duration="156583000" />
       <workItem from="1494228469756" duration="87858000" />
       <workItem from="1494431836431" duration="98111000" />
-      <workItem from="1495023672059" duration="31406000" />
+      <workItem from="1495023672059" duration="34955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421336000" />
+    <option name="totallyTimeSpent" value="424885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -689,18 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <marker date="1494940123532" expanded="true" signature="299:646" ph="..." />
-            <marker date="1494940123532" expanded="true" signature="299:703" ph="..." />
-            <marker date="1494940123532" expanded="true" signature="331:635" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ReservationClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -748,16 +757,6 @@
             <marker date="1494256205995" expanded="true" signature="4554:4766" ph="SELECT id_pi... pictures" />
             <marker date="1494256205995" expanded="true" signature="5031:5276" ph="UPDATE produ... " />
             <marker date="1494256205995" expanded="true" signature="5031:5290" ph="UPDATE pictu... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-          <folding>
-            <marker date="1495021184746" expanded="true" signature="1359:1390" ph="..." />
           </folding>
         </state>
       </provider>
@@ -822,9 +821,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1806">
+          <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+          <folding>
+            <marker date="1495123749923" expanded="true" signature="2929:3158" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3284:3354" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3284:4386" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3307:3331" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3354:3378" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3354:3491" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3354:4366" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3378:3491" ph="..." />
+            <marker date="1495123749923" expanded="true" signature="3870:4174" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <marker date="1495095271952" expanded="true" signature="2347:2356" ph="..." />
+            <marker date="1495095271952" expanded="true" signature="2741:2750" ph="..." />
+            <marker date="1495095271952" expanded="true" signature="2907:2916" ph="..." />
+            <marker date="1495095271952" expanded="true" signature="3579:3588" ph="..." />
+            <marker date="1495095271952" expanded="true" signature="6651:6660" ph="..." />
+            <marker date="1495095271952" expanded="true" signature="6817:6826" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
+        <state relative-caret-position="672">
           <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
           <folding>
             <marker date="1495030874158" expanded="true" signature="218:344" ph="INSERT INTO dispo... " />
@@ -841,63 +873,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
+        <state relative-caret-position="1354">
           <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <marker date="1495021184746" expanded="true" signature="1359:1390" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ReservationManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-294">
-          <caret line="25" column="106" lean-forward="true" selection-start-line="25" selection-start-column="106" selection-end-line="25" selection-end-column="106" />
+        <state relative-caret-position="567">
+          <caret line="75" column="150" lean-forward="true" selection-start-line="75" selection-start-column="150" selection-end-line="75" selection-end-column="150" />
           <folding>
-            <marker date="1495035116001" expanded="true" signature="242:296" ph="INSERT INTO reservations... " />
-            <marker date="1495035116001" expanded="true" signature="242:373" ph="INSERT INTO reservations... " />
-            <marker date="1495035116001" expanded="true" signature="727:775" ph="DELETE FROM " />
-            <marker date="1495035116001" expanded="true" signature="727:776" ph="DELETE FROM " />
-            <marker date="1495035116001" expanded="true" signature="727:804" ph="DELETE FROM " />
-            <marker date="1495035116001" expanded="true" signature="727:806" ph="DELETE FROM " />
-            <marker date="1495035116001" expanded="true" signature="941:1035" ph="SELECT id_re... reservations" />
-            <marker date="1495035116001" expanded="true" signature="1225:1285" ph="SELECT meeti... reservations" />
-            <marker date="1495035116001" expanded="true" signature="1464:1534" ph="SELECT id_re... reservations" />
-            <marker date="1495035116001" expanded="true" signature="1819:1905" ph="SELECT id_re... reservations" />
-            <marker date="1495035116001" expanded="true" signature="2211:2301" ph="SELECT id_re... reservations" />
-            <marker date="1495035116001" expanded="true" signature="2211:2313" ph="SELECT id_re... reservations" />
-            <marker date="1495035116001" expanded="true" signature="2475:2639" ph="UPDATE reser... " />
+            <marker date="1495180051466" expanded="true" signature="242:296" ph="INSERT INTO reservations... " />
+            <marker date="1495180051466" expanded="true" signature="242:373" ph="INSERT INTO reservations... " />
+            <marker date="1495180051466" expanded="true" signature="727:775" ph="DELETE FROM " />
+            <marker date="1495180051466" expanded="true" signature="727:776" ph="DELETE FROM " />
+            <marker date="1495180051466" expanded="true" signature="727:804" ph="DELETE FROM " />
+            <marker date="1495180051466" expanded="true" signature="727:806" ph="DELETE FROM " />
+            <marker date="1495180051466" expanded="true" signature="941:1035" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="1225:1285" ph="SELECT meeti... reservations" />
+            <marker date="1495180051466" expanded="true" signature="1464:1534" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="1819:1905" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2275" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2298" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2307" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2310" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2318" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2199:2440" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2613:2703" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2613:2715" ph="SELECT id_re... reservations" />
+            <marker date="1495180051466" expanded="true" signature="2877:3041" ph="UPDATE reser... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/calendar.php">
+    <entry file="file://$PROJECT_DIR$/inc/nav.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
           <folding>
-            <marker date="1495095271952" expanded="true" signature="2347:2356" ph="..." />
-            <marker date="1495095271952" expanded="true" signature="2741:2750" ph="..." />
-            <marker date="1495095271952" expanded="true" signature="2907:2916" ph="..." />
-            <marker date="1495095271952" expanded="true" signature="3579:3588" ph="..." />
-            <marker date="1495095271952" expanded="true" signature="6651:6660" ph="..." />
-            <marker date="1495095271952" expanded="true" signature="6817:6826" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/reservation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-          <folding>
-            <marker date="1495123749923" expanded="true" signature="2929:3158" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3284:3354" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3284:4386" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3307:3331" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3354:3378" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3354:3491" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3354:4366" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3378:3491" ph="..." />
-            <marker date="1495123749923" expanded="true" signature="3870:4174" ph="..." />
+            <marker date="1495180110890" expanded="true" signature="459:806" ph="..." />
+            <marker date="1495180110890" expanded="true" signature="459:863" ph="..." />
+            <marker date="1495180110890" expanded="true" signature="491:795" ph="..." />
           </folding>
         </state>
       </provider>

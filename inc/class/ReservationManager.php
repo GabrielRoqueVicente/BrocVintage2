@@ -70,6 +70,19 @@ class ReservationManager
         return $idReservations;
     }
 
+    public function getCartList($idUser)
+    {
+        $idReservations = [];
+        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE  id_dispo IS NULL AND id_user =' .$idUser);
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $idReservations[] = new Reservation ($datas);
+        }
+
+        return $idReservations;
+    }
+
     public function getProduct($idProduct)
     {
         $idProduct = (int) $idProduct;
