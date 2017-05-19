@@ -26,6 +26,7 @@ $reservation = $reservationManager->get($_GET['idReservation']);
 if($count == 1) //If it is the last reservation of the client unset de disponibility too
 {
     $dispo = $dispoManager->get($reservation->idDispo());
+    $dispo = $dispo->idDispo();
     $dispoManager->delete2($dispo);
     $product = $productManager->get($reservation->idProduct());
     $product->setDisponibility('dis');

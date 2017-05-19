@@ -27,7 +27,7 @@ class DispoManager
 
     public function delete2($dispo) //Delete from reservations
     {
-        $this->_db->exec('DELETE FROM dispo WHERE  meeting_date = ' . $dispo->idDispo());
+        $this->_db->exec("DELETE FROM dispo WHERE  id_dispo = '$dispo'");
     }
 
     public function get($idDispo)
