@@ -60,7 +60,7 @@ class ReservationManager
     public function getUserList($idUser)
     {
         $idReservations = [];
-        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE id_user =' .$idUser);
+        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE id_user =' .$idUser . ' ORDER BY id_reservation');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

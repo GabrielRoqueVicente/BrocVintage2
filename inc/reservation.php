@@ -49,7 +49,6 @@ if(!empty($_GET['dispo']))
         $dispo['id_user'] = $_SESSION['idUser'];
         $dispo = new Dispo($dispo);
         $dispoManager->add($dispo);
-        var_dump($_GET['dispo']);
         $dispo = $dispoManager->getByDate($_GET['dispo']);
 
         foreach($reservations as $reservation)
