@@ -68,6 +68,19 @@ class ProductManager
         return $products;
     }
 
+    public function getSubList($idSubType) //Getting list ordered by date
+    {
+        $products = [];
+        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products WHERE id_sub_type = ' . $idSubType . ' ORDER BY entry_date DESC');
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $products[] = new Product($datas);
+        }
+
+        return $products;
+    }
+
     public function getLast()
     {
         $q = $this->_db->query('SELECT MAX(id_product) FROM products');

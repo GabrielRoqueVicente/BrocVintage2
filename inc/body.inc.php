@@ -26,6 +26,9 @@
            }elseif($_GET['page'] == 'article')
            {
                include('article.php');
+           }elseif($_GET['page'] == 'products')
+           {
+               include('productsNav.php');
            }
 
            if(isConnected())

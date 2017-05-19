@@ -10,8 +10,6 @@ $pictureManager = new PictureManager($db);
 
 $products = $productManager->getDateList();
 $articles = $articleManager->getDateList();
-$articleManager->getDateList();
-
 
 /*=========================================================
 =====================NEWS DISPLAY==========================
@@ -69,8 +67,8 @@ for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
     }
 }
 
-var_dump($y);
-var_dump($z);
+//var_dump($y);
+//var_dump($z);
 
 
 
