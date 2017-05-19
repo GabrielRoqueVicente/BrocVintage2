@@ -37,7 +37,7 @@ $reservations = count($reservations);
                     if ($type->idProductType() == $subType->idProductType())
                     {
                         ?>
-                        <li><a href="#"><?php echo $subType->subTypeName(); ?></a></li>
+                        <li><a href="?page=produits&subType=<?php echo $subType->idSubType(); ?>"><?php echo $subType->subTypeName(); ?></a></li>
                         <?php
                     }
                 }

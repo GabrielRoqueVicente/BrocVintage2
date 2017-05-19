@@ -26,7 +26,7 @@
            }elseif($_GET['page'] == 'article')
            {
                include('article.php');
-           }elseif($_GET['page'] == 'products')
+           }elseif($_GET['page'] == 'produits')
            {
                include('productsNav.php');
            }
