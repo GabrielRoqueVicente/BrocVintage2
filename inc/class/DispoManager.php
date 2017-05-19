@@ -27,7 +27,7 @@ class DispoManager
 
     public function delete2($dispo) //Delete from reservations
     {
-        $this->_db->exec('DELETE FROM dispo WHERE  id_dispo = ' . $dispo->idDispo());
+        $this->_db->exec('DELETE FROM dispo WHERE  meeting_date = ' . $dispo->idDispo());
     }
 
     public function get($idDispo)
@@ -45,12 +45,20 @@ class DispoManager
         $q = $this->_db->query("SELECT meeting_date FROM dispo WHERE meeting_date ='$dateTime'");
         $data = $q->fetch(PDO::FETCH_ASSOC);
 
-        return ($data);
+        return $data;
+    }
+
+    public function getByDate($dateTime)
+    {
+        $q = $this->_db->query("SELECT * FROM dispo WHERE meeting_date ='$dateTime'");
+        $data = $q->fetch(PDO::FETCH_ASSOC);
+
+        return new Dispo($data);
     }
 
     public function getList()
     {
-        $idDispo = [];
+        $idDispos = [];
         $q = $this->_db->query('SELECT id_dispo, dispo_date, meeting_date, id_user FROM dispo');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
@@ -63,7 +71,7 @@ class DispoManager
 
     public function getDateList() //Getting list ordered by date
     {
-        $idDispo = [];
+        $idDispos = [];
         $q = $this->_db->query('SELECT id_dispo, dispo_date, meeting_date, id_user FROM dispo ORDER BY entry_date DESC');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))

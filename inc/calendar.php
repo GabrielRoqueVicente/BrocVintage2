@@ -144,7 +144,7 @@ $formatHourDateTime->setPattern('HH:mm:ss');
                         $btn = 'btn-danger';
                     }
 
-                    echo '<td><a href="?reservation&week=' . $_GET['week'] . '&product=' . $_GET['product'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button"' . $disabled . '>' . $formatHour->format($hour) . ' - ';
+                    echo '<td><a href="?page=reservation&week=' . $_GET['week'] . '&product=' . $_GET['product'] . '&dispo=' . $dateTime .'" class="btn ' . $btn . '" role="button"' . $disabled . '>' . $formatHour->format($hour) . ' - ';
                     $hour = $hour->modify('+1 hour');
                     echo $formatHour->format($hour) . '</a></td>';
                     $hour = $hour->modify('-10 hour');
