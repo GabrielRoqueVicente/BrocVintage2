@@ -5,7 +5,6 @@ if(!isConnected())
     header('location:' . URL . '/index.php');
 }
 
-
 //OBJECT'S INSTANCE
 
 $reservationManager = new ReservationManager($db);
@@ -13,6 +12,10 @@ $dispoManager = new DispoManager($db);
 $productManager = new ProductManager($db);
 $pictureManager = new PictureManager($db);
 $userManager = new UserManager($db);
+
+$yesterday = new DateTime("yesterday");
+$yesterday = strtotime($today);
+
 
 
 //VARIABLES
@@ -241,7 +244,7 @@ if(isset($reservations[0]))
         $meeting = $formatMeeting->format($meeting);
 
         echo '<h2>Votre rendez-vous à bien été enregistré pour la date du ' . $meeting  . '.</h2>
-    <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au #TEL#.<br /></h4>'; ?>
+    <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au +41.76.578.72.52.<br /></h4>'; ?>
 
         <!-- Trigger-button -->
         <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#delMeeting">Annuler ce rendez-vous</button>
@@ -249,21 +252,39 @@ if(isset($reservations[0]))
         <!-- Modal -->
         <div id="delMeeting" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
+                <?php
+                if($meeting <= $yesterday )
+                {?>
+                    <!--  Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
+                            <a href="<?php echo URL ;?>/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
-                        <a href="<?php echo URL ;?>/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>
+                <?php}else{?>
+                    <!--  Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Annulation rendez-vous.</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="modal-title">Un rendez-vous ne peut être annuler en ligne 24 heures avant celui-ci.<br />
+                                Je vous serait reconnaissant de me contacter ou de me laisser un message au +41.76.578.72.52. </h4>
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-
+                <?php}
+                ?>
             </div>
         </div>
         <?php
