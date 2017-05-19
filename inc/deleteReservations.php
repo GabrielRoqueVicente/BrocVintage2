@@ -20,6 +20,9 @@ $reservationManager = new ReservationManager($db);
 $productManager = new ProductManager($db);
 $dispoManager = new DispoManager($db);
 
+$formatMeeting = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'EEEE d MMMM yyyy HH:mm');
+$formatMeeting->setPattern('EEEE d MMMM yyyy à HH:mm');
+
 
 if($_GET['del']== '0')
 {
@@ -29,6 +32,7 @@ if($_GET['del']== '0')
 }elseif($_GET['del']== '1') {
     $reservations = $reservationManager->getUserList($_SESSION['idUser']);
     $dispo = $dispoManager->get($reservations[0]->idDispo());
+    $dispo2 = clone $dispo; //Cloning $Dispo for the MAILING
     $dispo = $dispo->idDispo();
     $dispoManager->delete2($dispo);
     foreach($reservations as $reservation)
@@ -42,8 +46,7 @@ if($_GET['del']== '0')
         }
     }
     //==========MAILING==========================================================
-    $dispo = $dispoManager->get($reservations[0]->idDispo());
-    $meeting = $dispo->meetingDate();
+    $meeting = $dispo2->meetingDate();
     $meeting = strtotime($meeting);
     $meeting = $formatMeeting->format($meeting);
     $mail = EMAIL; // Destination.

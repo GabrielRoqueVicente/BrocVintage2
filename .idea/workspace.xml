@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/deleteReservations.php" afterPath="$PROJECT_DIR$/inc/deleteReservations.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/reservation.php" afterPath="$PROJECT_DIR$/inc/reservation.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="reservation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/reservation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+            <state relative-caret-position="315">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="55" />
               <folding>
                 <element signature="e#10842#10849#1#HTML" expanded="true" />
                 <marker date="1495220170745" expanded="true" signature="3445:3674" ph="..." />
@@ -45,15 +44,50 @@
       <file leaf-file-name="deleteReservations.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/deleteReservations.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2667">
-              <caret line="127" column="40" lean-forward="false" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
+            <state relative-caret-position="483">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding>
-                <marker date="1495220415836" expanded="true" signature="2388:2482" ph="..." />
-                <marker date="1495220415836" expanded="true" signature="2388:2485" ph="..." />
-                <marker date="1495220415836" expanded="true" signature="2411:2435" ph="..." />
-                <marker date="1495220415836" expanded="true" signature="2458:2482" ph="..." />
-                <marker date="1495220415836" expanded="true" signature="2482:2485" ph="..." />
-                <marker date="1495220415836" expanded="true" signature="2678:2963" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2616:2710" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2616:2713" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2639:2663" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2686:2710" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2710:2713" ph="..." />
+                <marker date="1495221027886" expanded="true" signature="2906:3191" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DispoClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1554">
+              <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DispoManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding>
+                <marker date="1495202875418" expanded="true" signature="218:344" ph="INSERT INTO dispo... " />
+                <marker date="1495202875418" expanded="true" signature="602:641" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="602:642" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="602:643" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="602:650" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="756:792" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="756:799" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="756:800" ph="DELETE FROM " />
+                <marker date="1495202875418" expanded="true" signature="919:998" ph="SELECT id_di... dispo" />
+                <marker date="1495202875418" expanded="true" signature="1175:1237" ph="SELECT meeti... dispo" />
+                <marker date="1495202875418" expanded="true" signature="1395:1446" ph="SELECT * FRO... dispo" />
+                <marker date="1495202875418" expanded="true" signature="1628:1689" ph="SELECT id_di... dispo" />
+                <marker date="1495202875418" expanded="true" signature="1974:2060" ph="SELECT id_di... dispo" />
+                <marker date="1495202875418" expanded="true" signature="2292:2432" ph="UPDATE dispo... " />
               </folding>
             </state>
           </provider>
@@ -92,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>week</find>
       <find>i</find>
       <find>samedi</find>
       <find>titl</find>
@@ -119,9 +152,10 @@
       <find>reser</find>
       <find>var</find>
       <find>getby</find>
-      <find>dispo</find>
       <find>getDate</find>
       <find>delete2</find>
+      <find>dispo</find>
+      <find>forma</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -334,12 +368,12 @@
       <workItem from="1493104051472" duration="156583000" />
       <workItem from="1494228469756" duration="87858000" />
       <workItem from="1494431836431" duration="98111000" />
-      <workItem from="1495023672059" duration="58057000" />
+      <workItem from="1495023672059" duration="58850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="447987000" />
+    <option name="totallyTimeSpent" value="448780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,7 +385,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -699,14 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/init.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -769,30 +795,6 @@
             <marker date="1494169724942" expanded="true" signature="1477:1533" ph="SELECT id_su... sub_types" />
             <marker date="1494169724942" expanded="true" signature="1845:1925" ph="SELECT id_su... sub_types" />
             <marker date="1494169724942" expanded="true" signature="2191:2324" ph="UPDATE sub_t... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="72" lean-forward="true" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
-          <folding>
-            <marker date="1495202875418" expanded="true" signature="218:344" ph="INSERT INTO dispo... " />
-            <marker date="1495202875418" expanded="true" signature="602:641" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="602:642" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="602:643" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="602:650" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="756:792" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="756:799" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="756:800" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="756:1010" ph="DELETE FROM " />
-            <marker date="1495202875418" expanded="true" signature="919:998" ph="SELECT id_di... dispo" />
-            <marker date="1495202875418" expanded="true" signature="1175:1237" ph="SELECT meeti... dispo" />
-            <marker date="1495202875418" expanded="true" signature="1395:1446" ph="SELECT * FRO... dispo" />
-            <marker date="1495202875418" expanded="true" signature="1628:1689" ph="SELECT id_di... dispo" />
-            <marker date="1495202875418" expanded="true" signature="1974:2060" ph="SELECT id_di... dispo" />
-            <marker date="1495202875418" expanded="true" signature="2292:2432" ph="UPDATE dispo... " />
           </folding>
         </state>
       </provider>
@@ -860,10 +862,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/DispoClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1554">
+          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/DispoManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <marker date="1495202875418" expanded="true" signature="218:344" ph="INSERT INTO dispo... " />
+            <marker date="1495202875418" expanded="true" signature="602:641" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="602:642" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="602:643" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="602:650" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="756:792" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="756:799" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="756:800" ph="DELETE FROM " />
+            <marker date="1495202875418" expanded="true" signature="919:998" ph="SELECT id_di... dispo" />
+            <marker date="1495202875418" expanded="true" signature="1175:1237" ph="SELECT meeti... dispo" />
+            <marker date="1495202875418" expanded="true" signature="1395:1446" ph="SELECT * FRO... dispo" />
+            <marker date="1495202875418" expanded="true" signature="1628:1689" ph="SELECT id_di... dispo" />
+            <marker date="1495202875418" expanded="true" signature="1974:2060" ph="SELECT id_di... dispo" />
+            <marker date="1495202875418" expanded="true" signature="2292:2432" ph="UPDATE dispo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inc/reservation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="55" />
           <folding>
             <element signature="e#10842#10849#1#HTML" expanded="true" />
             <marker date="1495220170745" expanded="true" signature="3445:3674" ph="..." />
@@ -887,15 +920,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/deleteReservations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2667">
-          <caret line="127" column="40" lean-forward="false" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
+        <state relative-caret-position="483">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
           <folding>
-            <marker date="1495220415836" expanded="true" signature="2388:2482" ph="..." />
-            <marker date="1495220415836" expanded="true" signature="2388:2485" ph="..." />
-            <marker date="1495220415836" expanded="true" signature="2411:2435" ph="..." />
-            <marker date="1495220415836" expanded="true" signature="2458:2482" ph="..." />
-            <marker date="1495220415836" expanded="true" signature="2482:2485" ph="..." />
-            <marker date="1495220415836" expanded="true" signature="2678:2963" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2616:2710" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2616:2713" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2639:2663" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2686:2710" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2710:2713" ph="..." />
+            <marker date="1495221027886" expanded="true" signature="2906:3191" ph="..." />
           </folding>
         </state>
       </provider>
