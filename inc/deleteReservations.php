@@ -41,5 +41,91 @@ if($_GET['del']== '0')
             $reservationManager->delete($reservation);
         }
     }
+    //==========MAILING==========================================================
+    $dispo = $dispoManager->get($reservations[0]->idDispo());
+    $meeting = $dispo->meetingDate();
+    $meeting = strtotime($meeting);
+    $meeting = $formatMeeting->format($meeting);
+    $mail = EMAIL; // Destination.
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
+    {
+        $return = "\r\n";
+    }else{
+        $return = "\n";
+    }
+
+    //=====TXT message.
+    $message_txt .= 'Le rendez-vous de ' . $meeting .' à été annulé.' . $return . $return . '
+                        Voici la liste des articles qui étaient concernés : '. $return;
+    foreach($reservations as $reservation)
+    {
+        if($reservation->idDispo() !== null)
+        {
+            $product = $productManager->get($reservation->idProduct());
+            $message_txt .= $product->name() . $return;
+        }
+    }
+
+    //=====HTML message.
+    $message_html = '
+            <html>
+                <head>
+                </head>
+                <body>
+                    <p>';
+    $message_html .= 'Le rendez-vous de ' . $meeting .' à été annulé.<br /><br />
+                        Voici la liste des articles qui étaient concernés : <br />
+                        <ul>';
+    foreach($reservations as $reservation)
+    {
+        if($reservation->idDispo() !== null)
+        {
+            $product = $productManager->get($reservation->idProduct());
+            $message_html .= '<li>' . $product->name() . '</li>';
+        }
+
+    }
+    $message_html .= '
+                    </p>
+                </body>
+            </html>';
+    //==========
+
+    //=====Boundary
+    $boundary = "-----=".md5(rand());
+    //==========
+
+    //=====Défine subject.
+    $sujet = "[Broc'Vintage]Annulation du rendez-vous de ". $meeting .".";
+    //=========
+
+    //=====Mail Header.
+    $header = "From: \"Broc'Vintage\"<" . EMAIL . ">".$return;
+    $header.= "Reply-to: \"Broc'Vintage\"<" . EMAIL . ">".$return;
+    $header.= "MIME-Version: 1.0".$return;
+    $header.= "Content-Type: multipart/alternative;".$return." boundary=\"$boundary\"".$return;
+    //==========
+
+    //=====Message.
+    $message = $return."--".$boundary.$return;
+    //=====Add TXT message.
+    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$return;
+    $message.= "Content-Transfer-Encoding: 8bit".$return;
+    $message.= $return.$message_txt.$return;
+    //==========
+    $message.= $return."--".$boundary.$return;
+
+    //=====Add HTML message.
+    $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$return;
+    $message.= "Content-Transfer-Encoding: 8bit".$return;
+    $message.= $return.$message_html.$return;
+    //==========
+    $message.= $return."--".$boundary."--".$return;
+    $message.= $return."--".$boundary."--".$return;
+    //==========
+
+    //=====Sending Mail.
+    mail($mail,$sujet,$message,$header);
+    //==========
     header('Location:' . URL . '?page=reservation&week=0&product=0&dispo=0');
 }

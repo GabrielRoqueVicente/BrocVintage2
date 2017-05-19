@@ -106,12 +106,12 @@ if(!empty($_GET['dispo']))
                         +41.76.578.72.52';
 
         //=====HTML message.
-        $message_html = "
+        $message_html = '
             <html>
                 <head>
                 </head>
                 <body>
-                    <p>";
+                    <p>';
 
                     if($user->title() == "H")
                     {
