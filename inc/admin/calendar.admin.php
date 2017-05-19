@@ -7,6 +7,9 @@ if(!isAdmin())
 //Objects instance
 
 $dispoManager = new DispoManager($db);
+$reservationManager = new ReservationManager($db);
+$userManager = new UserManager($db);
+$productManager = new ProductManager($db);
 
 //VARIABLES
 $week = $_GET['week'];
@@ -215,5 +218,52 @@ if(!empty($_GET['dispo'])){
         $hour = $hour->modify('+1 hour');
     }
         ?></tbody>
+    </table>
+</div>
+
+<!--RESERVATION ADMNISTRATIONS-->
+
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Article</th>
+        </tr>
+        </thead>
+        <tbody>
+<?php
+
+$reservations = $reservationManager->getReservationList();
+foreach($reservations as $reservation)
+{
+    var_dump($reservation);
+    $user = $userManager->get($reservation->idUser());
+    $dispo = $dispoManager->get($reservation->idDispo());
+    $product = $productManager->get($reservation->idProduct());
+?>
+        <tr>
+            <?php
+            if($user->title() == 'H')
+            {
+                echo '<th>Mr</th>';
+            }else{
+                echo '<th>Mme</th>';
+            }
+            ?>
+            <td><?php echo $user->surname(); ?></td>
+            <td><?php echo $user->name(); ?></td>
+            <td><?php echo $dispo->meetingDate(); ?></td>
+            <td><?php echo $product->name(); ?></td>
+            <td><?php echo '<a href="' . URL . '/inc/admin/deleteReservation.admin.php?idUser=' . $reservation->idUser() . '&idReservation=' . $reservation->idReservation() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="15" width="15" /></a>'; ?></td>
+        </tr>
+    <?php
+}
+?>
+        </tbody>
     </table>
 </div>

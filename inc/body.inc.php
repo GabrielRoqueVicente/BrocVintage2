@@ -53,7 +53,6 @@
                 {
                     echo '<div class="col-md-offset-3 col-md-9">';
                     include('admin/calendar.admin.php');
-                    echo '</div>';
                 }
             }
 

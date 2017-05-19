@@ -83,6 +83,19 @@ class ReservationManager
         return $idReservations;
     }
 
+    public function getReservationList()
+    {
+        $idReservations = [];
+        $q = $this->_db->query('SELECT id_reservation, id_user, id_dispo, id_product FROM reservations WHERE  id_dispo IS NOT NULL');
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $idReservations[] = new Reservation ($datas);
+        }
+
+        return $idReservations;
+    }
+
     public function getProduct($idProduct)
     {
         $idProduct = (int) $idProduct;
