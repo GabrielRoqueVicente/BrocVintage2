@@ -84,13 +84,14 @@ if(!empty($_GET['dispo']))
         //=====TXT message.
         if($user->title() == "H")
         {
-            $message_txt = 'Monsieur ' . $user->surname() .' bonjour,' . $return;
+            $message_txt = 'Monsieur ' . $user->surname() .' bonjour !' . $return;
         }else{
             $message_txt = 'Madame ' . $user->surname() .' bonjour,' . $return;
         }
 
-        $message_txt .= "Notre rendez-vous du " . $meeting ." à bien été fixé." . $return . "
-                        Vous avez reservé les articles suivants : ". $return;
+        $message_txt .= 'Je me permets de vous contacter, afin de confirmer la date de notre rendez-vous au showroom.' . $return . $return . 'Soit le ' . $meeting .'.' . $return . $return . '
+                        Pour rappel, le showroom se situe à : Route des Granges 10/ 1617 Tatroz près Bossonens' . $return . $return . '
+                        J\'ai pris connaissance de votre reservation concernant les articles suivants : '. $return;
         foreach($reservations as $reservation)
         {
             if($reservation->idDispo() !== null)
@@ -99,6 +100,10 @@ if(!empty($_GET['dispo']))
                 $message_txt .= $product->name() . $return;
             }
         }
+        $message_txt .= $return . 'Je reste à disposition pour vos questions et remarques.' . $return . $return . '
+                        Michel Gaillard, pour Broc\'Vintage'. $return .
+                        EMAIL. $return .'
+                        +41.76.578.72.52';
 
         //=====HTML message.
         $message_html = "
@@ -110,14 +115,15 @@ if(!empty($_GET['dispo']))
 
                     if($user->title() == "H")
                     {
-                        $message_html .= 'Monsieur ' . $user->surname() .' bonjour,<br />';
+                        $message_html .= 'Monsieur ' . $user->surname() .' bonjour !<br />';
                     }else{
                         $message_html .= 'Madame ' . $user->surname() .' bonjour,<br />';
                     }
 
-        $message_html .= "Notre rendez-vous du " . $meeting ." à bien été fixé.<br /> 
-                        Vous avez reservé les articles suivants : <br />
-                        <ul>";
+        $message_html .= 'Je me permets de vous contacter, afin de confirmer la date de notre rendez-vous au showroom.<br /><br />Soit le' . $meeting .'.<br /><br />
+                        Pour rappel, le showroom se situe à : Route des Granges 10/ 1617 Tatroz près Bossonens<br /><br />
+                        J\'ai pris connaissance de votre reservation concernant les articles suivants : <br />
+                        <ul>';
                     foreach($reservations as $reservation)
                     {
                         if($reservation->idDispo() !== null)
@@ -127,11 +133,15 @@ if(!empty($_GET['dispo']))
                         }
 
                     }
-        $message_html .= " 
+        $message_html .= '
                         </ul>
+                        <br />Je reste à disposition pour vos questions et remarques.<br /><br />
+                        Michel Gaillard, pour Broc\'Vintage<br />'
+                        . EMAIL .'<br />
+                        +41.76.578.72.52
                     </p>
                 </body>
-            </html>";
+            </html>';
         //==========
 
         //=====Boundary
