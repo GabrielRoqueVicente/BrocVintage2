@@ -240,7 +240,33 @@ if($reservations[0]->idDispo() == Null)
     $meeting = $formatMeeting->format($meeting);
 
     echo '<h2>Votre rendez-vous à bien été enregistré pour la date du ' . $meeting  . '.</h2>
-    <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au #TEL#.<br /></h4>';
+    <h4>Pour reserver tout article nouvellement ajouté à votre panier, veuillez me contacter au #TEL#.<br /></h4>'; ?>
+
+    <!-- Trigger-button -->
+    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#delMeeting">Annuler ce rendez-vous</button>
+
+    <!-- Modal -->
+    <div id="delMeeting" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
+                    <a href="<?php echo URL ;?>/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+<?php
 }
 
 echo '</div>';
+?>

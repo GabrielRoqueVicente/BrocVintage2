@@ -20,9 +20,14 @@ class DispoManager
         $q->execute();
     }
 
-    public function delete($dispo)
+    public function delete($dispo) //Delete from calendar
     {
         $this->_db->exec("DELETE FROM dispo WHERE  meeting_date = '$dispo'");
+    }
+
+    public function delete2($dispo) //Delete from reservations
+    {
+        $this->_db->exec('DELETE FROM dispo WHERE  id_dispo = ' . $dispo->idDispo());
     }
 
     public function get($idDispo)
@@ -40,15 +45,7 @@ class DispoManager
         $q = $this->_db->query("SELECT meeting_date FROM dispo WHERE meeting_date ='$dateTime'");
         $data = $q->fetch(PDO::FETCH_ASSOC);
 
-        return $data;
-    }
-
-    public function getByDate($dateTime)
-    {
-        $q = $this->_db->query("SELECT * FROM dispo WHERE meeting_date ='$dateTime'");
-        $data = $q->fetch(PDO::FETCH_ASSOC);
-
-        return new Dispo($data);
+        return ($data);
     }
 
     public function getList()

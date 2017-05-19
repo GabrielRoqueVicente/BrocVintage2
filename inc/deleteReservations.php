@@ -29,7 +29,8 @@ if($_GET['del']== '0')
 }elseif($_GET['del']== '1') {
     $reservations = $reservationManager->getUserList($_SESSION['idUser']);
     $dispo = $dispoManager->get($reservations[0]->idDispo());
-    $dispoManager->delete($dispo);
+    var_dump($dispo);
+    $dispoManager->delete2($dispo);
     foreach($reservations as $reservation)
     {
         if(!is_null($reservation->idDispo()))
