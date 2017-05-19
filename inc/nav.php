@@ -59,6 +59,7 @@ $reservations = count($reservations);
           }else{
 
               echo '<li><a href="?page=reservation&week=0&product=0&dispo=0">' . $reservations . ' <span class="glyphicon glyphicon-shopping-cart"></span></a></li>';
+              echo '<li><a href="?page=profile"><span class="glyphicon glyphicon-user"></span></a></li>';
               echo '<li><a href="?page=connection&action=out"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>';
           }
           ?>

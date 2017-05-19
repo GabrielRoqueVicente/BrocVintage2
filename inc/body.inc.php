@@ -33,6 +33,9 @@
                if($_GET['page'] == 'reservation')
                {
                    include('reservation.php');
+               }else if($_GET['page'] == 'profile')
+               {
+                   include('profile.php');
                }
            }
 
