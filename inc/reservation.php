@@ -208,7 +208,8 @@ foreach($reservations as $reservation)
         ?><img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" width="20%">
         <a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a><br / ><?php
         echo $product->price() . ' Frs<br / >
-        <span class="glyphicon glyphicon-shopping-cart"></span><br / ><br / >';
+        <span class="glyphicon glyphicon-shopping-cart"></span> ';
+        echo '<a href="' . URL . '/inc/deleteReservations.php?del=0&idReservation=' . $reservation->idReservation() . '"><img src="' . URL . '/inc/img/delete.png" alt="Supprimer" height="13" width="13" /></a><br / ><br / >';
     }else{
         $primary = $pictureManager->getPrimaryPicture2($reservation->idProduct());
         $primary = $pictureManager->getPicture($primary);

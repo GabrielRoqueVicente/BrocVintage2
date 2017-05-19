@@ -23,7 +23,7 @@ class ReservationManager
 
     public function delete(Reservation $reservation)
     {
-        $this->_db->exec("DELETE FROM reservations WHERE  id_reservation = " .$reservation->id_picture());
+        $this->_db->exec("DELETE FROM reservations WHERE  id_reservation = " .$reservation->idReservation());
     }
 
     public function get($idReservation)
