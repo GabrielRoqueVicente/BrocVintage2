@@ -1,3 +1,6 @@
+<br />
+<br />
+<br />
 <div class="col-md-12">
     <h1><strong>BIENVENUE SUR LE SITE DE BROC'VINTAGE !</strong></h1><br /><br /><br />
     <p><img src="<?php echo URL .'\inc\img\home.jpg' ?>" alt="image d'accueil" class="homeImg">
@@ -14,6 +17,6 @@
 
         De même, le showroom est ouvert le <strong>SAMEDI</strong> et le <strong>DIMANCHE</strong> : n'hésitez pas à me contacter pour nous retrouver sur place.<br /><br /><br /><br />
 
-        <h3>Parcourez ce site, et <a href="mailto:info@brocvintage.ch">contactez moi</a> pour de plus amples renseignements</h3>.</p>
+        <h3>Parcourez ce site, et <a href="mailto:info@brocvintage.ch">contactez moi</a> pour de plus amples renseignements.</h3></p>
 
 </div>

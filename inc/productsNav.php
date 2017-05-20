@@ -3,12 +3,15 @@
 //OBJECT'S INSTANCE
 
 $productManager = new ProductManager($db);
-$pictureManager = new PictureManager($db);
+$subTypeManager = new SubTypeManager($db);
 
 //VARIABLES
 
 $products = $productManager->getSubList($_GET['subType']);
+$subType = $subTypeManager->getProductSubTYpe($_GET['subType']);
 
+// DIPLAY PRODUCTS
+echo '<strong><h1>'. $subType->subTypeName() .'</h1></strong><br />';
 foreach($products as $product)
 {
     echo '<div class="col-md-4">';

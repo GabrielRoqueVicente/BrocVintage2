@@ -1,24 +1,34 @@
 /*===STYLE====*/
 
-
-/*===IMG====*/
-p
+/*===NAV====*/
+.navbar-inverse .navbar-nav > li > a
 {
+    font-size: 1.15em;
+}
+.navbar-brand
+{
+    font-size: 30px;
 }
 
+
+/*===IMG====*/
 p img
 {
-    width: 45vh;
+    width: 60%;
     vertical-align: text-top;
     float: left;
-    margin: 0 20px 20px 0;
+    padding: 0 10px 0 0;
 }
 
 .homeImg
 {
-    width: 48vh;
+    width: 40%;
 }
 
+.imgPage
+{
+    width: 40%;
+}
 
 /*====TABLE====*/
 table
@@ -30,5 +40,39 @@ table .btn
 {
     font-size: 0.77em;
     Font-Weight: bold;
+}
+
+/*====BUTTON====*/
+
+.resBtn
+{
+    vertical-align: bottom;
+}
+
+/*====PANNEL====*/
+.panel-info {
+    border-color: #f5b7b1;
+}
+
+.panel-info > .panel-heading
+{
+    background-color: #943226;
+    border-color: #ec7063;
+}
+
+.panel-info > .panel-body
+{
+    background-color: #f4efef;
+    border-color: #ec7063;
+}
+.panel-info a
+{
+    color: #eee5e5;
+}
+
+.panel-info a:hover, a:focus, a:active
+{
+    color: #9d9d9d;
+    text-decoration: none;
 }
 

@@ -20,8 +20,11 @@ $newsDisplay = 9; //Setting number of displayed news per page.
 $y=0; //Products counter
 $z=0; //Articles counter
 
-
-
+echo '<div class="col-md-12">
+      <h1 class="h1">NEWS</h1>
+      </div>
+      </div>
+      <div class="row"><br />';
 for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
 {
     $offset = '';

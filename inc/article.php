@@ -31,23 +31,32 @@ if(!empty($idArticle))
 ?>
 
 <!-- DISPLAY ARTICLE -->
+<div class="col-md-12"><br />
+    <div class="panel-group">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h2><a href="<?php echo URL . '?page=article&idArticle=' . $article->idArticle() ?>"><strong><?php echo $article->title(); ?></strong></a></h2>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+                    <?php echo $article->text() ; ?>
+                </p>
 
-<h2><a href="<?php echo URL . '?page=article&idArticle=' . $article->idArticle() ?>"><strong><?php echo $article->title(); ?></strong></a></h2>
-<p>
-    <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
-    <?php echo $article->text() ; ?>
-</p>
+                <?php
 
-<?php
+                if(!empty($_GET['idArticle']))
+                {
+                    foreach($pictures as $picture)
+                    {
+                        ?>
+                        <img src="<?php echo URL .'\inc\\'. $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
+                        <?php
+                    }
+                }
 
-if(!empty($_GET['idArticle']))
-{
-    foreach($pictures as $picture)
-    {
-        ?>
-        <img src="<?php echo URL .'\inc\\'. $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
-        <?php
-    }
-}
-
-?>
+                ?>
+            </div>
+        </div>
+    </div>
+</div>

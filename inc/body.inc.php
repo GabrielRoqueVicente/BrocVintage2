@@ -3,9 +3,6 @@
 ?>
 
 <?php include('Nav.php');?>
-<br />
-<br />
-<br />
 
 <div class="container">
 
