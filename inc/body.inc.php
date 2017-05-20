@@ -29,6 +29,9 @@
            }elseif($_GET['page'] == 'produits')
            {
                include('productsNav.php');
+           }elseif($_GET['page'] == 'news')
+           {
+               include('news.php');
            }
 
            if(isConnected())
@@ -63,7 +66,7 @@
             }
 
         }else{
-            include('news.php');
+            include('home.php');
         }
 
 
