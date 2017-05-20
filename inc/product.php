@@ -35,19 +35,19 @@ if(!empty($idProduct))
 <div class="col-md-8">
     <h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
     <p>
-        <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+        <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="productImg">
         <?php
 
         if($product->autor() != NULL )
         {
-            echo 'Designer : ' . $product->autor() .'<br />';
+            echo 'Designer : ' . $product->autor() .'<br /><br />';
         }
 
         if($product->year() != NULL )
         {
-            echo 'Année de création : ' . $product->year() .'<br />';
+            echo 'Année de création : ' . $product->year() .'<br /><br />';
         }
-        echo $product->description() .'<br />';
+        echo $product->description() .'<br /><br />';
         echo $product->price() . ' Frs';
         switch($product->disponibility())
         {
