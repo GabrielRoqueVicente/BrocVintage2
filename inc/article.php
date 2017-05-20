@@ -11,6 +11,13 @@ if(empty($_GET['idArticle']) && empty($idArticle))
 $articleManager = new ArticleManager($db);
 $pictureManager = new PictureManager($db);
 
+//Variables
+if($_GET['page'] == 'article')
+{
+    $colPage = "col-md-12";
+    $imgPage='imgPage';
+}
+
 if(!empty($_GET['idArticle']))
 {
     $article = $articleManager->get($_GET['idArticle']);
@@ -31,7 +38,7 @@ if(!empty($idArticle))
 ?>
 
 <!-- DISPLAY ARTICLE -->
-<div class="col-md-12"><br />
+<div class="<?php echo $colPage; ?>">
     <div class="panel-group">
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -39,7 +46,7 @@ if(!empty($idArticle))
             </div>
             <div class="panel-body">
                 <p>
-                    <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>">
+                    <img src="<?php echo URL .'\inc\\' . $primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt'];?>" class="<?php echo $imgPage; ?>">
                     <?php echo $article->text() ; ?>
                 </p>
 

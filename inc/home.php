@@ -1,8 +1,8 @@
 <br />
 <br />
-<br />
 <div class="col-md-12">
-    <h1><strong>BIENVENUE SUR LE SITE DE BROC'VINTAGE !</strong></h1><br /><br /><br />
+    <h1><strong>BIENVENUE SUR LE SITE DE BROC'VINTAGE !</strong></h1>
+    <hr><br /><br />
     <p><img src="<?php echo URL .'\inc\img\home.jpg' ?>" alt="image d'accueil" class="homeImg">
 
         Je vous propose une série de <strong>meubles</strong>, de <strong>lampes</strong>, <strong>d'accessoires</strong> et de <strong>vaisselle</strong>.<br />
