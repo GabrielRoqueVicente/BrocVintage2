@@ -7,8 +7,6 @@ $reservationManager = new ReservationManager($db);
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
 $nTypes = count($types);
-$reservations = $reservationManager->getCartList($_SESSION['idUser']);
-$reservations = count($reservations);
 
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -57,6 +55,8 @@ $reservations = count($reservations);
               echo '<li><a href="?page=registration"><span class="glyphicon glyphicon-user"></span> S\'inscrire</a></li>';
 
           }else{
+              $reservations = $reservationManager->getCartList($_SESSION['idUser']);
+              $reservations = count($reservations);
 
               echo '<li><a href="?page=reservation&week=0&product=0&dispo=0">' . $reservations . ' <span class="glyphicon glyphicon-shopping-cart"></span></a></li>';
               echo '<li><a href="?page=profile"><span class="glyphicon glyphicon-user"></span></a></li>';

@@ -11,17 +11,17 @@ if(!isset($_GET['week']))
 }
 $week = $_GET['week'];
 
-//Today Date
+//Tomorrow Date
 $tomorrow = new DateTime("tomorrow");
 
 // Format days
 $formatDay = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE');
 $formatDay->setPattern('EEEE');
-$formatDayTh = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE d MMMM  yyyy');
-$formatDayTh->setPattern('EEEE d MMMM  yyyy');
+$formatDayTh = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN,'EEEE d MMMM yyyy');
+$formatDayTh->setPattern('EEEE d MMMM yyyy');
 
-$formatMonth = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'MMMM  yyyy');
-$formatMonth->setPattern('MMMM  yyyy');
+$formatMonth = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'Europe/Paris', IntlDateFormatter::GREGORIAN, 'MMMM yyyy');
+$formatMonth->setPattern('MMMM yyyy');
 $dayI = clone $tomorrow;
 $dayI =$dayI->modify('+' . ($week * 7) . 'days');
 

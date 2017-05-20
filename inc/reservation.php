@@ -275,22 +275,22 @@ if(isset($reservations[0]))
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <?php
+                    <?php
 
-                        if($day2 >= $day1)
-                        {
-                            echo '<h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
+                    if($day2 >= $day1)
+                    {
+                        echo '<h4 class="modal-title">Voulez-vous réellement annuler ce rendez-vous ?</h4>
                     </div>
-                        <div class="modal-body">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
-                            <a href="' . URL . '/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>';
-                        }else{
-                            echo '<h4 class="modal-title">Annulation rendez-vous.</h4>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
+                        <a href="' . URL . '/inc/deleteReservations.php?del=1" class="btn btn-danger" role="button">Oui</a>';
+                    }else{
+                        echo '<h4 class="modal-title">Annulation rendez-vous.</h4>
                     </div>
-                        <div class="modal-body">
-                            <h4 class="modal-title">Un rendez-vous ne peut être annuler en ligne 24 heures avant la date initialement prévue.<br />
-                                Je vous serait reconnaissant de me contacter ou de me laisser un message au +41.76.578.72.52. </h4>
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>';
+                    <div class="modal-body">
+                        <h4 class="modal-title">Un rendez-vous ne peut être annuler en ligne 24 heures avant la date initialement prévue.<br />
+                            Je vous serait reconnaissant de me contacter ou de me laisser un message au +41.76.578.72.52. </h4>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>';
                         }?>
                     </div>
                     <div class="modal-footer">
