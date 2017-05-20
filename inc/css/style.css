@@ -2,12 +2,16 @@
 
 
 /*===IMG====*/
+p
+{
+}
+
 p img
 {
     width: 45vh;
     vertical-align: text-top;
     float: left;
-    padding: 0 20px 20px 0;
+    margin: 0 20px 20px 0;
 }
 
 .homeImg

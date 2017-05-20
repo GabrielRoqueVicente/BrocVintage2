@@ -241,7 +241,6 @@ if(!empty($_GET['dispo'])){
 $reservations = $reservationManager->getReservationList();
 foreach($reservations as $reservation)
 {
-    var_dump($reservation);
     $user = $userManager->get($reservation->idUser());
     $dispo = $dispoManager->get($reservation->idDispo());
     $product = $productManager->get($reservation->idProduct());

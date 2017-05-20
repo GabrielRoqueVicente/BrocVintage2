@@ -13,6 +13,8 @@ $pictureManager = new PictureManager($db);
 $reservationManager = new ReservationManager($db);
 
 // VARIABLES
+$colPage=''; // col for individual product diplay
+
 if(!empty($_GET['idProduct']))
 {
     $product = $productManager->get($_GET['idProduct']);
@@ -32,7 +34,7 @@ if(!empty($idProduct))
 ?>
 
 <!-- DISPLAY PRODUCT -->
-<div class="col-md-8">
+<div class="<?php echo $colPage; ?>">
     <h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
     <p>
         <img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="productImg">
@@ -83,6 +85,7 @@ if(!empty($idProduct))
 <?php
 if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) && $_GET['page'] == 'product')
 {
+    $colPage = "col-md-8";
 ?>
     <div class="col-md-4">
         <a href="?page=reservation&week=0&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success" role="button">Réserver</a>
