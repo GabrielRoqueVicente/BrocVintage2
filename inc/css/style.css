@@ -30,6 +30,18 @@ p img
     width: 40%;
 }
 
+.imgProduct
+{
+    height : 10vh;
+    width: auto;
+    margin: 15px 15px 15px 0;
+}
+
+.col-md-1
+{
+    width: auto;
+}
+
 /*====TABLE====*/
 table
 {
@@ -77,6 +89,7 @@ table .btn
     text-decoration: none;
 }
 
+/*====HR====*/
 hr
 {
     border-color: #eee currentcolor currentcolor;

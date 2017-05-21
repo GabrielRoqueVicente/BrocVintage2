@@ -17,7 +17,7 @@ $colPage=''; // col for individual product display
 $imgPage=''; // Style for individual product display
 if($_GET['page'] == 'product')
 {
-    $colPage = "col-md-8";
+    $colPage = "col-md-9";
     $imgPage='imgPage';
 }
 
@@ -84,10 +84,13 @@ if(!empty($idProduct))
 
                 if(!empty($_GET['idProduct']))
                 {
+                    ?><p><?php
                     foreach($pictures as $picture)
                     {
                         ?>
-                        <img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>">
+                        <div class="col-md-1">
+                        <img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>" class="imgProduct">
+                        </div>
                         <?php
                     }
                 }
@@ -103,7 +106,7 @@ if(!empty($idProduct))
 if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) && $_GET['page'] == 'product')
 {
 ?>
-    <div class="col-md-4 resBtn">
+    <div class="col-md-3 resBtn">
         <a href="?page=reservation&week=0&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success btn-lg" role="button">Réserver</a>
     </div>
 <?php

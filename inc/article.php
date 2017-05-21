@@ -57,7 +57,9 @@ if(!empty($idArticle))
                     foreach($pictures as $picture)
                     {
                         ?>
-                        <img src="<?php echo URL .'\inc\\'. $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> ">
+                        <div class="col-md-1">
+                        <img src="<?php echo URL .'\inc\\'. $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?> " class="imgProduct">
+                        </div>
                         <?php
                     }
                 }
