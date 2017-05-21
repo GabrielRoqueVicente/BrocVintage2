@@ -29,6 +29,12 @@
            }elseif($_GET['page'] == 'news')
            {
                include('news.php');
+           }elseif($_GET['page'] == 'aboutUs')
+           {
+               include('aboutUs.php');
+           }elseif($_GET['page'] == 'conditions')
+           {
+               include('conditions.php');
            }
 
            if(isConnected())

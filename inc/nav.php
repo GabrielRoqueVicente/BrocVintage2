@@ -22,6 +22,7 @@ $nTypes = count($types);
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li><a href="?page=news">News</a></li>
+            <li><a href="?page=aboutUs">Qui sommes nous ?</a></li>
             <?php
             foreach($types as $type)
             {
@@ -47,6 +48,7 @@ $nTypes = count($types);
                     <?php
             }
             ?>
+            <li><a href="?page=conditions">Conditions</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <?php
