@@ -107,7 +107,10 @@ if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) &
 {
 ?>
     <div class="col-md-3 resBtn">
+        <p> Cet article vous intéresse ?<br />
+            Reservez-le, puis <b>consultez le calendrier</b> pour connaitre mes disponibilités afin de fixer une date de rendez-vous.</p>
         <a href="?page=reservation&week=0&product=<?php echo $_GET['idProduct'] ; ?>" class="btn btn-success btn-lg" role="button">Réserver</a>
+
     </div>
 <?php
 }

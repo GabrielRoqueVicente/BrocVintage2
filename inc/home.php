@@ -15,6 +15,9 @@
         <b>Horaires d'ouverture :</b><br />
         De façon générale, le showroom est ouvert sur rendez vous, mais de préférence en fin de journée, <strong>dès 17 heures</strong>.<br /><br />
 
+        <b>Adresse :</b><br />
+        <strong> Route des granges 10 à 1617 Tatroz / Fribourg / Suisse</strong>.<br /><br />
+
         De même, le showroom est ouvert le <strong>SAMEDI</strong> et le <strong>DIMANCHE</strong> : n'hésitez pas à me contacter pour nous retrouver sur place.<br /><br /><br /><br />
 
         <h3>Parcourez ce site, et <a href="mailto:info@brocvintage.ch">contactez moi</a> pour de plus amples renseignements.</h3></p>
