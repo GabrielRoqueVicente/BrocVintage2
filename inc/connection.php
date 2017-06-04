@@ -59,5 +59,3 @@ echo $error;
 
         <input type="submit" name="submit" value="Connecter">
     </form>
-
-<?php

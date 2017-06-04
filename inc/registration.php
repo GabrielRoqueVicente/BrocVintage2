@@ -126,7 +126,7 @@ echo $error; ?>
     <label for="city">Ville : </label><br />
     <input type="text" id="city" name="city" placeholder="Ville" maxlength="20"><br /><br />
 
-    <input name="submit" value="Envoyer" type="submit"><input type="reset" value="Vider" />
+    <input name="submit" value="Envoyer" type="submit" disabled><input type="reset" value="Vider" />
 </form>
 
 <!-- Add Captcha -->

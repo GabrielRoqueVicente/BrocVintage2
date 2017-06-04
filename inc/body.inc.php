@@ -2,7 +2,7 @@
 
 ?>
 
-<?php include('Nav.php');?>
+<?php include('nav.php');?>
 
 <div class="container">
 

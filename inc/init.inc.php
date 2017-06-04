@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = new PDO('mysql:host=https://mysql9.lwspanel.com/myadmin4;dbname=steph800565_3uey9i', 'steph800565_3uey9i', '8ls5osP00');
+$db = new PDO('mysql:host=91.216.107.162;dbname=steph800565_3uey9i', 'steph800565_3uey9i', '8ls5osP00');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 define('DOCUMENT_ROOT',
@@ -14,7 +14,7 @@ define('DOCUMENT_ROOT',
 
 // CONSTANT
 // Define URL
-define('URL', '/htdocs/brocvintage/');
+define('URL', 'http://stephservices.fr/brocvintage');
 //Define ADMIN MAIL
 define('EMAIL', 'gabriel.vicente.59@gmail.com');
 //Define ADMIN ID
