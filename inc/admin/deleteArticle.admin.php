@@ -30,9 +30,9 @@ if(isset($_GET['idArticle']))
     }
 
     $pictureManager->deleteArticlePicture($_GET['idArticle']);
-    header('Location: articles.admin.php');
+    header('location:' . URL . '?page=products');
 
 
 }else{
-    header('Location: articles.admin.php');
+    header('location:' . URL . '?page=products');
 }

@@ -19,7 +19,6 @@ $subTypeManager = new SubTypeManager($db);
 
 $types = $typeManager->getListProductType();
 $subTypes = $subTypeManager->getListProductSubType();
-var_dump($_GET);
 
 // DATA PROCESSING
 

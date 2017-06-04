@@ -11,7 +11,7 @@ $products = $productManager->getSubList($_GET['subType']);
 $subType = $subTypeManager->getProductSubTYpe($_GET['subType']);
 
 // DIPLAY PRODUCTS
-echo '<strong><h1>'. $subType->subTypeName() .'</h1></strong>
+echo '<h1>'. $subType->subTypeName() .'</h1>
       <hr>';
 foreach($products as $product)
 {

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <?php include('nav.php');?>
 
 <div class="container">
@@ -70,13 +66,6 @@
 
         }else{
             include('home.php');
-        }
-
-
-
-
-        ?>
-
-
+        }?>
     </div>
 </div>

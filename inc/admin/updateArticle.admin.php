@@ -84,7 +84,7 @@ if (!empty($_POST))
             $pictureManager->update($picture4);
         }
     }
-    header('Location: articles.admin.php');
+    header('location:' . URL . '?page=articles');
 }
 
 // Pictures Update

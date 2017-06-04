@@ -57,7 +57,7 @@ class Picture
 
     public function setPic_name($picName)
     {
-        if (is_string($picName) && strlen($picName) <= 20)
+        if (is_string($picName) && strlen($picName) <= 50)
         {
             $this->_picName = $picName;
         }

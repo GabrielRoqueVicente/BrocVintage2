@@ -25,6 +25,7 @@ if(isAdmin())
         </div>
     </nav>
 <?php } ?>
+</html>
 
 
 
