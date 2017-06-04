@@ -8,7 +8,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 define('DOCUMENT_ROOT',
     substr(__FILE__,
         0,
-        strpos(__FILE__, 'inc\init.inc.php')
+        strpos(__FILE__, 'inc/init.inc.php')
     )
 );
 

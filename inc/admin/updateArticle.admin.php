@@ -1,10 +1,10 @@
 <?php
 // Require list
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ArticleManager.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureClass.php');
-require(DOCUMENT_ROOT . 'inc\class\PictureManager.php');
+require('../init.inc.php');
+require(DOCUMENT_ROOT . 'inc/class/ArticleClass.php');
+require(DOCUMENT_ROOT . 'inc/class/ArticleManager.php');
+require(DOCUMENT_ROOT . 'inc/class/PictureClass.php');
+require(DOCUMENT_ROOT . 'inc/class/PictureManager.php');
 
 //Redirect
 if(!isAdmin())

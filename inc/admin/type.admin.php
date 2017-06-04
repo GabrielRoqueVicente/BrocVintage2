@@ -1,10 +1,10 @@
 <?php
 // Require list
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductTypeManager.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeClass.php');
-require(DOCUMENT_ROOT . 'inc\class\SubTypeManager.php');
+require('../init.inc.php');
+require(DOCUMENT_ROOT . 'inc/class/ProductTypeClass.php');
+require(DOCUMENT_ROOT . 'inc/class/ProductTypeManager.php');
+require(DOCUMENT_ROOT . 'inc/class/SubTypeClass.php');
+require(DOCUMENT_ROOT . 'inc/class/SubTypeManager.php');
 
 //Redirect
 if(!isAdmin())
@@ -18,7 +18,6 @@ $typeManager = new TypeManager($db);
 $subTypeManager = new SubTypeManager($db);
 
 $types = $typeManager->getListProductType();
-var_dump($_GET);
 
 // DATA PROCESSING
 if(!empty($_GET['idProductType']))
@@ -33,14 +32,14 @@ if(!empty($_GET['idProductType']))
     }
 
     $typeManager->deleteProductType($type);
-    header('Location: website.admin.php');
+    header('location:' . URL . '?page=products');
     exit();
 
 }elseif (!empty($_GET['name']))
 {
     $productType = new ProductType($_GET);
     $typeManager->addProductType($productType);
-    header('Location: website.admin.php');
+    header('location:' . URL . '?page=products');
     exit();
 }elseif(!empty($_GET))
 {

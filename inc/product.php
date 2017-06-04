@@ -3,7 +3,7 @@
 
 if(empty($_GET['idProduct']) && empty($idProduct))
 {
-    header('Location: ..\index.php');
+    header('Location: ../index.php');
 }
 
 //OBJETCS INSTANCE
@@ -48,7 +48,7 @@ if(!empty($idProduct))
             </div>
             <div class="panel-body">
                 <p>
-                    <a target="_blank" href="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>"><img src="<?php echo URL .'\inc\\' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="<?php echo $imgPage; ?>"></a>
+                    <a target="_blank" href="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>"><img src="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="<?php echo $imgPage; ?>"></a>
                     <?php
 
                     if($product->autor() != NULL )
@@ -89,7 +89,7 @@ if(!empty($idProduct))
                     {
                         ?>
                         <div class="col-md-1">
-                            <a target="_blank" href="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>"><img src="<?php echo URL .'\inc\\' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>" class="imgProduct"></a>
+                            <a target="_blank" href="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>"><img src="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>" class="imgProduct"></a>
                         </div>
                         <?php
                     }

@@ -1,8 +1,8 @@
 <?php
 
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\UserClass.php');
-require(DOCUMENT_ROOT . 'inc\class\UserManager.php');
+require('../init.inc.php');
+require(DOCUMENT_ROOT . 'inc/class/UserClass.php');
+require(DOCUMENT_ROOT . 'inc/class/UserManager.php');
 
 //Redirect
 if(!isAdmin())

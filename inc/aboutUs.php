@@ -9,7 +9,7 @@
         Son adresse exacte : <strong>Route des granges 10 à 1617 Tatroz</strong><br /><br /><br />
 
 
-        Vous y trouverez de multiples témoins du <strong>design des années 50,60,70 et 80S'</strong> des lampes, des lampadaires, du mobilier en teck, ou des meubles en plastic, tous vintage.<br /><br />
+        Vous y trouverez de multiples témoins du <strong>design des années 50,60,70 et 80S'</strong> des lampes, des lampadaires, du mobilier en teck, ou des meubles en plastique, tous vintage.<br /><br />
 
         <strong>Tous les articles volumineux, lourd, ou hors gabarit, sont à retirer au Showroom</strong>, ou possible à livrer par un transporteur professionnel ( montant en sus ) tarification selon volume et distance, sur simple demande.<br /><br />
 

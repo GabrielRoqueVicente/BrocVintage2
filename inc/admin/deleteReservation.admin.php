@@ -1,12 +1,12 @@
 <?php
 
-require('..\init.inc.php');
-require(DOCUMENT_ROOT . 'inc\class\ReservationClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ReservationManager.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductClass.php');
-require(DOCUMENT_ROOT . 'inc\class\ProductManager.php');
-require(DOCUMENT_ROOT . 'inc\class\DispoClass.php');
-require(DOCUMENT_ROOT . 'inc\class\DispoManager.php');
+require('../init.inc.php');
+require(DOCUMENT_ROOT . 'inc/class/ReservationClass.php');
+require(DOCUMENT_ROOT . 'inc/class/ReservationManager.php');
+require(DOCUMENT_ROOT . 'inc/class/ProductClass.php');
+require(DOCUMENT_ROOT . 'inc/class/ProductManager.php');
+require(DOCUMENT_ROOT . 'inc/class/DispoClass.php');
+require(DOCUMENT_ROOT . 'inc/class/DispoManager.php');
 
 //Redirect
 if(!isAdmin())
