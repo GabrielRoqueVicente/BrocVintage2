@@ -104,6 +104,7 @@ if(!empty($_SESSION['idUser']))
             foreach($_POST as $key => $value)
             {
                 $_POST[$key] = addslashes($_POST[$key]);
+                $_POST[$key] = htmlspecialchars($_POST[$key]);
             }
 
             // UPPDATE USERS

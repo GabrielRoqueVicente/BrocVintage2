@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/htdocs/brocvintage/inc/admin/.htpasswd"
+Require valid-user

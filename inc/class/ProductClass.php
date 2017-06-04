@@ -49,7 +49,8 @@ class Product
 
     public function setAutor($autor)
     {
-        if (is_string($autor) && strlen($autor) <= 50) {
+        if (is_string($autor) && strlen($autor) <= 50)
+        {
             $this->_autor = $autor;
         }
     }
