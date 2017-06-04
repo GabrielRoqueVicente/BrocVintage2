@@ -1,6 +1,9 @@
 <br />
 <br />
 <div class="col-md-12">
+    <div class="alert alert-warning">
+        <strong>ATTENTION!</strong> SITE EN CONSTRUCTION, les inscriptions sont actuellement fermées.
+    </div>
     <h1><strong>BIENVENUE SUR LE SITE DE BROC'VINTAGE !</strong></h1>
     <hr><br /><br />
     <p><img src="<?php echo URL .'\inc\img\home.jpg' ?>" alt="image d'accueil" class="homeImg">

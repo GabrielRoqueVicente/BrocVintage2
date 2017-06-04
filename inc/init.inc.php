@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = new PDO('mysql:host=localhost;dbname=brocVintage', 'root', '');
+$db = new PDO('mysql:host=https://mysql9.lwspanel.com/myadmin4;dbname=steph800565_3uey9i', 'steph800565_3uey9i', '8ls5osP00');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 define('DOCUMENT_ROOT',
@@ -14,11 +14,11 @@ define('DOCUMENT_ROOT',
 
 // CONSTANT
 // Define URL
-define('URL', 'http://localhost/brocvintage2');
+define('URL', '/htdocs/brocvintage/');
 //Define ADMIN MAIL
 define('EMAIL', 'gabriel.vicente.59@gmail.com');
 //Define ADMIN ID
-define('IDA', 6);
+define('IDA', 1);
 
 //Functions
 
