@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="" />
+    <list default="true" id="15658cbf-144d-487e-8072-7d2b6f087be5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/PictureClass.php" afterPath="$PROJECT_DIR$/inc/class/PictureClass.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,12 +14,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="nav.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/nav.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="882">
               <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PictureManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-798">
+              <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PictureClass.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="59" column="57" lean-forward="false" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+              <folding>
+                <marker date="1496666801510" expanded="true" signature="2738:2804" ph="SELECT MIN(i... pictures" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,19 +147,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="body.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/body.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1496662405597" expanded="true" signature="2019:2029" ph="..." />
-                <marker date="1496662405597" expanded="true" signature="2019:2036" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="product.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/product.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -156,18 +167,6 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1" />
               <folding>
                 <marker date="1496662405626" expanded="true" signature="377:502" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/article.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="60" column="71" lean-forward="false" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-              <folding>
-                <marker date="1496607873522" expanded="true" signature="1321:1642" ph="..." />
               </folding>
             </state>
           </provider>
@@ -232,7 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/inc/functions.inc.php" />
         <option value="$PROJECT_DIR$/inc/class/ArticleManager.php" />
         <option value="$PROJECT_DIR$/inc/class/UsersClass.php" />
         <option value="$PROJECT_DIR$/inc/class/UserClass.php" />
@@ -283,6 +281,7 @@
         <option value="$PROJECT_DIR$/inc/reservation.php" />
         <option value="$PROJECT_DIR$/inc/admin/type.admin.php" />
         <option value="$PROJECT_DIR$/inc/admin/subType.admin.php" />
+        <option value="$PROJECT_DIR$/inc/class/PictureClass.php" />
       </list>
     </option>
   </component>
@@ -341,6 +340,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrocVintage2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrocVintage2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -491,7 +508,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="519316000" />
+    <option name="totallyTimeSpent" value="519900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -697,6 +714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,22 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/class/ProductManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -762,6 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -783,6 +786,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,6 +1135,24 @@
         <state relative-caret-position="882">
           <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/PictureManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798">
+          <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/PictureClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="59" column="57" lean-forward="false" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+          <folding>
+            <marker date="1496666801510" expanded="true" signature="2738:2804" ph="SELECT MIN(i... pictures" />
+          </folding>
         </state>
       </provider>
     </entry>
