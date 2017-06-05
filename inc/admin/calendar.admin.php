@@ -55,6 +55,7 @@ if(!empty($_GET['dispo'])){
     {
         $dispoManager->delete($_GET['dispo']);
         unset($_GET['dispo']);
+        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=');
 
     }elseif(empty($error) && $_GET['dispo'] !== $dispoManager->getDate($_GET['dispo']))
     {
@@ -62,6 +63,7 @@ if(!empty($_GET['dispo'])){
         $dispo['id_user'] = $_SESSION['idUser'];
         $dispo = new Dispo($dispo);
         $dispoManager->add($dispo);
+        header('location:' . URL .'?page=calendarAdmin&week=' . $_GET['week'] . '&dispo=');
     }
 }?>
 
