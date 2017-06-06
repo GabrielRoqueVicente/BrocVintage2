@@ -24,17 +24,13 @@ foreach($types as $type)
 
         $content .= '</div>';
 }
-?>
 
-<div class="container">
-
-    <div class="row">
-
-        <div class="col-md-3">
-            <p class="lead">Articles</p>
-            <div id="MainMenu">
-                <div class="list-group panel">
-                    <?php echo $content; ?>
-                </div>
-            </div>
+echo'
+<div class="col-md-3">
+    <p class="lead">Articles</p>
+    <div id="MainMenu">
+        <div class="list-group panel">' .
+            $content . '
         </div>
+    </div>
+</div>';
