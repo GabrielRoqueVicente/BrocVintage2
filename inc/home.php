@@ -22,6 +22,8 @@
 </div>
 
 </div>
+<br />
+<br />
 <!-- body /.container -->
 
 <?php include('news.php'); ?>

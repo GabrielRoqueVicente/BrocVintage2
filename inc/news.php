@@ -23,23 +23,23 @@ $z=0; //Articles counter
 echo '
 <div class="container">
     <div class="col-md-12">
-        <h2>NEWS</h2>
-        <hr>';
+        <hr>
+        <h2>NEWS</h2>';
 
 for($i =0; $i<$newsDisplay ; $i++){//Getting and sorting products and dates.
-    if(($y + $z ) % 3 == 0 && $i !== 0){
+    if(($y + $z ) % 3 == 0)
+    {
         echo  '<div class="row">';
     }
-
     if(!empty($products[$y]) && (!empty($articles[$z]))){
         if(strtotime($products[$y]->entryDate()) > strtotime($articles[$z]->entryDate())){
-            echo '<div class="col-md-4'. $offset .'">';
+            echo '<div class="col-sm-4 col-lg-4 col-md-4">';
             $idProduct = $products[$y]->idProduct();
             include('product.php');
             $y++;
             echo'</div>';
         }else{
-            echo '<div class="col-md-4'. $offset .'">';
+            echo '<div class="col-sm-4 col-lg-4 col-md-4">';
             $idArticle = $articles[$z]->idArticle();
             include('article.php');
             $z++;
@@ -47,14 +47,14 @@ for($i =0; $i<$newsDisplay ; $i++){//Getting and sorting products and dates.
         }
     }elseif(empty($products[$y]) && (!empty($articles[$z])))
     {
-        echo '<div class="col-md-4'. $offset .'">';
+        echo '<div class="col-sm-4 col-lg-4 col-md-4">';
         $idArticle = $articles[$z]->idArticle();
         include('article.php');
         $z++;
         echo'</div>';
     }elseif(!empty($products[$y]) && (empty($articles[$z])))
     {
-        echo '<div class="col-md-4'. $offset .'">';
+        echo '<div class="col-sm-4 col-lg-4 col-md-4">';
         $idProduct = $products[$y]->idProduct();
         include('product.php');
         $y++;
@@ -66,6 +66,6 @@ for($i =0; $i<$newsDisplay ; $i++){//Getting and sorting products and dates.
     }
 }
 
-//var_dump($y);
-//var_dump($z);
-?>
+echo '
+    </div>
+</div>';

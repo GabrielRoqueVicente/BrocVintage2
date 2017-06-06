@@ -11,16 +11,6 @@
         </div>
     </div>';
 
-    echo '
-    <div class="container">
-    
-        <div class="row">';
-
-            include('content.php');
-
-            echo '
-            <div class="col-md-9">';
-
                 if(isset($_GET['page']))
                 {
                     if($_GET['page'] == 'registration')
@@ -31,16 +21,58 @@
                         include('connection.php');
                     }elseif($_GET['page'] == 'product')
                     {
-                        include('product.php');
+                        echo '
+                        <div class="container">
+    
+                            <div class="row">';
+
+                                include('content.php');
+                                echo '
+                                <div class="col-md-9">';
+                                    include('product.php');
+                                echo '
+                                </div>
+                                <!-- /.col-md-9 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->';
                     }elseif($_GET['page'] == 'article')
                     {
-                        include('article.php');
+                        echo '
+                        <div class="container">
+    
+                            <div class="row">';
+
+                                include('content.php');
+                                echo '
+                                <div class="col-md-9">';
+                                    include('article.php');
+                                echo '
+                                </div>
+                                <!-- /.col-md-9 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->';
                     }elseif($_GET['page'] == 'produits')
                     {
-                        include('productsNav.php');
-                    }elseif($_GET['page'] == 'news')
-                    {
-                        include('news.php');
+                        echo '
+                        <div class="container">
+    
+                            <div class="row">';
+
+                                include('content.php');
+                                echo '
+                                <div class="col-md-9">';
+                                    include('productsNav.php');
+                                echo '
+                                </div>
+                                <!-- /.col-md-9 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->';
                     }elseif($_GET['page'] == 'aboutUs')
                     {
                         include('aboutUs.php');
@@ -81,15 +113,23 @@
                     }
 
                 }else{
-                    include('home.php');
-                }
+                    echo '
+                        <div class="container">
+    
+                            <div class="row">';
 
-    echo '
-            </div>
-            <!-- /.col-md-9 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
+                                include('content.php');
+                                echo '
+                                <div class="col-md-9">';
+                                    include('home.php');
+                                echo '
+                                </div>
+                                <!-- /.col-md-9 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->';
+                }
+echo '
 </body>
 ';

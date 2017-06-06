@@ -12,7 +12,7 @@
             <a class="navbar-brand" href="<?php echo URL; ?>">Broc'Vintage</a>
         </div>
         <!-- Collect the nav links and other content for toggling -->
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="primaryNavbar">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="?page=aboutUs">Qui sommes nous ?</a>

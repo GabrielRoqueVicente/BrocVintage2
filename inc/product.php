@@ -18,7 +18,7 @@ $imgPage=''; // Style for individual product display
 $more='more'; // Hide content
 if($_GET['page'] == 'product')
 {
-    $colPage = "col-md-9";
+    $colPage = "col-md-12";
     $imgPage='imgPage';
     $more='';
 }
