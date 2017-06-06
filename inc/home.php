@@ -23,6 +23,6 @@
 
         De même, le showroom est ouvert le <strong>SAMEDI</strong> et le <strong>DIMANCHE</strong> : n'hésitez pas à me contacter pour nous retrouver sur place.</p><br /><br />
 
-        <h3>Parcourez ce site, et <a href="mailto:info@brocvintage.ch">contactez moi</a> pour de plus amples renseignements.</h3>
+        <h2>Parcourez ce site, et <a href="mailto:info@brocvintage.ch">contactez moi</a> pour de plus amples renseignements.</h2>
 
 </div>

@@ -128,3 +128,12 @@ hr
 }
 
 #myImg:hover {opacity: 0.7;}
+
+/*====SHOW MORE====*/
+.morecontent span {
+    display: none;
+}
+.morelink {
+    display: block;
+}
+

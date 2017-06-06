@@ -15,10 +15,12 @@ $reservationManager = new ReservationManager($db);
 // VARIABLES
 $colPage=''; // col for individual product display
 $imgPage=''; // Style for individual product display
+$more='more'; // Hide content
 if($_GET['page'] == 'product')
 {
     $colPage = "col-md-9";
     $imgPage='imgPage';
+    $more='';
 }
 
 if(!empty($_GET['idProduct']))
@@ -49,6 +51,7 @@ if(!empty($idProduct))
             <div class="panel-body">
                 <p>
                     <a target="_blank" href="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>"><img src="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="<?php echo $imgPage; ?>"></a>
+                    <span class="<?php echo $more; ?>">
                     <?php
 
                     if($product->autor() != NULL )
@@ -77,6 +80,7 @@ if(!empty($idProduct))
                             break;
                     }
                     ?>
+                    </span>
                     <br />
                 </p>
 
