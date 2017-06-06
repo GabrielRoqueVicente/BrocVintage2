@@ -1,6 +1,4 @@
-<?php
-
-?>
+<body>
 
 <?php include('nav.php');?>
 
@@ -11,44 +9,44 @@
         <?php
         if(isset($_GET['page']))
         {
-           if($_GET['page'] == 'registration')
-           {
-               include('registration.php');
-           }elseif($_GET['page'] == 'connection')
-           {
-               include('connection.php');
-           }elseif($_GET['page'] == 'product')
-           {
-               include('product.php');
-           }elseif($_GET['page'] == 'article')
-           {
-               include('article.php');
-           }elseif($_GET['page'] == 'produits')
-           {
-               include('productsNav.php');
-           }elseif($_GET['page'] == 'news')
-           {
-               include('news.php');
-           }elseif($_GET['page'] == 'aboutUs')
-           {
-               include('aboutUs.php');
-           }elseif($_GET['page'] == 'conditions')
-           {
-               include('conditions.php');
-           }
+            if($_GET['page'] == 'registration')
+            {
+                include('registration.php');
+            }elseif($_GET['page'] == 'connection')
+            {
+                include('connection.php');
+            }elseif($_GET['page'] == 'product')
+            {
+                include('product.php');
+            }elseif($_GET['page'] == 'article')
+            {
+                include('article.php');
+            }elseif($_GET['page'] == 'produits')
+            {
+                include('productsNav.php');
+            }elseif($_GET['page'] == 'news')
+            {
+                include('news.php');
+            }elseif($_GET['page'] == 'aboutUs')
+            {
+                include('aboutUs.php');
+            }elseif($_GET['page'] == 'conditions')
+            {
+                include('conditions.php');
+            }
 
-           if(isConnected())
-           {
-               if($_GET['page'] == 'reservation')
-               {
-                   include('reservation.php');
-               }else if($_GET['page'] == 'profile')
-               {
-                   include('profile.php');
-               }
-           }
+            if(isConnected())
+            {
+                if($_GET['page'] == 'reservation')
+                {
+                    include('reservation.php');
+                }else if($_GET['page'] == 'profile')
+                {
+                    include('profile.php');
+                }
+            }
 
-           // ADMIN PAGES
+            // ADMIN PAGES
 
             if(isAdmin())
             {

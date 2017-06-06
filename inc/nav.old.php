@@ -53,3 +53,29 @@ $nTypes = count($types);
     </div>
     <!-- /.container -->
 </nav>
+
+<?php/*
+foreach($types as $type)
+{
+    ?>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $type->typeName(); ?>
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <?php
+            foreach ($subTypes as $subType)
+            {
+                if ($type->idProductType() == $subType->idProductType())
+                {
+                    ?>
+                    <li><a href="?page=produits&subType=<?php echo $subType->idSubType(); ?>"><?php echo $subType->subTypeName(); ?></a></li>
+                    <?php
+                }
+            }
+
+            ?>
+        </ul>
+    </li>
+    <?php
+}
+*/?>
