@@ -35,9 +35,9 @@ if(isset($_GET['idProduct']))
     }
 
     $pictureManager->deleteProductPicture($_GET['idProduct']);
-    header('Location: website.admin.php');
+    header('Location:' . URL . '?page=products');
 
 
 }else{
-    header('Location: website.admin.php');
+    header('Location:' . URL . '?page=products');
 }

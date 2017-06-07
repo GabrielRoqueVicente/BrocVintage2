@@ -3,6 +3,8 @@
 <!-- <script language="javascript" src="inc/js/showMore.js"></script> -->*/
 if(isAdmin()){
     echo'
+    <br />
+    <br />
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-header">

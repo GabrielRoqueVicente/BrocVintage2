@@ -16,6 +16,10 @@
     border-bottom-left-radius: 4px
 }
 
+/*===H====*/
+.h3, h3 {
+    font-size: 1.3em;
+}
 
 /*===IMG====*/
 p img
@@ -38,7 +42,7 @@ p img:hover
 
 .imgPage
 {
-    width: 40%;
+    height: 80%;
     margin: 15px 15px 15px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -88,20 +92,24 @@ table .btn
 }
 
 /*====PANNEL====*/
+
 .panel-info {
     border-color: #f5b7b1;
+    height: 60vh;
 }
 
 .panel-info > .panel-heading
 {
     background-color: #943226;
     border-color: #ec7063;
+    height: 30%;
 }
 
 .panel-info > .panel-body
 {
     background-color: #f4efef;
     border-color: #ec7063;
+    height: 70%;
 }
 .panel-info a
 {
@@ -141,4 +149,11 @@ hr
 .morelink {
     display: block;
 }
+
+
+/*====HOME====*/
+.home-article{
+    margin-bottom: 30px;
+}
+
 

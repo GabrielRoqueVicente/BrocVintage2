@@ -6,6 +6,7 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-bot: 70px; /* Required padding for .navbar-fixed-bottom. Remove if using .navbar-static-bottom. Change if height of navigation changes. */
 }
 
 .slide-image {
@@ -24,10 +25,6 @@ body {
 .caption {
     height: 130px;
     overflow: hidden;
-}
-
-.caption h4 {
-    white-space: nowrap;
 }
 
 .thumbnail img {

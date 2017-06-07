@@ -83,7 +83,7 @@ if (!empty($_POST))
             $pictureManager->update($picture3);
         }
     }
-    header('Location: website.admin.php');
+    header('Location:' . URL . '?page=products');
 }
 
 //VARIABLES

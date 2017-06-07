@@ -24,16 +24,17 @@ echo '
 
                 foreach($articles as $article) {
                     $i++;
-                    echo '<div class="col-sm-4 col-lg-4 col-md-4">';
+                    echo '<div class="col-md-3 col-sm-6 home-article">';
                     $idArticle = $article->idArticle();
                     include('article.php');
                     echo'</div>';
 
-                    if($i % 3 == 0 && $i !== 0){
+                    /*if($i % 3 == 0 && $i !== 0){
                         echo '</div>
                         <div class="row">';
-                    }
+                    }*/
                 }
+
 echo '
         </div>
     </div>

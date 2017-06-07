@@ -76,7 +76,7 @@ if (!empty($_POST))
 
         if (isset($_FILES['picture4']) && $_FILES['picture4']['error'] == 0)
         {
-            $picture4 = new Picture ($_FILES['picture4'], $_POST['3Alt']);
+            $picture4 = new Picture ($_FILES['picture4'], $_POST['4Alt']);
             $picture4->setId_picture($pictures[4]->idPicture());
             $picture4->setPic_file_date($pictures[4]->picFileDate());
             $picture4->setId_article($_GET['idArticle']);
@@ -84,7 +84,7 @@ if (!empty($_POST))
             $pictureManager->update($picture4);
         }
     }
-    header('Location: articles.admin.php');
+    header('Location:' . URL . '?page=articles');
 }
 
 // Pictures Update
@@ -120,8 +120,8 @@ if(isset($pictures[3]))
 
 if(isset($pictures[4]))
 {
-    $picture3 = $pictures[4]->picFinalName();
-    $alt3 = $pictures[4]->picAlt();
+    $picture4 = $pictures[4]->picFinalName();
+    $alt4 = $pictures[4]->picAlt();
 }
 
 ?>

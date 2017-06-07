@@ -1,5 +1,4 @@
 <?php
-
 //Redirect
 if(!isAdmin())
 {
