@@ -1,9 +1,8 @@
 <?php
-if(isAdmin())
-{ ?>
-    <br />
-    <br />
-    <br />
+/*<!-- <script language="javascript" src="inc/js/brocVintage.js"></script> -->
+<!-- <script language="javascript" src="inc/js/showMore.js"></script> -->*/
+if(isAdmin()){
+    echo'
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -23,11 +22,5 @@ if(isAdmin())
                 </ul>
             </div>
         </div>
-    </nav>
-<?php } ?>
-
-
-
-
-<!-- <script language="javascript" src="inc/js/brocVintage.js"></script> -->
-<!-- <script language="javascript" src="inc/js/showMore.js"></script> -->
+    </nav>';
+}

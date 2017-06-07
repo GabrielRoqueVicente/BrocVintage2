@@ -26,8 +26,8 @@ foreach($products as $product)
     include('product.php');
     echo'</div>';
     if($i % 3 == 0 && $i !== 0) {
-        echo  '</div>';
-        echo  '<div class="row">';
+        echo  '</div>
+        <div class="row">';
     }
 }
 echo '

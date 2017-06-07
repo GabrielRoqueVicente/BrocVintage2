@@ -85,6 +85,6 @@ echo '
         </div>
         <!-- /.row -->
     </div>
-    <!-- /.container -->\';
+    <!-- /.container -->
 </body>
 ';
