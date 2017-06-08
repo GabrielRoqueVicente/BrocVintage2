@@ -68,6 +68,19 @@ class ProductManager
         return $products;
     }
 
+    public function getDateList9() //Getting list of the nine last products ordered by date
+    {
+        $products = [];
+        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY entry_date DESC LIMIT 9');
+
+        while ($datas = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            $products[] = new Product($datas);
+        }
+
+        return $products;
+    }
+
     public function getSubList($idSubType) //Getting list ordered by date
     {
         $products = [];
