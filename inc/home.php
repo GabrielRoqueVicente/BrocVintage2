@@ -1,6 +1,7 @@
 <div class="col-md-12">
 
         <header>
+            <h1><strong>BIENVENUE SUR BROC'VINTAGE !</strong></h1>
             <hr>
             <p><img src="<?php echo URL .'/inc/img/home.jpg' ?>" alt="image d'accueil" class="homeImg">
             Je vous propose une série de <strong>meubles</strong>, de <strong>lampes</strong>, <strong>d'accessoires</strong> et de <strong>vaisselle</strong>.<br />

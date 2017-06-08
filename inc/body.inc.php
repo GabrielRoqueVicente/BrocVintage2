@@ -8,8 +8,6 @@
             <div class="alert alert-warning">
                 <strong>ATTENTION!</strong> SITE EN CONSTRUCTION, les inscriptions sont actuellement fermées.
             </div>
-            
-            <h1><strong>BIENVENUE SUR BROC\'VINTAGE !</strong></h1>
         </div>
     </div>';
 

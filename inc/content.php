@@ -10,7 +10,7 @@ $content = '';
 foreach($types as $type)
 {
     $typeName = str_replace(chr(32), '-', $type->typeName()); //replace spaces to avoid bugs with ids
-    $content .= '<a class="list-group-item" data-toggle="collapse" data-parent="#MainMenu" href="#' . $typeName . '">
+    $content .= '<a class="list-group-item contentType" data-toggle="collapse" data-parent="#mainMenu" href="#' . $typeName . '">
         ' . $type->typeName() . '<span class="caret"></span></a>
         <div class="collapse" id="' . $typeName . '">';
 
@@ -28,7 +28,7 @@ foreach($types as $type)
 echo'
 <div class="col-md-3">
     <p class="lead">Articles</p>
-    <div id="MainMenu">
+    <div id="mainMenu">
         <div class="list-group panel">' .
             $content . '
         </div>
