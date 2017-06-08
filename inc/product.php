@@ -39,72 +39,43 @@ if(!empty($idProduct))
     $pictures = $pictureManager->getNewsPicture2($idProduct, $primary['id_picture']);
 }
 
-?>
-
-<!-- DISPLAY PRODUCT -->
-<div class="<?php echo $colPage; ?>">
+// DISPLAY PRODUCT
+if($_GET['page'] !== 'product')
+{
+    echo '
+    <article class="white-panel">
+        <a target="_blank" href="' .URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' .  $imgPage . '"></a>
+            <h3>' .  $product->name() . '</h3>
+            <p hidden>' . $product->description() . '</p>
+            <a class="btn btn-default" href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">Voir plus</a>
+    </article>';
+}else{
+    echo '
+<div class="' . $colPage .'">
     <div class="panel-group">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
+                <h1><a href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">' . $product->title() . '</a></h1>
             </div>
             <div class="panel-body">
                 <p>
-                    <a target="_blank" href="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>"><img src="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="<?php echo $imgPage; ?>"></a>
-                    <span class="<?php echo $more; ?>">
-                    <?php
-
-                    if($product->autor() != NULL )
-                    {
-                        echo 'Designer : ' . $product->autor() .'<br /><br />';
-                    }
-
-                    if($product->year() != NULL )
-                    {
-                        echo 'Année de création : ' . $product->year() .'<br /><br />';
-                    }
-                    echo $product->description() .'<br /><br />';
-                    echo $product->price() . ' Frs';
-                    switch($product->disponibility())
-                    {
-                        case 'dis':
-                            echo ' Disponible !';
-                            break;
-
-                        case 'ind':
-                            echo ' N\'est plus disponible !';
-                            break;
-
-                        case 'res':
-                            echo ' Produit reservé.';
-                            break;
-                    }
-                    ?>
-                    </span>
-                    <br />
-                </p>
-
-                <?php
-
-                if(!empty($_GET['idProduct']))
-                {
-                    ?><p><?php
-                    foreach($pictures as $picture)
-                    {
-                        ?>
+                    <a target="_blank" href="' . URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' . $imgPage . '"></a>
+                    ' . $product->text() . '
+                </p>';
+    if(!empty($_GET['idProduct'])){
+        foreach($pictures as $picture){
+            echo '
                         <div class="col-md-1">
-                            <a target="_blank" href="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>"><img src="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>" class="imgProduct"></a>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
+                            <a target="_blank" href="' . URL .'/inc/'. $picture->picFinalName() . '"><img src="' . URL .'/inc/'. $picture->picFinalName() . '" alt="' . $picture->picAlt() . '" class="imgProduct"></a>
+                        </div>';
+        }
+    }
+    echo'
             </div>
         </div>
     </div>
-</div>
-
-<?php
+</div>';
+}
 
 
 if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) && $_GET['page'] == 'product')

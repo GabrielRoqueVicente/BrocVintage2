@@ -50,14 +50,19 @@ echo '
     <div class="col-md-12">
         <hr>
         <h2 class="homeH2">Nouveautés</h2>
-            <div class="row">';
+        
+    </div>
+</div>
+
+<div class="container">
+        <div class="row">
+        
+            <section id="pinBoot">';
 
 foreach($products as $product) {
     $i++;
-    echo '<div class="col-md-3 col-sm-6 home-article">';
     $idProduct = $product->idProduct();
     include('product.php');
-    echo'</div>';
 
     /*if($i % 3 == 0 && $i !== 0){
         echo '</div>
@@ -66,6 +71,6 @@ foreach($products as $product) {
 }
 
 echo '
-        </div>
+        </section>
     </div>
 </div>';

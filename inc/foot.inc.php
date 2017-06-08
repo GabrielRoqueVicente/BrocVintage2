@@ -1,7 +1,4 @@
 <?php
-/*<!-- <script language="javascript" src="inc/js/brocVintage.js"></script> -->
-<!-- <script language="javascript" src="inc/js/showMore.js"></script> -->*/
-
 echo'
 <div class="container">
 
@@ -51,4 +48,7 @@ echo'
         crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>';
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script language="javascript" src="inc/js/pinterestGrid.js"></script>
+<!-- <script language="javascript" src="inc/js/brocVintage.js"></script> -->
+<!-- <script language="javascript" src="inc/js/showMore.js"></script> -->';
