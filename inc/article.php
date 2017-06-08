@@ -55,4 +55,30 @@ if($_GET['page'] !== 'article')
         </div>
     </div>
     ';
+}else{
+echo '
+<div class="' . $colPage .'">
+    <div class="panel-group">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1><a href="' . URL . '?page=article&idArticle=' . $article->idArticle() . '">' . $article->title() . '</a></h1>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <a target="_blank" href="' . URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' . $imgPage . '"></a>
+                    ' . $article->text() . '
+                </p>';
+                    if(!empty($_GET['idArticle'])){
+                        foreach($pictures as $picture){
+                        echo '
+                        <div class="col-md-1">
+                            <a target="_blank" href="' . URL .'/inc/'. $picture->picFinalName() . '"><img src="' . URL .'/inc/'. $picture->picFinalName() . '" alt="' . $picture->picAlt() . '" class="imgProduct"></a>
+                        </div>';
+                        }
+                    }
+            echo'
+            </div>
+        </div>
+    </div>
+</div>';
 }

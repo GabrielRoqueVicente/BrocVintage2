@@ -19,7 +19,7 @@ echo '
 <div class="container">
     <div class="col-md-12">
         <hr>
-        <h2>Actualités</h2>
+        <h2 class="homeH2">Actualités</h2>
             <div class="row">';
 
                 foreach($articles as $article) {

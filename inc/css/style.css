@@ -21,6 +21,16 @@
     font-size: 1.3em;
 }
 
+.homeH2
+{
+    background-color: #943226;
+    border-color: #ec7063;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #eee5e5;
+}
+
 /*===IMG====*/
 p img
 {
@@ -95,7 +105,7 @@ table .btn
 
 .panel-info {
     border-color: #f5b7b1;
-    height: 60vh;
+    height: auto;
 }
 
 .panel-info > .panel-heading

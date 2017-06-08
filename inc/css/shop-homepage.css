@@ -9,24 +9,6 @@ body {
     padding-bot: 70px; /* Required padding for .navbar-fixed-bottom. Remove if using .navbar-static-bottom. Change if height of navigation changes. */
 }
 
-.slide-image {
-    width: 100%;
-}
-
-.carousel-holder {
-    margin-bottom: 30px;
-}
-
-.carousel-control,
-.item {
-    border-radius: 4px;
-}
-
-.caption {
-    height: 130px;
-    overflow: hidden;
-}
-
 .thumbnail img {
     width: 100%;
 }
