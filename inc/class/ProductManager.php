@@ -68,10 +68,10 @@ class ProductManager
         return $products;
     }
 
-    public function getDateList15() //Getting list of the fifteen last products ordered by date
+    public function getDateList16() //Getting list of the fifteen last products ordered by date
     {
         $products = [];
-        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY entry_date DESC LIMIT 15');
+        $q = $this->_db->query('SELECT id_product, autor, year, price, disponibility, entry_date, name, description, promotion, id_product_type, id_sub_type FROM products ORDER BY entry_date DESC LIMIT 16');
 
         while ($datas = $q->fetch(PDO::FETCH_ASSOC))
         {

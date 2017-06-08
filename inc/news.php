@@ -9,7 +9,7 @@ $pictureManager = new PictureManager($db);
 //VARIABLES
 
 $articles = $articleManager->getDateList();
-$products = $productManager->getDateList15();
+$products = $productManager->getDateList16();
 
 $i = 0;
 
