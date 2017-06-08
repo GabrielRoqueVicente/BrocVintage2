@@ -51,17 +51,47 @@ if($_GET['page'] !== 'product')
     </article>';
 }else{
     echo '
-<div class="' . $colPage .'">
+<div class="' . $colPage . '">
     <div class="panel-group">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h1><a href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">' . $product->title() . '</a></h1>
+                <h2><a href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '"><strong>' . $product->name() . '</strong></a></h2>
             </div>
             <div class="panel-body">
                 <p>
                     <a target="_blank" href="' . URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' . $imgPage . '"></a>
-                    ' . $product->text() . '
+                    <span class="' . $more . '">';
+
+                    if($product->autor() != NULL )
+                    {
+                        echo 'Designer : ' . $product->autor() . '<br /><br />';
+                    }
+
+                    if($product->year() != NULL )
+                    {
+                        echo 'Année de création : ' . $product->year() . '<br /><br />';
+                    }
+                    echo $product->description() . '<br /><br />';
+                    echo $product->price() . ' Frs';
+                    switch($product->disponibility())
+                    {
+                        case 'dis':
+                            echo ' Disponible !';
+                            break;
+
+                        case 'ind':
+                            echo ' N\'est plus disponible !';
+                            break;
+
+                        case 'res':
+                            echo ' Produit reservé.';
+                            break;
+                    }
+                    echo '
+                    </span>
+                    <br />
                 </p>';
+
     if(!empty($_GET['idProduct'])){
         foreach($pictures as $picture){
             echo '

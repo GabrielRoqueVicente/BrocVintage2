@@ -9,7 +9,7 @@ $pictureManager = new PictureManager($db);
 //VARIABLES
 
 $articles = $articleManager->getDateList();
-$products = $productManager->getDateList9();
+$products = $productManager->getDateList15();
 
 $i = 0;
 
@@ -55,22 +55,24 @@ echo '
 </div>
 
 <div class="container">
-        <div class="row">
+    <div class="row">
+        <div class="col-md-12">
         
             <section id="pinBoot">';
 
-foreach($products as $product) {
-    $i++;
-    $idProduct = $product->idProduct();
-    include('product.php');
+            foreach($products as $product) {
+                $i++;
+                $idProduct = $product->idProduct();
+                include('product.php');
 
-    /*if($i % 3 == 0 && $i !== 0){
-        echo '</div>
-        <div class="row">';
-    }*/
-}
+                /*if($i % 3 == 0 && $i !== 0){
+                    echo '</div>
+                    <div class="row">';
+                }*/
+            }
 
 echo '
-        </section>
+            </section>    
+        </div>
     </div>
 </div>';

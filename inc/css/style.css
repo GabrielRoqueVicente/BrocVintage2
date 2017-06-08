@@ -38,20 +38,20 @@ body{
 }
 
 /*===IMG====*/
-/*p img
+p img
 {
     width: 45%;
     vertical-align: text-top;
     float: left;
     margin: 0 15px 15px 0;
-}*/
+}
 p img:hover
 {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 
-/*.homeImg
+.homeImg
 {
     width: 40%;
 }
@@ -81,7 +81,7 @@ p img:hover
 .imgProduct:hover
 {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}*/
+}
 
 .col-md-1
 {
