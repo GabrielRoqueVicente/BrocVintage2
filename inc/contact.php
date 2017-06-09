@@ -1,3 +1,70 @@
+<?php
+//==========MAILING==========================================================
+if(!empty($_POST)){
+    $mail = EMAIL; // Destination.
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
+    {
+        $return = "\r\n";
+    }else{
+        $return = "\n";
+    }
+
+//=====TXT message.
+
+    $message_txt .= $_POST['message'];
+
+//=====HTML message.
+    $message_html = '
+<html>
+<head>
+</head>
+<body>
+<p>';
+    $message_html .= $_POST['message'] . '
+</p>
+</body>
+</html>';
+//==========
+
+//=====Boundary
+    $boundary = "-----=".md5(rand());
+//==========
+
+//=====Défine subject.
+    $sujet = "[". $_POST['subject'] ."]" . $_POST['name'];
+//=========
+
+//=====Mail Header.
+    $header = "From: " . $_POST['email'] .$return;
+    $header.= "Reply-to: " . $_POST['email'] .$return;
+    $header.= "MIME-Version: 1.0".$return;
+    $header.= "Content-Type: multipart/alternative;".$return." boundary=\"$boundary\"".$return;
+//==========
+
+//=====Message.
+    $message = $return."--".$boundary.$return;
+//=====Add TXT message.
+    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$return;
+    $message.= "Content-Transfer-Encoding: 8bit".$return;
+    $message.= $return.$message_txt.$return;
+//==========
+    $message.= $return."--".$boundary.$return;
+
+//=====Add HTML message.
+    $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$return;
+    $message.= "Content-Transfer-Encoding: 8bit".$return;
+    $message.= $return.$message_html.$return;
+//==========
+    $message.= $return."--".$boundary."--".$return;
+    $message.= $return."--".$boundary."--".$return;
+//==========
+
+//=====Sending Mail.
+    mail($mail,$sujet,$message,$header);
+//==========
+}
+?>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-lg-12">
@@ -9,7 +76,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="well well-sm">
-                <form>
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
