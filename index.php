@@ -42,6 +42,8 @@ if(isset($_GET['page'])){
         $title .= 'Qui sommes-nous ?';
     } elseif ($_GET['page'] == 'conditions'){
         $title .= 'Conditions de vente';
+    }elseif ($_GET['page'] == 'contact') {
+        $title .= 'Contact';
     }
 
     if (isConnected()) {

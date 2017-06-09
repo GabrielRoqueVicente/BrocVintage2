@@ -48,6 +48,8 @@
                         include('aboutUs.php');
                     }elseif($_GET['page'] == 'conditions'){
                         include('conditions.php');
+                    }elseif($_GET['page'] == 'contact'){
+                        include('contact.php');
                     }
 
                     if(isConnected()){
