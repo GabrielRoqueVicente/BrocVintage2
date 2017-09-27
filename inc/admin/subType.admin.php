@@ -35,7 +35,6 @@ if(!empty($_GET['idSubType']))
 {
     $subType = new SubType($_GET);
     $subType->setId_Product_Type($_GET['productType']);
-    var_dump($subType);
     $subTypeManager->addProductSubType($subType);
     header('location:' . URL . '?page=products');
     exit();

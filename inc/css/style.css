@@ -4,6 +4,8 @@
 /*===BODY====*/
 body{
     background-color: #f2f3f4;
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-bot: 70px; /* Required padding for .navbar-fixed-bottom. Remove if using .navbar-static-bottom. Change if height of navigation changes. */
 }
 
 /*===NAV====*/
@@ -225,4 +227,19 @@ stylize any heading tags withing white-panel below
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+
+/*=======Thumnail======*/
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
 }

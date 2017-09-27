@@ -32,7 +32,7 @@ if(isset($_GET['page'])){
         $title .= $product->name();
     } elseif ($_GET['page'] == 'article'){
         $articleManager = new articleManager($db);
-        $article = $productManager->get($_GET['idArticle']);
+        $article = $articleManager->get($_GET['idArticle']);
         $title .= $article->title();
     } elseif ($_GET['page'] == 'produits'){
         $subTypeManager = new SubTypeManager($db);

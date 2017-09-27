@@ -51,16 +51,16 @@ if($_GET['page'] !== 'product')
                         <h3>' .  $product->name() . '</h3>
                     </div>
                     <div class="col-md-3 col-xs-3">
-                        <h3><label>' . $product->price() . ' Frs</label></h3>
+                        <label>' . $product->price() . ' Frs</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h3><a class="btn btn-default pull-right btn-sm" href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">Voir plus</a></h3>
+                        <a class="btn btn-default pull-right btn-sm" href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">Voir plus</a>
                     </div>
                     <div class="col-md-6">';
                         if(isConnected() && $product->disponibility() == 'dis'){
-                            echo '<h3><a href="?page=reservation&week=0&product=' . $_GET['idProduct'] . '" class="btn btn-success pull-left btn-sm" role="button">Réserver</a></h3>';
+                            echo '<a href="?page=reservation&week=0&product=' . $_GET['idProduct'] . '" class="btn btn-success pull-left btn-sm" role="button">Réserver</a>';
                         }
                     echo '
                     </div>

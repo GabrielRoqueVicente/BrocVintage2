@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title><?php echo $title ;?></title>
     <meta name="autor" content="Roque Vicente Gabriel">
-    <meta name="description" content= "Découvrez nos lampes, mobilier et accessoires vintage témoins du design des années 50,60,70 et 80. En salon ou au showroom de Tatroz près de Lausanne.">
+    <meta name="description" content="Découvrez nos lampes, mobilier et accessoires vintage témoins du design des années 50,60,70 et 80. En salon ou au showroom de Tatroz près de Lausanne.">
     <meta name="robots" content="all">
     <meta name="Revisit-after" content="14 days">
     <meta name="viewport" content="width=device-width, initial-scale=1">

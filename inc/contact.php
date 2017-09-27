@@ -1,68 +1,87 @@
 <?php
 //==========MAILING==========================================================
 if(!empty($_POST)){
-    $mail = EMAIL; // Destination.
-    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
+
+    //CHECKS
+
+    $error ='';
+
+    if (($nom != '') && ($email != '') && ($objet != '') && ($message != ''))
     {
-        $return = "\r\n";
-    }else{
-        $return = "\n";
+        $error .= 'Veuillez remplir toutes les informations.';
     }
 
-//=====TXT message.
+    if(!empty($error))
+    {
+        echo '<div class="alert alert-warning">
+            <b>Attention!</b>' . $error . '
+        </div>';
+    }else{
+        $mail = EMAIL; // Destination.
+        if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) //Preventing bugs.
+        {
+            $return = "\r\n";
+        }else{
+            $return = "\n";
+        }
 
-    $message_txt .= $_POST['message'];
+        //=====TXT message.
 
-//=====HTML message.
-    $message_html = '
-<html>
-<head>
-</head>
-<body>
-<p>';
-    $message_html .= $_POST['message'] . '
-</p>
-</body>
-</html>';
-//==========
+                $message_txt .= $_POST['message'];
 
-//=====Boundary
-    $boundary = "-----=".md5(rand());
-//==========
+        //=====HTML message.
+                $message_html = '
+        <html>
+        <head>
+        </head>
+        <body>
+        <p>';
+                $message_html .= $_POST['message'] . '
+        </p>
+        </body>
+        </html>';
+        //==========
 
-//=====Défine subject.
-    $sujet = "[". $_POST['subject'] ."]" . $_POST['name'];
-//=========
+        //=====Boundary
+                $boundary = "-----=".md5(rand());
+        //==========
 
-//=====Mail Header.
-    $header = "From: " . $_POST['email'] .$return;
-    $header.= "Reply-to: " . $_POST['email'] .$return;
-    $header.= "MIME-Version: 1.0".$return;
-    $header.= "Content-Type: multipart/alternative;".$return." boundary=\"$boundary\"".$return;
-//==========
+        //=====Défine subject.
+                $subject = "[". $_POST['subject'] ."]" . $_POST['name'];
+        //=========
 
-//=====Message.
-    $message = $return."--".$boundary.$return;
-//=====Add TXT message.
-    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$return;
-    $message.= "Content-Transfer-Encoding: 8bit".$return;
-    $message.= $return.$message_txt.$return;
-//==========
-    $message.= $return."--".$boundary.$return;
+        //=====Mail Header.
+                $header = "From: " . $_POST['name'] . " <" . $_POST['email'] . " >" .$return;
+                $header.= "Reply-to: " . $_POST['email'] .$return;
+                $header.= "MIME-Version: 1.0".$return;
+                $header.= "Content-Type: multipart/alternative;".$return." boundary=\"$boundary\"".$return;
+        //==========
 
-//=====Add HTML message.
-    $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$return;
-    $message.= "Content-Transfer-Encoding: 8bit".$return;
-    $message.= $return.$message_html.$return;
-//==========
-    $message.= $return."--".$boundary."--".$return;
-    $message.= $return."--".$boundary."--".$return;
-//==========
+        //=====Message.
+                $message = $return."--".$boundary.$return;
+        //=====Add TXT message.
+                $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$return;
+                $message.= "Content-Transfer-Encoding: 8bit".$return;
+                $message.= $return.$message_txt.$return;
+        //==========
+                $message.= $return."--".$boundary.$return;
 
-//=====Sending Mail.
-    mail($mail,$sujet,$message,$header);
-//==========
-}
+        //=====Add HTML message.
+                $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$return;
+                $message.= "Content-Transfer-Encoding: 8bit".$return;
+                $message.= $return.$message_html.$return;
+        //==========
+                $message.= $return."--".$boundary."--".$return;
+                $message.= $return."--".$boundary."--".$return;
+        //==========
+
+        //=====Sending Mail.
+                mail($mail,$subject,$message,$header);
+        //==========
+            }
+    }
+
+
 ?>
 
 <div class="container">
@@ -80,19 +99,19 @@ if(!empty($_POST)){
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name">Nom</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nom prénom" required="required" />
+                                <label for="name">Nom *</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Nom prénom" required />
                             </div>
                             <div class="form-group">
-                                <label for="email">Adresse Mail</label>
+                                <label for="email">Adresse Mail *</label>
                                 <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                 </span>
-                                    <input type="email" class="form-control" id="email" placeholder="johndoe@mail.com" required="required" /></div>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="johndoe@mail.com" required /></div>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Sujet</label>
-                                <select id="subject" name="subject" class="form-control" required="required">
+                                <label for="subject">Sujet *</label>
+                                <select id="subject" name="subject" class="form-control" required>
                                     <option value="question">Questions</option>
                                     <option value="suggestions">Suggestions</option>
                                     <option value="bug">Signaler un bug</option>
@@ -101,8 +120,8 @@ if(!empty($_POST)){
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="name">Message</label>
-                                <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                <label for="name">Message *</label>
+                                <textarea name="message" id="message" class="form-control" rows="9" cols="25" required
                                           placeholder="Votre message"></textarea>
                             </div>
                         </div>
