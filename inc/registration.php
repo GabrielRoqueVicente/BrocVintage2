@@ -26,7 +26,7 @@ if(!empty($_POST))
         $error .= '<div class="erreur">Le nom ne peux pas dépasser 20 caractères.</div>';
     }
 
-    if(!preg_match('#^[a-zA-Z0-9. _-]+$#', $_POST['surname']))
+    if(!preg_match('#^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]$#', $_POST['surname']))
     {
         $error .= '<div class="erreur">Le nom ne peux pas comporter de caractères spéciaux.)</div>';
     }
@@ -91,7 +91,7 @@ if(!empty($_POST))
 
 <?php $error .= $error;
 echo $error; ?>
-<form method="POST" action="" autocomplete>
+<form <!-- method="POST" action=""--> autocomplete >
 
     <label for="title">Civilité* : </label><br />
     <input type="radio" name="title" value="H" checked>Mr
@@ -99,13 +99,14 @@ echo $error; ?>
 
     <label for="surname">Nom* : </label><br />
     <input type="text" id="surname" name="surname" placeholder="Nom" maxlength="20" required>
-    <input type="text" id="name" name="name" placeholder="Prénom" maxlength="20" required><br />
+    <input type="text" id="name" name="name" placeholder="Prénom" maxlength="20" required><span id="nameError"></span><br />
 
     <label for="password">Mot de passe* : </label><br />
     <input type="password" id="password" name="password" placeholder="Mot de passe" required><br />
+    <input type="password" id="password" name="password" placeholder="Mot de passe" required><span id="passwordError"></span><br />
 
     <label for="email">Email* : </label><br />
-    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><br />
+    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><span id="emailError"></span><br />
 
     <label for="international_code">Télephone : </label><br />
     <div class="flag">
@@ -115,20 +116,21 @@ echo $error; ?>
         <option value="+32">  +32</option>
         <option value="+49">  +49</option>
     </div>
-    <input type="text" id="phone" name="phone" placeholder="123456789" maxlength="11"><br /><br />
+    <input type="text" id="phone" name="phone" placeholder="123456789" maxlength="11"><span id="phoneError"></span><br /><br />
 
     <label for="address">Adresse : </label><br />
-    <textarea id="address" name="address" placeholder="votre dresse"></textarea><br />
+    <textarea id="address" name="address" placeholder="votre dresse"></textarea><span id="addressError"></span><br />
 
     <label for="post_code">Code postal :</label><br />
-    <input type="text" id="post_code" name="post_code" placeholder="Code Postal" maxlength="5"><br />
+    <input type="text" id="post_code" name="post_code" placeholder="Code Postal" maxlength="5"><span id="postCodeError"></span><br />
 
     <label for="city">Ville : </label><br />
-    <input type="text" id="city" name="city" placeholder="Ville" maxlength="20"><br /><br />
+    <input type="text" id="city" name="city" placeholder="Ville" maxlength="20"><span id="cityError"></span><br /><br />
 
     <input name="submit" value="Envoyer" type="submit" disabled><input type="reset" value="Vider" />
 </form>
 
+<script src="inc/js/registration.js"></script>
 <!-- Add Captcha -->
 
 <!--

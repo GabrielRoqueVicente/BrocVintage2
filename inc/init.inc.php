@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = new PDO('mysql:host=, 'user', 'password');
+$db = new PDO('mysql:host=91.216.107.162;dbname=steph800565_3uey9i', 'steph800565_3uey9i', '8ls5osP00');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 define('DOCUMENT_ROOT',
