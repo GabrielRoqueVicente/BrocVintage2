@@ -41,7 +41,7 @@ if($_GET['page'] == 'article')
 }
 
 
-//DISPLAY ARTICLE
+/*//DISPLAY ARTICLE
 
 if($_GET['page'] !== 'article')
 {
@@ -81,4 +81,4 @@ echo '
         </div>
     </div>
 </div>';
-}
+}*/

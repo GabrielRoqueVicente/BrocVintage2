@@ -91,7 +91,7 @@ if(!empty($_POST))
 
 <?php $error .= $error;
 echo $error; ?>
-<form <!-- method="POST" action=""--> autocomplete >
+<form method="POST" action="" autocomplete >
 
     <label for="title">Civilité* : </label><br />
     <input type="radio" name="title" value="H" checked>Mr
@@ -103,10 +103,11 @@ echo $error; ?>
 
     <label for="password">Mot de passe* : </label><br />
     <input type="password" id="password" name="password" placeholder="Mot de passe" required><br />
-    <input type="password" id="password" name="password" placeholder="Mot de passe" required><span id="passwordError"></span><br />
+    <input type="password" id="passCheck" name="passCheck" placeholder="Confirmation mot de passe" required><span id="passwordError"></span><br />
 
     <label for="email">Email* : </label><br />
-    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><span id="emailError"></span><br />
+    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" maxlength="40" required><br />
+    <input type="email" id="emailCheck" name="emailCheck" placeholder="exemple@gmail.com" maxlength="40" required><span id="emailError"></span><br />
 
     <label for="international_code">Télephone : </label><br />
     <div class="flag">
@@ -130,7 +131,7 @@ echo $error; ?>
     <input name="submit" value="Envoyer" type="submit" disabled><input type="reset" value="Vider" />
 </form>
 
-<script src="inc/js/registration.js"></script>
+<script src="<?php echo URL; ?>/inc/js/registration.js"></script>
 <!-- Add Captcha -->
 
 <!--
