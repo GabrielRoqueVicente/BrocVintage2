@@ -1,6 +1,6 @@
 var slideIndex = 1;
 showSlides(slideIndex);
-setInterval("plusSlides(1)", 6000); //Auto slide
+setInterval(plusSlides.bind(this,1), 6000); //Auto slide)
 
 
 function plusSlides(n) { //React to the onclick event set in news.php mine 38-39
