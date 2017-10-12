@@ -1,0 +1,121 @@
+* 6463fe2 : Formulaire de contacts fonctionnel
+* 5bb217c : Formulaire de contact
+* fa929d4 : Title et description
+* befe97b : Google analytics
+* 3c77027 : Petits débugs
+* a7dbd8c : Affichage pinterest finit.
+* 1274887 : Affichage style pintereset.
+* 3c68a9c : Affichage des derniers produits ajoutées dans news.
+* ead2ce9 : plus de style
+* 52716b0 : style
+* 490f994 : Amélioration de l'affichage des news
+* e34fff9 : optimisation du body
+* 29e98d7 : optimisation du body
+* 1fd1ddb : réglage affichage
+* c49d1e5 : affichage de la barre de navigation
+* 9267a63 : Partie supérieur finie
+* bafde10 : Ajout de la barre de navigation latérale
+* 7087dfb : Nouvelle navigation
+* 860b612 : Début du nouveau design
+* 32c6725 : petit débug
+* ebd27e3 : version actuelle
+* 395485b : version actuelle
+* 113be3d : divers debut de redirection
+* 29ff595 : debug suite au W3 validator
+* 123cfb5 : configuration du init.inc.php
+* 2a5c5dc : Référencement
+* e19d962 : Diverses modifications
+* f7bcf48 : ajout de text
+* e8abd01 : Ajout des conditions de vente et de la page qui sommes nous ?
+* 65e0cb9 : IMG links
+* 3b40aa2 : IMG MODAL
+* 495aea6 : CSS images
+* 64e8328 : CSS
+* 2a36806 : petits correctifs d'affichage
+* 7ffa298 : petits correctifs d'affichage
+* 8acf02c : home.php finit
+* f94072a : Début création pages non dynamiques
+* 2718951 : Debug
+* 33505ee : Navigation dynamique
+* 08cdb25 : début de l'affichage produits dynamiques
+* 503ae91 : Profil Utilisateur
+* ef5b33f : Debug Mail
+* b5c91f5 : Envoie du mail de supression
+* 4848553 : Définition du mail de confirmation
+* fd5a914 : Ajout d'un limitateur d'annulation de rendez_vous
+* d15f562 : Ajout de demande d'appel.
+* 2108c26 : Debug
+* bf2a84f : Gestion reservations finit
+* 5621cf1 : debut de la gestion de rendez-vous admin
+* b5a214a : Debug panier
+* d232569 : Debug delete reservations
+* 9fb7d1d : Retirer du panier
+* b23dfe2 : Debug Panier
+* 4c1e0b0 : Ajout du bouton panier
+* 21223ea : Debug envoie de mail
+* b63cef8 : Envoie de mail de confirmation
+* 58c8d58 : Debug prise de commandes
+* 0a86af3 : Validation de la prise de commande
+* 6ef822f : Finalisation de la prise de commande
+* 71725c0 : back pannier réalisé -> finaliser la reservation puis affichage.
+* ce8524d : début de la programmation du panier
+* e2641ce : séparation des class Dispo et Reservation afin de permettre la reservation de plusieurs produits
+* 545f4ab : ajout des liens vers les pages individuelles des produits
+* 2e1eeb5 : Petits correctifs
+* 547495d : Petits correctifs
+* 3eaecb7 : calendar.admin.php finit
+* 666698f : Début du traitement du calendrier admin
+* ba16a02 : création de ReservationClass.php et ReservationManager.php
+* 948f8b6 : légère correction du calendrier
+* 16e64c7 : Affichage de base calendrier
+* f8309ac : Debug divers
+* 5514d74 : debug de la connection
+* 4da8c04 : User Upp finit
+* ddac3cd :  à Finir users.admin.php
+* 007e554 : redefine links
+* 9489c8d : connection.php finit
+* e6b81bd : registration.php finit
+* 12322b4 : finir les controles dans registration.php
+* 539990d : Début de la création du formulaire d'enregistrement
+* 0f57466 : Création des classes User et UserManager
+* 6597aaf : Affichage de la nav et des dropdowns
+* d9e25ba : Affichage des NEWS
+* 1b05bb2 : Affichage des news finit (reste à faire le front dessus).
+* b33c78c : commit avant d'ajouter du contenu fictif en DB pour tester l'affichage des news.
+* 181de65 : Début Affichage News
+* b06225f : Affichage Produits individuel finit
+* c3054d0 : Affichage Article individuel finit
+* e2d74cc : Uppdate ^ Articles finit
+* d532b72 : Out<- Articles finit
+* e7982ab : In-> articles Finit
+* 4700ebd : Debug ArticleManager.php
+* ee07354 : Articles class et Manager crées
+* 5ee28df : subType.admin.php finit
+* eb337db : type.admin.php finit
+* 3a875f9 : Debug d'update.admin.php
+* 2740b23 : In/Out Produits fonctionnel
+* 4ef1b8f : Trouver un moyen de modifier le nom d'un fichier à l'uppload
+* da95eb2 : redirection vers website.admin.php
+* 7f1fbc7 : Update produit finit
+* 62e8ac2 : Formulaire de mise à jours finit -> Traitement
+* 5959d34 : Début du formulaire de mise à jours produit reste à faire les images
+* b7b0e00 : debug website.admin.php
+* 4275c3b : debug du picture Manager et du getAllPictures
+* 38baafe : Correction de l'hydrate Product
+* 4b9cabc : Ajout de produits et d'images en BD 100%
+* 31bdfb1 : Ajout d'images en BD 50%
+* 4fb376a : Formulaire d'ajout en base de données Fonctionnel
+* e6a26e1 : Création de la class Picture.
+* 510553e : Fin du formulaire Produits. A commencer : Class Image et son controller
+* 1930fed : Création du formulaire de mise à jours des produits.
+* 96344fb : Affichage dynamique de la navigation dans Nav.php
+* a309b31 : Correction de l'hydratation de ProductTypeManager et de SubTypeManager
+* ff56a9e : Debut de la mise en forme de la navigation
+* 8a2d4ca :  Correction du dernier commit
+* 296bc8f :  Supression de la class Nav et créations des class ProductType et SubType
+* 3bb7bc4 :  Creation de la class Nav
+* 18950cb : Corrections dans ProductManager.php
+* 549e1d0 : Création du ProductManager.php
+* eea7fd4 : ajout des fichier et dossiers manquants au commit précédent
+* 1b84554 : Création de la class Product (Reste à definir les controles sur les immages)
+* 0af68a8 : Début de la v2 de broc'vintage

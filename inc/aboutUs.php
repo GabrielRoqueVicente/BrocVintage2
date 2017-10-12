@@ -17,8 +17,5 @@
 
         Je précise que j'ai un statut de vendeur particulier, donc non assujettis à la TVA , et ne donne <b>aucune garantie sur les articles vendus.</b><br /><br />
 
-        Portable : <strong>0041.76.578.72.52</strong> ou, pour la Suisse : <strong>076.578.72.52</strong><br /><br />
-
-        Adresse E-mail : <a href="mailto:info@brocvintage.ch">info@brocvintage.ch</a></p>
-
+        Portable : <strong>0041.76.578.72.52</strong> ou, pour la Suisse : <strong>076.578.72.52</strong><br /><br /></p>
 </div>

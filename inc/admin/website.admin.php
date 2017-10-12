@@ -98,7 +98,7 @@ if (!empty($_POST) && !empty($_FILES))
             <label for="ind">Indisponible</label><br />
 
             <label for="price">Prix : </label>
-            <input type="number" name="price" id="price" min="0" max="9999.99" step="0.01" /> €<br />
+            <input type="number" name="price" id="price" min="0" max="9999.99" step="0.01" /> Frs<br />
 
             <input type="checkbox" name="promotion" value="1" id="promotion" />
             <label for="promotion">Promotion</label><br />

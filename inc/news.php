@@ -8,72 +8,76 @@ $pictureManager = new PictureManager($db);
 
 //VARIABLES
 
-$products = $productManager->getDateList();
 $articles = $articleManager->getDateList();
+$articlesNbr = count($articles);
+$products = $productManager->getDateList2();
 
 /*=========================================================
 =====================NEWS DISPLAY==========================
 ===========================================================*/
 
-$newsDisplay = 9; //Setting number of displayed news per page.
+echo '
+<div class="container">
+    <div class="col-md-12">
+        <hr>
+        <h2 class="homeH2">Actualités</h2>
+        <div class="row">
+            <div class="slideshow-container">';
 
-$y=0; //Products counter
-$z=0; //Articles counter
+                for ($i = 0; $i < $articlesNbr; $i++) {
+                    $numbertext = $i + 1;
+                    $primary = $pictureManager->getPrimaryPicture($articles[$i]->idArticle());
+                    $primary = $pictureManager->getPicture($primary);
+                    echo '<div class="mySlides fade">
+                        <div class="numbertext">' . $numbertext . '/ '. $articlesNbr .'</div>
+                        <a href="' . URL . '?page=article&idArticle=' . $articles[$i]->idArticle() . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="slideImg"></a>
+                        <div class="text"><h3>' .  $articles[$i]->title() . '</h3></div>
+                    </div>';
+                }
 
-echo '    <div class="col-md-12">
-            <h1>NEWS</h1>
-            <hr>
-          </div>
-      </div>
-      <div class="row">';
-for($i =0; $i<$newsDisplay ; $i++) //Getting and sorting products and dates.
-{
-    $offset = '';
-    if(($y + $z ) % 3 == 0 && $i !== 0)
-    {
-       // $offset = ' col-md-offset-3';
-        echo  '<div class="row">';
-    }
-    if(!empty($products[$y]) && (!empty($articles[$z])))
-    {
-        if(strtotime($products[$y]->entryDate()) > strtotime($articles[$z]->entryDate()))
-        {
-            echo '<div class="col-md-4'. $offset .'">';
-            $idProduct = $products[$y]->idProduct();
-            include('product.php');
-            $y++;
-            echo'</div>';
-        }else{
-            echo '<div class="col-md-4'. $offset .'">';
-            $idArticle = $articles[$z]->idArticle();
-            include('article.php');
-            $z++;
-            echo'</div>';
-        }
-    }elseif(empty($products[$y]) && (!empty($articles[$z])))
-    {
-        echo '<div class="col-md-4'. $offset .'">';
-        $idArticle = $articles[$z]->idArticle();
-        include('article.php');
-        $z++;
-        echo'</div>';
-    }elseif(!empty($products[$y]) && (empty($articles[$z])))
-    {
-        echo '<div class="col-md-4'. $offset .'">';
-        $idProduct = $products[$y]->idProduct();
-        include('product.php');
-        $y++;
-        echo'</div>';
-    }
-    if(($y + $z ) % 3 == 0 && $i !== 0)
-    {
-        echo  '</div>';
-    }
-}
+                echo '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
 
-//var_dump($y);
-//var_dump($z);
+            <div style="text-align:center">';
+                for ($i = 0; $i <$articlesNbr; $i++){
+                    $currentSlide = $i + 1;
+                    echo '<span class="dot" onclick="currentSlide(' . $currentSlide . ')"></span>';
+                }
 
+            echo '</div>
+        </div>
+    </div>
+</div>';
 
+/*=========================================================
+=====================LAST PRODUCTS=========================
+===========================================================*/
+echo '
+<div class="container">
+    <div class="col-md-12">
+        <hr>
+        <h2 class="homeH2">Nouveautés</h2>
+        
+    </div>
+</div>
 
-?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        
+            <section id="pinBoot">';
+
+            foreach($products as $product) {
+                $i++;
+                $idProduct = $product->idProduct();
+                include('product.php');
+            }
+
+echo '
+            </section>    
+        </div>
+    </div>
+</div>
+<script src="' . URL . '/inc/js/newsSlideshow.js"></script>';

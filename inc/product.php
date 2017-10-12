@@ -15,10 +15,12 @@ $reservationManager = new ReservationManager($db);
 // VARIABLES
 $colPage=''; // col for individual product display
 $imgPage=''; // Style for individual product display
+$more='more'; // Hide content
 if($_GET['page'] == 'product')
 {
-    $colPage = "col-md-9";
+    $colPage = "col-md-12";
     $imgPage='imgPage';
+    $more='';
 }
 
 if(!empty($_GET['idProduct']))
@@ -37,30 +39,58 @@ if(!empty($idProduct))
     $pictures = $pictureManager->getNewsPicture2($idProduct, $primary['id_picture']);
 }
 
-?>
-
-<!-- DISPLAY PRODUCT -->
-<div class="<?php echo $colPage; ?>">
+// DISPLAY PRODUCT
+if($_GET['page'] !== 'product')
+{
+    echo '
+    <article class="white-panel">
+        <a target="_blank" href="' .URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' .  $imgPage . '"></a>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8 col-xs-8">
+                        <h3>' .  $product->name() . '</h3>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <label>' . $product->price() . ' Frs</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-default pull-right btn-sm" href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '">Voir plus</a>
+                    </div>
+                    <div class="col-md-6">';
+                        if(isConnected() && $product->disponibility() == 'dis'){
+                            echo '<a href="?page=reservation&week=0&product=' . $_GET['idProduct'] . '" class="btn btn-success pull-left btn-sm" role="button">Réserver</a>';
+                        }
+                    echo '
+                    </div>
+                </div>
+            </div>
+            <p hidden>' . $product->description() . '</p>
+    </article>';
+}else{
+    echo '
+<div class="' . $colPage . '">
     <div class="panel-group">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h2><a href="<?php echo URL . '?page=product&idProduct=' . $product->idProduct() ?>"><strong><?php echo $product->name(); ?></strong></a></h2>
+                <h2><a href="' . URL . '?page=product&idProduct=' . $product->idProduct() . '"><strong>' . $product->name() . '</strong></a></h2>
             </div>
             <div class="panel-body">
                 <p>
-                    <a target="_blank" href="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>"><img src="<?php echo URL .'/inc/' .$primary['pic_final_name']; ?>" alt="<?php echo $primary['pic_alt']; ?>" class="<?php echo $imgPage; ?>"></a>
-                    <?php
+                    <a target="_blank" href="' . URL .'/inc/' . $primary['pic_final_name'] . '"><img src="' . URL .'/inc/' . $primary['pic_final_name'] . '" alt="' . $primary['pic_alt'] . '" class="' . $imgPage . '"></a>
+                    <span class="' . $more . '">';
 
                     if($product->autor() != NULL )
                     {
-                        echo 'Designer : ' . $product->autor() .'<br /><br />';
+                        echo 'Designer : ' . $product->autor() . '<br /><br />';
                     }
 
                     if($product->year() != NULL )
                     {
-                        echo 'Année de création : ' . $product->year() .'<br /><br />';
+                        echo 'Année de création : ' . $product->year() . '<br /><br />';
                     }
-                    echo $product->description() .'<br /><br />';
+                    echo $product->description() . '<br /><br />';
                     echo $product->price() . ' Frs';
                     switch($product->disponibility())
                     {
@@ -76,31 +106,25 @@ if(!empty($idProduct))
                             echo ' Produit reservé.';
                             break;
                     }
-                    ?>
+                    echo '
+                    </span>
                     <br />
-                </p>
+                </p>';
 
-                <?php
-
-                if(!empty($_GET['idProduct']))
-                {
-                    ?><p><?php
-                    foreach($pictures as $picture)
-                    {
-                        ?>
+    if(!empty($_GET['idProduct'])){
+        foreach($pictures as $picture){
+            echo '
                         <div class="col-md-1">
-                            <a target="_blank" href="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>"><img src="<?php echo URL .'/inc/' . $picture->picFinalName(); ?>" alt="<?php echo $picture->picAlt(); ?>" class="imgProduct"></a>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
+                            <a target="_blank" href="' . URL .'/inc/'. $picture->picFinalName() . '"><img src="' . URL .'/inc/'. $picture->picFinalName() . '" alt="' . $picture->picAlt() . '" class="imgProduct"></a>
+                        </div>';
+        }
+    }
+    echo'
             </div>
         </div>
     </div>
-</div>
-
-<?php
+</div>';
+}
 
 
 if(isConnected() && $product->disponibility() == 'dis' && isset($_GET['page']) && $_GET['page'] == 'product')

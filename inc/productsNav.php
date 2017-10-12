@@ -11,12 +11,16 @@ $products = $productManager->getSubList($_GET['subType']);
 $subType = $subTypeManager->getProductSubTYpe($_GET['subType']);
 
 // DIPLAY PRODUCTS
-echo '<h1>'. $subType->subTypeName() .'</h1>
-      <hr>';
+echo '
+<div class="col-md-12">
+    <h1>'. $subType->subTypeName() .'</h1>
+    <hr>
+    <section id="pinBoot">';
 foreach($products as $product)
 {
-    echo '<div class="col-md-4">';
     $idProduct = $product->idProduct();
     include('product.php');
-    echo'</div>';
 }
+echo '
+    </section>
+</div>';

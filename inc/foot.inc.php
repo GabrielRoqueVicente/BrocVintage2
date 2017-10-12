@@ -1,7 +1,22 @@
 <?php
-if(isAdmin())
-{ ?>
-    <br />
+echo'
+<div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Broc\'Vintage 2017</p>
+            </div>
+        </div>
+    </footer>
+    <!-- /.container -->
+</div>';
+
+if(isAdmin()){
+    echo'
     <br />
     <br />
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
@@ -23,11 +38,5 @@ if(isAdmin())
                 </ul>
             </div>
         </div>
-    </nav>
-<?php } ?>
-</html>
-
-
-
-
-<!-- <script language="javascript" src="inc/js/brocVintage.js"></script> -->
+    </nav>';
+}
